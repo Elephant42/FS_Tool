@@ -36,7 +36,7 @@ There is also a secondary function available which will allow you to change the 
 
 
 ## Tray Icon
-The app is meant to run in the system tray and has a context menu to suit.  While minimised you can use the Tray Icon context menu to set the required Sim Rate and slew to the current contents of the clipboard.  There is also a settings option which will make the all go straight to the tray as soon as it's launched.
+The app is meant to run in the system tray and has a context menu to suit.  While minimised you can use the Tray Icon context menu to set the required Sim Rate and slew to the current contents of the clipboard.  There is also a settings option which will make the app go straight to the tray as soon as it's launched.
 
 
 ## Building
