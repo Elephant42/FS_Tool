@@ -1,4 +1,4 @@
-# Flight Sim Tool v0.1.0
+# Flight Sim Tool v0.1.1
 
 ## About
 This little app uses SimConnect to continuously read position data from MSFS2020.  Meh I hear you say, so what - lots of far more capable apps out there that'll do that.  Ahh true but despite lots of searching I have not yet found one that will allow me to instantly slew my aircraft to any position on the globe.  Hence this project was born.
@@ -46,12 +46,18 @@ One caveat is that you will need the MSFS2020 SDK installed in order for the Sim
 xcopy "C:\MSFS SDK\SimConnect SDK\lib\SimConnect.dll" "$(TargetDir)" /y
 xcopy "C:\MSFS SDK\Samples\SimvarWatcher\SimConnect.cfg" "$(TargetDir)" /y
 
+You will also need to change or remove the code signing section in the build events to suit your own personal situation.
+
 
 ## License
 GNU GENERAL PUBLIC LICENSE Version 3, 29 June 2007
 
 
 ## Changelog
+
+## [0.1.1]
+### Codesign
+- No changes other than self codesigning the .exe to enable a clean VirusTotal report.
 
 ## [0.1.0]
 ### Initial Commit
