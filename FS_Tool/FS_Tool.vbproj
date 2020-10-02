@@ -161,7 +161,13 @@
   <PropertyGroup>
     <PostBuildEvent>xcopy "C:\MSFS SDK\SimConnect SDK\lib\SimConnect.dll" "$(TargetDir)" /y
 xcopy "C:\MSFS SDK\Samples\SimvarWatcher\SimConnect.cfg" "$(TargetDir)" /y
+if $(ConfigurationName) == Release (
 xcopy "$(ProjectDir)\..\README.md" "$(TargetDir)" /y
+powershell "C:\Util\CodeSign.ps1" -file_path "$(TargetDir)\FS_Tool.exe"
+  echo "Release build.".
+) ELSE (
+  echo "Debug build.".
+)
 </PostBuildEvent>
   </PropertyGroup>
 </Project>
