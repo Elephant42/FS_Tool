@@ -29,14 +29,13 @@ Partial Class MainForm
         Me.ttDesc2 = New System.Windows.Forms.ToolTip(Me.components)
         Me.NotifyIcon1 = New System.Windows.Forms.NotifyIcon(Me.components)
         Me.cmTrayIcon = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.ctx1Item_Slew = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator6 = New System.Windows.Forms.ToolStripSeparator()
         Me.ctx1Item_Rate_x8 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ctx1Item_Rate_x4 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ctx1Item_Rate_x2 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ctx1Item_Rate_x1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator5 = New System.Windows.Forms.ToolStripSeparator()
-        Me.ctx1Item_Settings = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripSeparator9 = New System.Windows.Forms.ToolStripSeparator()
         Me.ctx1Item_Restore = New System.Windows.Forms.ToolStripMenuItem()
         Me.ctx1Item_Minimise = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator8 = New System.Windows.Forms.ToolStripSeparator()
@@ -55,10 +54,15 @@ Partial Class MainForm
         Me.txtNewLong = New System.Windows.Forms.TextBox()
         Me.lblNewLat = New System.Windows.Forms.Label()
         Me.txtDisplay = New System.Windows.Forms.TextBox()
-        Me.ctx1Item_Slew = New System.Windows.Forms.ToolStripMenuItem()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
+        Me.ctx1Item_Settings = New System.Windows.Forms.ToolStripMenuItem()
         Me.cmTrayIcon.SuspendLayout()
         Me.gbSimRate.SuspendLayout()
         Me.gbSlew.SuspendLayout()
+        Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
         'tmrUpdateTimer
@@ -73,10 +77,16 @@ Partial Class MainForm
         '
         'cmTrayIcon
         '
-        Me.cmTrayIcon.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ctx1Item_Slew, Me.ToolStripSeparator6, Me.ctx1Item_Rate_x8, Me.ctx1Item_Rate_x4, Me.ctx1Item_Rate_x2, Me.ctx1Item_Rate_x1, Me.ToolStripSeparator5, Me.ctx1Item_Settings, Me.ToolStripSeparator9, Me.ctx1Item_Restore, Me.ctx1Item_Minimise, Me.ToolStripSeparator8, Me.ctx1Item_Exit})
+        Me.cmTrayIcon.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ctx1Item_Slew, Me.ToolStripSeparator6, Me.ctx1Item_Rate_x8, Me.ctx1Item_Rate_x4, Me.ctx1Item_Rate_x2, Me.ctx1Item_Rate_x1, Me.ToolStripSeparator5, Me.ctx1Item_Settings, Me.ToolStripSeparator1, Me.ctx1Item_Restore, Me.ctx1Item_Minimise, Me.ToolStripSeparator8, Me.ctx1Item_Exit})
         Me.cmTrayIcon.Name = "cmTrayIcon"
         Me.cmTrayIcon.Size = New System.Drawing.Size(181, 248)
         Me.cmTrayIcon.Text = "Actions"
+        '
+        'ctx1Item_Slew
+        '
+        Me.ctx1Item_Slew.Name = "ctx1Item_Slew"
+        Me.ctx1Item_Slew.Size = New System.Drawing.Size(180, 22)
+        Me.ctx1Item_Slew.Text = "Slew To Clipboard"
         '
         'ToolStripSeparator6
         '
@@ -112,17 +122,6 @@ Partial Class MainForm
         Me.ToolStripSeparator5.Name = "ToolStripSeparator5"
         Me.ToolStripSeparator5.Size = New System.Drawing.Size(177, 6)
         '
-        'ctx1Item_Settings
-        '
-        Me.ctx1Item_Settings.Name = "ctx1Item_Settings"
-        Me.ctx1Item_Settings.Size = New System.Drawing.Size(180, 22)
-        Me.ctx1Item_Settings.Text = "Settings"
-        '
-        'ToolStripSeparator9
-        '
-        Me.ToolStripSeparator9.Name = "ToolStripSeparator9"
-        Me.ToolStripSeparator9.Size = New System.Drawing.Size(177, 6)
-        '
         'ctx1Item_Restore
         '
         Me.ctx1Item_Restore.Name = "ctx1Item_Restore"
@@ -153,7 +152,7 @@ Partial Class MainForm
         Me.gbSimRate.Controls.Add(Me.lblNewSimRate)
         Me.gbSimRate.Controls.Add(Me.lblCurrSimRate)
         Me.gbSimRate.Controls.Add(Me.txtCurrSimRate)
-        Me.gbSimRate.Location = New System.Drawing.Point(12, 302)
+        Me.gbSimRate.Location = New System.Drawing.Point(12, 349)
         Me.gbSimRate.Name = "gbSimRate"
         Me.gbSimRate.Size = New System.Drawing.Size(420, 56)
         Me.gbSimRate.TabIndex = 20
@@ -214,7 +213,7 @@ Partial Class MainForm
         Me.gbSlew.Controls.Add(Me.txtNewLat)
         Me.gbSlew.Controls.Add(Me.txtNewLong)
         Me.gbSlew.Controls.Add(Me.lblNewLat)
-        Me.gbSlew.Location = New System.Drawing.Point(12, 186)
+        Me.gbSlew.Location = New System.Drawing.Point(12, 171)
         Me.gbSlew.Name = "gbSlew"
         Me.gbSlew.Size = New System.Drawing.Size(422, 110)
         Me.gbSlew.TabIndex = 19
@@ -274,24 +273,59 @@ Partial Class MainForm
         'txtDisplay
         '
         Me.txtDisplay.Enabled = False
-        Me.txtDisplay.Location = New System.Drawing.Point(12, 27)
+        Me.txtDisplay.Location = New System.Drawing.Point(12, 12)
         Me.txtDisplay.Multiline = True
         Me.txtDisplay.Name = "txtDisplay"
         Me.txtDisplay.ReadOnly = True
         Me.txtDisplay.Size = New System.Drawing.Size(422, 153)
         Me.txtDisplay.TabIndex = 18
         '
-        'ctx1Item_Slew
+        'GroupBox1
         '
-        Me.ctx1Item_Slew.Name = "ctx1Item_Slew"
-        Me.ctx1Item_Slew.Size = New System.Drawing.Size(180, 22)
-        Me.ctx1Item_Slew.Text = "Slew To Clipboard"
+        Me.GroupBox1.Controls.Add(Me.Button2)
+        Me.GroupBox1.Controls.Add(Me.Button1)
+        Me.GroupBox1.Location = New System.Drawing.Point(12, 287)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(420, 56)
+        Me.GroupBox1.TabIndex = 21
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "Sample Commands"
+        '
+        'Button2
+        '
+        Me.Button2.Location = New System.Drawing.Point(144, 19)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(124, 25)
+        Me.Button2.TabIndex = 19
+        Me.Button2.Text = "Toggle Auto Pilot"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(11, 19)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(124, 25)
+        Me.Button1.TabIndex = 18
+        Me.Button1.Text = "Toggle Parking Brake"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'ToolStripSeparator1
+        '
+        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(177, 6)
+        '
+        'ctx1Item_Settings
+        '
+        Me.ctx1Item_Settings.Name = "ctx1Item_Settings"
+        Me.ctx1Item_Settings.Size = New System.Drawing.Size(180, 22)
+        Me.ctx1Item_Settings.Text = "Settings"
         '
         'MainForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(442, 366)
+        Me.ClientSize = New System.Drawing.Size(442, 412)
+        Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.gbSimRate)
         Me.Controls.Add(Me.gbSlew)
         Me.Controls.Add(Me.txtDisplay)
@@ -307,6 +341,7 @@ Partial Class MainForm
         Me.gbSimRate.PerformLayout()
         Me.gbSlew.ResumeLayout(False)
         Me.gbSlew.PerformLayout()
+        Me.GroupBox1.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -323,9 +358,7 @@ Partial Class MainForm
     Friend WithEvents ctx1Item_Minimise As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ctx1Item_Restore As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ctx1Item_Rate_x8 As System.Windows.Forms.ToolStripMenuItem
-    Friend WithEvents ToolStripSeparator9 As ToolStripSeparator
     Friend WithEvents ctx1Item_Rate_x2 As ToolStripMenuItem
-    Friend WithEvents ctx1Item_Settings As ToolStripMenuItem
     Friend WithEvents ctx1Item_Rate_x1 As ToolStripMenuItem
     Friend WithEvents ctx1Item_Rate_x4 As ToolStripMenuItem
     Friend WithEvents gbSimRate As GroupBox
@@ -343,4 +376,9 @@ Partial Class MainForm
     Friend WithEvents lblNewLat As Label
     Friend WithEvents txtDisplay As TextBox
     Friend WithEvents ctx1Item_Slew As ToolStripMenuItem
+    Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents Button2 As Button
+    Friend WithEvents Button1 As Button
+    Friend WithEvents ctx1Item_Settings As ToolStripMenuItem
+    Friend WithEvents ToolStripSeparator1 As ToolStripSeparator
 End Class

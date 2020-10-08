@@ -8,17 +8,17 @@ Imports System.Runtime.InteropServices
 
 ' Review the values of the assembly attributes
 
-<Assembly: AssemblyTitle("Flight Sim Tool")>
+<Assembly: AssemblyTitle("SimConnectLib")>
 <Assembly: AssemblyDescription("")>
-<Assembly: AssemblyCompany("Elephant42")>
-<Assembly: AssemblyProduct("FS_SlewTool")>
+<Assembly: AssemblyCompany("")>
+<Assembly: AssemblyProduct("SimConnectLib")>
 <Assembly: AssemblyCopyright("Copyright ©  2020")>
 <Assembly: AssemblyTrademark("")>
 
 <Assembly: ComVisible(False)>
 
 'The following GUID is for the ID of the typelib if this project is exposed to COM
-<Assembly: Guid("bdc74a3b-e480-44c8-9c8e-c0d0a225b9de")>
+<Assembly: Guid("78252be9-a514-4f70-b04e-7238c5ea1c0a")>
 
 ' Version information for an assembly consists of the following four values:
 '
@@ -31,5 +31,5 @@ Imports System.Runtime.InteropServices
 ' by using the '*' as shown below:
 ' <Assembly: AssemblyVersion("1.0.*")>
 
-<Assembly: AssemblyVersion("0.1.0.1")>
-<Assembly: AssemblyFileVersion("0.1.0.1")>
+<Assembly: AssemblyVersion("0.2.0.0")>
+<Assembly: AssemblyFileVersion("0.2.0.0")>
