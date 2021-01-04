@@ -1,7 +1,9 @@
-# Flight Sim Tool v0.2.0
+# Flight Sim Tool v0.5.0
 
 ## About
 This little app uses SimConnect to continuously read position data from MSFS2020.  Meh I hear you say, so what - lots of far more capable apps out there that'll do that.  Ahh true but despite lots of searching I have not yet found one that will allow me to instantly slew my aircraft to any position on the globe.  Hence this project was born.
+
+Update for v0.5.0 - The above is no longer true, there are now many utilities that provide slewing functions available but that is no longer the primary purpose for this app.  However I have left it in because I still use it in conjunction with one of my favourite FS companion apps - LittlNavMap.
 
 Took me a while to get to grips with SimConnect but thanks to these two posts 
 https://www.fsdeveloper.com/forum/threads/msfs-2020-managed-simconnect.448446/#post-855955
@@ -12,7 +14,7 @@ Central Repository: https://github.com/Elephant42/FS_Tool
 
 
 ## Installation
-Installation is really simple. You only have to download the zip file and then un-zip it anywhere you like.  Double click on FS_Tool.exe to run the app.  It will sit there waiting for a connection to the sim and show the connected status in the title bar.  The "Slew" button will not be enabled untill the app is connected to the sim.
+Installation is really simple. You only have to download the zip file and then un-zip it anywhere you like.  Double click on FS_Tool.exe to run the app.  It will sit there waiting for a connection to the sim and show the connected status in the title bar.  The "Slew" button will not be enabled until the app is connected to the sim.
 
 
 ## How To Use
@@ -35,38 +37,41 @@ All the other parameters in the plane remain at their pre-slew values - speed, h
 There is also a secondary function available which will allow you to change the simulation rate from x1 to x8.  This can be done from the main form or from the Tray Icon context menu.
 
 
+## Big Bonus Function :)
+As of version 0.5.0 the app is now able to map HID events, specifically for joysticks, to SimConnect events and to keystrokes.  This can be used with any HID joystick but is primarily aimed at the Honeycomb Bravo throttle quadrant.
+
+
 ## Tray Icon
-The app is meant to run in the system tray and has a context menu to suit.  While minimised you can use the Tray Icon context menu to set the required Sim Rate and slew to the current contents of the clipboard.  There is also a settings option which will make the app go straight to the tray as soon as it's launched.
+The app is meant to run in the system tray and has a context menu to suit.  While minimised you can use the Tray Icon context menu to set the required Sim Rate, slew to the current contents of the clipboard and activate joystick event mapping.  There is also a settings option which will make the app go straight to the tray as soon as it's launched.
 
 
 ## Building
 The app is a bog standard VB.Net project and should build on any version of Visual Studio later than and including VS2017.
 
+The app utilises code from the HIDSharp library, Copyright 2010-2019 James F. Bellinger <http://www.zer7.com/software/hidsharp>
+
 One caveat is that you will need the MSFS2020 SDK installed in order for the SimConnect libraries to be found.  The project is configured to look for them in "C:\MSFS SDK" so if your SDK is installed to a different folder you will need to remove and re-add the Microsoft.FlightSimulator.SimConnect reference and change the following post-build events to point to the correct path:
 xcopy "C:\MSFS SDK\SimConnect SDK\lib\SimConnect.dll" "$(TargetDir)" /y
 xcopy "C:\MSFS SDK\Samples\SimvarWatcher\SimConnect.cfg" "$(TargetDir)" /y
 
-You will also need to change or remove the code signing .bat and .ps1 files to suit your own personal situation.
-
 
 ## License
-GNU GENERAL PUBLIC LICENSE Version 3, 29 June 2007
+My code is licensed under the GNU GENERAL PUBLIC LICENSE Version 3, 29 June 2007
+The included HIDSharp library code which I utilise for reading joystick events is licensed under the Apache License, Version 2.0.
 
 
 ## Changelog
 
-## [0.2.0]
-### Refactor
-- Extracted all SimConnect functions to a separate DLL.
-- Added a couple of sample SimEvent buttons (Toggle Parking Brakes and Toggle Auto Pilot).
-
-## [0.1.1]
-### Codesign
-- No changes other than self codesigning the .exe to enable a clean VirusTotal report.
-
 ## [0.1.0]
 ### Initial Commit
 - **[Slew]** Ability to slew aircraft to any position on the globe.
+
+## [0.5.0]
+### 
+- **[SimConnect]** All functions separated out to a library DLL.
+- **[SimConnect]** Able to inject low level keystroke events.
+- **[Joysticks]** Able map HID joystick events to SimConnect events and/or keystroke events.
+
 
 ## Known Issues - None.
 

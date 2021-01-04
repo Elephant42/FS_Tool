@@ -15,7 +15,7 @@ Option Explicit On
 Namespace My
     
     <Global.System.Runtime.CompilerServices.CompilerGeneratedAttribute(),  _
-     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.7.0.0"),  _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.8.1.0"),  _
      Global.System.ComponentModel.EditorBrowsableAttribute(Global.System.ComponentModel.EditorBrowsableState.Advanced)>  _
     Partial Friend NotInheritable Class MySettings
         Inherits Global.System.Configuration.ApplicationSettingsBase
@@ -54,13 +54,16 @@ Namespace My
             End Get
         End Property
         
-        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.DefaultSettingValueAttribute("500")>  _
-        Public ReadOnly Property UpdateInterval_ms() As Integer
+        Public Property SimConnectPollInterval_ms() As Integer
             Get
-                Return CType(Me("UpdateInterval_ms"),Integer)
+                Return CType(Me("SimConnectPollInterval_ms"),Integer)
             End Get
+            Set
+                Me("SimConnectPollInterval_ms") = value
+            End Set
         End Property
         
         <Global.System.Configuration.UserScopedSettingAttribute(),  _
@@ -96,6 +99,138 @@ Namespace My
             End Get
             Set
                 Me("StartMinimised") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("0")>  _
+        Public Property DebugX() As Integer
+            Get
+                Return CType(Me("DebugX"),Integer)
+            End Get
+            Set
+                Me("DebugX") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("0")>  _
+        Public Property DebugY() As Integer
+            Get
+                Return CType(Me("DebugY"),Integer)
+            End Get
+            Set
+                Me("DebugY") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("12345")>  _
+        Public Property ServerPort() As Integer
+            Get
+                Return CType(Me("ServerPort"),Integer)
+            End Get
+            Set
+                Me("ServerPort") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("False")>  _
+        Public Property AutoStartServer() As Boolean
+            Get
+                Return CType(Me("AutoStartServer"),Boolean)
+            End Get
+            Set
+                Me("AutoStartServer") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("True")>  _
+        Public Property AutoStartSimCon() As Boolean
+            Get
+                Return CType(Me("AutoStartSimCon"),Boolean)
+            End Get
+            Set
+                Me("AutoStartSimCon") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("0")>  _
+        Public Property JoyX() As Integer
+            Get
+                Return CType(Me("JoyX"),Integer)
+            End Get
+            Set
+                Me("JoyX") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("0")>  _
+        Public Property JoyY() As Integer
+            Get
+                Return CType(Me("JoyY"),Integer)
+            End Get
+            Set
+                Me("JoyY") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("True")>  _
+        Public Property JoyThrottle() As Boolean
+            Get
+                Return CType(Me("JoyThrottle"),Boolean)
+            End Get
+            Set
+                Me("JoyThrottle") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("True")>  _
+        Public Property JoyIgnoreAxes() As Boolean
+            Get
+                Return CType(Me("JoyIgnoreAxes"),Boolean)
+            End Get
+            Set
+                Me("JoyIgnoreAxes") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("True")>  _
+        Public Property AutoStartJoy() As Boolean
+            Get
+                Return CType(Me("AutoStartJoy"),Boolean)
+            End Get
+            Set
+                Me("AutoStartJoy") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Default")>  _
+        Public Property JoyProfile() As String
+            Get
+                Return CType(Me("JoyProfile"),String)
+            End Get
+            Set
+                Me("JoyProfile") = value
             End Set
         End Property
     End Class

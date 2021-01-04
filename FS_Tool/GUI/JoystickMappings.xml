@@ -1,0 +1,751 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<JoystickMappings>
+	<Joysticks>
+		<Joystick MappingName="Bravo Throttle Quadrant - Default" Name="Bravo Throttle Quadrant">
+			<JoyMap JoyEvent="Button1" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!--HDG-->
+			<JoyMap JoyEvent="Button2" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!--NAV-->
+			<JoyMap JoyEvent="Button3" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!--APR-->
+			<JoyMap JoyEvent="Button4" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!--REV-->
+			<JoyMap JoyEvent="Button5" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!--ALT-->
+			<JoyMap JoyEvent="Button6" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!--VS-->
+			<JoyMap JoyEvent="Button7" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!--IAS-->
+			<JoyMap JoyEvent="Button8" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!--AUTO PILOT-->
+			<JoyMap JoyEvent="Button9" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!--Axis 2 REVERSE-->
+			<JoyMap JoyEvent="Button10" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!--Axis 3 REVERSE-->
+			<JoyMap JoyEvent="Button11" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!--Axis 4 REVERSE-->
+			<JoyMap JoyEvent="Button12" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!--Axis 5 REVERSE-->
+
+			<JoyMap JoyEvent="Button13" JoyEnableEvents="Button17" SimEvent="AP_SPD_VAR_INC" Accel="10" Delay="50" /><!--IAS INCR-->
+			<JoyMap JoyEvent="Button14" JoyEnableEvents="Button17" SimEvent="AP_SPD_VAR_DEC" Accel="10" Delay="50" /><!--IAS DECR-->
+			<JoyMap JoyEvent="Button13" JoyEnableEvents="Button18" SimEvent="VOR1_OBI_INC" SimVar="" ActiveState="True" /><!--CRS INCR-->
+			<JoyMap JoyEvent="Button14" JoyEnableEvents="Button18" SimEvent="VOR1_OBI_DEC" SimVar="" ActiveState="True" /><!--CRS DECR-->
+			<JoyMap JoyEvent="Button13" JoyEnableEvents="Button19" SimEvent="HEADING_BUG_INC" Accel="10" Delay="50" /><!--HDG INCR-->
+			<JoyMap JoyEvent="Button14" JoyEnableEvents="Button19" SimEvent="HEADING_BUG_DEC" Accel="10" Delay="50" /><!--HDG DECR-->
+			<JoyMap JoyEvent="Button13" JoyEnableEvents="Button20" SimEvent="AP_VS_VAR_INC" SimVar="" ActiveState="True" /><!--VS INCR-->
+			<JoyMap JoyEvent="Button14" JoyEnableEvents="Button20" SimEvent="AP_VS_VAR_DEC" SimVar="" ActiveState="True" /><!--VS DECR-->
+			<JoyMap JoyEvent="Button13" JoyEnableEvents="Button21" SimEvent="AP_ALT_VAR_INC" Accel="10" Delay="50" /><!--ALT INCR-->
+			<JoyMap JoyEvent="Button14" JoyEnableEvents="Button21" SimEvent="AP_ALT_VAR_DEC" Accel="10" Delay="50" /><!--ALT DECR-->
+
+			<JoyMap JoyEvent="Button15" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!--FLAPS DOWN-->
+			<JoyMap JoyEvent="Button16" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!--FLAPS UP-->
+			<JoyMap JoyEvent="Button17" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!--Knob IAS-->
+			<JoyMap JoyEvent="Button18" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!--Knob CRS-->
+			<JoyMap JoyEvent="Button19" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!--Knob HDG-->
+			<JoyMap JoyEvent="Button20" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!--Knob VS-->
+			<JoyMap JoyEvent="Button21" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!--Knob ALT-->
+			<JoyMap JoyEvent="Button22" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!--TRIM NOSE DOWN-->
+			<JoyMap JoyEvent="Button23" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!--TRIM NOSE UP-->
+			<JoyMap JoyEvent="Button24" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!--AXIS 1 DETENT-->
+			<JoyMap JoyEvent="Button25" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!--AXIS 2 DETENT-->
+			<JoyMap JoyEvent="Button26" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!--AXIS 3 DETENT-->
+			<JoyMap JoyEvent="Button27" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!--AXIS 4 DETENT-->
+			<JoyMap JoyEvent="Button28" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!--AXIS 5 DETENT-->
+			<JoyMap JoyEvent="Button29" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!--TOGA-->
+			<JoyMap JoyEvent="Button30" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!---->
+			<JoyMap JoyEvent="Button31" JoyEnableEvents="" SimEvent="GEAR_UP" SimVar="" ActiveState="True" /><!--GEAR UP-->
+			<JoyMap JoyEvent="Button32" JoyEnableEvents="" SimEvent="GEAR_DOWN" SimVar="" ActiveState="True" /><!--GEAR DOWN-->
+			<JoyMap JoyEvent="Button33" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!--AXIS 6 DETENT-->
+			<JoyMap JoyEvent="Button34" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!--ROCKER SW 1 UP-->
+			<JoyMap JoyEvent="Button35" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!--ROCKER SW 1 DOWN-->
+			<JoyMap JoyEvent="Button36" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!--ROCKER SW 2 UP-->
+			<JoyMap JoyEvent="Button37" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!--ROCKER SW 2 DOWN-->
+			<JoyMap JoyEvent="Button38" JoyEnableEvents="" SimEvent="LANDING_LIGHTS_ON" SimVar="" ActiveState="True" /><!--ROCKER SW 3 UP-->
+			<JoyMap JoyEvent="Button39" JoyEnableEvents="" SimEvent="LANDING_LIGHTS_OFF" SimVar="" ActiveState="False" /><!--ROCKER SW 3 DOWN-->
+			<JoyMap JoyEvent="Button40" JoyEnableEvents="" SimEvent="TOGGLE_TAXI_LIGHTS" SimVar="LIGHT TAXI" ActiveState="True" /><!--ROCKER SW 4 UP-->
+			<JoyMap JoyEvent="Button41" JoyEnableEvents="" SimEvent="TOGGLE_TAXI_LIGHTS" SimVar="LIGHT TAXI" ActiveState="False" /><!--ROCKER SW 4 DOWN-->
+			<JoyMap JoyEvent="Button42" JoyEnableEvents="" SimEvent="TOGGLE_NAV_LIGHTS" SimVar="LIGHT NAV" ActiveState="True" /><!--ROCKER SW 5 UP-->
+			<JoyMap JoyEvent="Button43" JoyEnableEvents="" SimEvent="TOGGLE_NAV_LIGHTS" SimVar="LIGHT NAV" ActiveState="False" /><!--ROCKER SW 5 DOWN-->
+			<JoyMap JoyEvent="Button44" JoyEnableEvents="" SimEvent="STROBES_ON" SimVar="" ActiveState="True" /><!--ROCKER SW 6 UP-->
+			<JoyMap JoyEvent="Button45" JoyEnableEvents="" SimEvent="STROBES_OFF" SimVar="" ActiveState="False" /><!--ROCKER SW 6 DOWN-->
+			<JoyMap JoyEvent="Button46" JoyEnableEvents="" SimEvent="PITOT_HEAT_ON" SimVar="" ActiveState="True" /><!--ROCKER SW 7 UP-->
+			<JoyMap JoyEvent="Button47" JoyEnableEvents="" SimEvent="PITOT_HEAT_OFF" SimVar="" ActiveState="True" /><!--ROCKER SW 7 DOWN-->
+			<JoyMap JoyEvent="Button48" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!---->
+		</Joystick>
+		<Joystick MappingName="Bravo Throttle Quadrant - MobiFlight" Name="Bravo Throttle Quadrant">
+			<!--AP Buttons-->
+			<JoyMap JoyEvent="Button1" JoyEnableEvents="Button35,Button37" SimEvent="AP_HDG_HOLD" /><!--HDG-->
+			<JoyMap JoyEvent="Button2" JoyEnableEvents="Button35,Button37" SimEvent="AP_NAV1_HOLD" /><!--NAV-->
+			<JoyMap JoyEvent="Button3" JoyEnableEvents="Button35,Button37" SimEvent="AP_APR_HOLD" /><!--APR-->
+			<JoyMap JoyEvent="Button4" JoyEnableEvents="Button35,Button37" SimEvent="AP_BC_HOLD" /><!--REV-->
+			<JoyMap JoyEvent="Button5" JoyEnableEvents="Button35,Button37" SimEvent="AP_ALT_HOLD" /><!--ALT-->
+			<JoyMap JoyEvent="Button6" JoyEnableEvents="Button35,Button37" SimEvent="AP_VS_HOLD" /><!--VS-->
+			<JoyMap JoyEvent="Button7" JoyEnableEvents="Button35,Button37" SimEvent="KEY.ALT.KEY_F" /><!--IAS-->
+
+			<!--PFD Radios Buttons-->
+			<JoyMap JoyEvent="Button1" JoyEnableEvents="Button34,Button37" SimEvent="" SimVar="" ActiveState="True" /><!--HDG-->
+			<JoyMap JoyEvent="Button2" JoyEnableEvents="Button34,Button37" SimEvent="" SimVar="" ActiveState="True" /><!--NAV-->
+			<JoyMap JoyEvent="Button3" JoyEnableEvents="Button34,Button37" SimEvent="" SimVar="" ActiveState="True" /><!--APR-->
+			<JoyMap JoyEvent="Button4" JoyEnableEvents="Button34,Button37" SimEvent="MobiFlight_AS1000_PFD_COM_Switch" /><!--REV-->
+			<JoyMap JoyEvent="Button5" JoyEnableEvents="Button34,Button37" SimEvent="MobiFlight_AS1000_PFD_COM_Push" /><!--ALT-->
+			<JoyMap JoyEvent="Button6" JoyEnableEvents="Button34,Button37" SimEvent="MobiFlight_AS1000_PFD_NAV_Switch" /><!--VS-->
+			<JoyMap JoyEvent="Button7" JoyEnableEvents="Button34,Button37" SimEvent="MobiFlight_AS1000_PFD_NAV_Push" /><!--IAS-->
+<!--
+MobiFlight.AS1000_PFD_COM_Switch_Long
+MobiFlight.AS1000_PFD_CRS_PUSH
+MobiFlight.AS1000_PFD_JOYSTICK_PUSH
+MobiFlight.AS1000_PFD_ActivateMapCursor
+MobiFlight.AS1000_PFD_DeactivateMapCursor
+-->
+
+			<!--PFD Buttons-->
+			<JoyMap JoyEvent="Button1" JoyEnableEvents="Button35,Button36" SimEvent="MobiFlight_AS1000_PFD_FMS_Upper_PUSH" /><!--HDG-->
+			<JoyMap JoyEvent="Button2" JoyEnableEvents="Button35,Button36" SimEvent="MobiFlight_AS1000_PFD_CLR" /><!--NAV-->
+			<JoyMap JoyEvent="Button3" JoyEnableEvents="Button35,Button36" SimEvent="MobiFlight_AS1000_PFD_FPL_Push" /><!--APR-->
+			<JoyMap JoyEvent="Button4" JoyEnableEvents="Button35,Button36" SimEvent="MobiFlight_AS1000_PFD_PROC_Push" /><!--REV-->
+			<JoyMap JoyEvent="Button5" JoyEnableEvents="Button35,Button36" SimEvent="MobiFlight_AS1000_PFD_DIRECTTO" /><!--ALT-->
+			<JoyMap JoyEvent="Button6" JoyEnableEvents="Button35,Button36" SimEvent="MobiFlight_AS1000_PFD_MENU_Push" /><!--VS-->
+			<JoyMap JoyEvent="Button7" JoyEnableEvents="Button35,Button36" SimEvent="MobiFlight_AS1000_PFD_ENT_Push" /><!--IAS-->
+
+			<!--MFD Buttons-->
+			<JoyMap JoyEvent="Button1" JoyEnableEvents="Button34,Button36" SimEvent="MobiFlight_AS1000_MFD_FMS_Upper_PUSH" /><!--HDG-->
+			<JoyMap JoyEvent="Button2" JoyEnableEvents="Button34,Button36" SimEvent="MobiFlight_AS1000_MFD_CLR" /><!--NAV-->
+			<JoyMap JoyEvent="Button3" JoyEnableEvents="Button34,Button36" SimEvent="MobiFlight_AS1000_MFD_FPL_Push" /><!--APR-->
+			<JoyMap JoyEvent="Button4" JoyEnableEvents="Button34,Button36" SimEvent="MobiFlight_AS1000_MFD_PROC_Push" /><!--REV-->
+			<JoyMap JoyEvent="Button5" JoyEnableEvents="Button34,Button36" SimEvent="MobiFlight_AS1000_MFD_DIRECTTO" /><!--ALT-->
+			<JoyMap JoyEvent="Button6" JoyEnableEvents="Button34,Button36" SimEvent="MobiFlight_AS1000_MFD_MENU_Push" /><!--VS-->
+			<JoyMap JoyEvent="Button7" JoyEnableEvents="Button34,Button36" SimEvent="MobiFlight_AS1000_MFD_ENT_Push" /><!--IAS-->
+
+			<!--AP INC/DEC-->
+			<JoyMap JoyEvent="Button13" JoyEnableEvents="Button37,Button35,Button17" SimEvent="AP_SPD_VAR_INC" Accel="10" Delay="50" /><!--IAS INCR-->
+			<JoyMap JoyEvent="Button14" JoyEnableEvents="Button37,Button35,Button17" SimEvent="AP_SPD_VAR_DEC" Accel="10" Delay="50" /><!--IAS DECR-->
+			<JoyMap JoyEvent="Button13" JoyEnableEvents="Button37,Button35,Button18" SimEvent="VOR1_OBI_INC" /><!--CRS INCR-->
+			<JoyMap JoyEvent="Button14" JoyEnableEvents="Button37,Button35,Button18" SimEvent="VOR1_OBI_DEC" /><!--CRS DECR-->
+			<JoyMap JoyEvent="Button13" JoyEnableEvents="Button37,Button35,Button19" SimEvent="HEADING_BUG_INC" Accel="10" Delay="50" /><!--HDG INCR-->
+			<JoyMap JoyEvent="Button14" JoyEnableEvents="Button37,Button35,Button19" SimEvent="HEADING_BUG_DEC" Accel="10" Delay="50" /><!--HDG DECR-->
+			<JoyMap JoyEvent="Button13" JoyEnableEvents="Button37,Button35,Button20" SimEvent="AP_VS_VAR_INC" /><!--VS INCR-->
+			<JoyMap JoyEvent="Button14" JoyEnableEvents="Button37,Button35,Button20" SimEvent="AP_VS_VAR_DEC" /><!--VS DECR-->
+			<JoyMap JoyEvent="Button13" JoyEnableEvents="Button37,Button35,Button21" SimEvent="AP_ALT_VAR_INC" Accel="10" Delay="50" /><!--ALT INCR-->
+			<JoyMap JoyEvent="Button14" JoyEnableEvents="Button37,Button35,Button21" SimEvent="AP_ALT_VAR_DEC" Accel="10" Delay="50" /><!--ALT DECR-->
+
+			<!--PFD Radios INC/DEC Inner Knobs-->
+			<JoyMap JoyEvent="Button13" JoyEnableEvents="Button37,Button34,Button17" SimEvent="MobiFlight_AS1000_PFD_NAV_Small_INC" /><!--IAS INCR-->
+			<JoyMap JoyEvent="Button14" JoyEnableEvents="Button37,Button34,Button17" SimEvent="MobiFlight_AS1000_PFD_NAV_Small_DEC" /><!--IAS DECR-->
+			<JoyMap JoyEvent="Button13" JoyEnableEvents="Button37,Button34,Button18" SimEvent="MobiFlight_AS1000_PFD_COM_Small_INC" /><!--CRS INCR-->
+			<JoyMap JoyEvent="Button14" JoyEnableEvents="Button37,Button34,Button18" SimEvent="MobiFlight_AS1000_PFD_COM_Small_DEC" /><!--CRS DECR-->
+			<JoyMap JoyEvent="Button13" JoyEnableEvents="Button37,Button34,Button19" SimEvent="" SimVar="" ActiveState="True" /><!--HDG INCR-->
+			<JoyMap JoyEvent="Button14" JoyEnableEvents="Button37,Button34,Button19" SimEvent="" SimVar="" ActiveState="True" /><!--HDG DECR-->
+			<JoyMap JoyEvent="Button13" JoyEnableEvents="Button37,Button34,Button20" SimEvent="" SimVar="" ActiveState="True" /><!--VS INCR-->
+			<JoyMap JoyEvent="Button14" JoyEnableEvents="Button37,Button34,Button20" SimEvent="" SimVar="" ActiveState="True" /><!--VS DECR-->
+			<JoyMap JoyEvent="Button13" JoyEnableEvents="Button37,Button34,Button21" SimEvent="" SimVar="" ActiveState="True" /><!--ALT INCR-->
+			<JoyMap JoyEvent="Button14" JoyEnableEvents="Button37,Button34,Button21" SimEvent="" SimVar="" ActiveState="True" /><!--ALT DECR-->
+
+			<!--PFD Radios INC/DEC Outer Knobs-->
+			<JoyMap JoyEvent="Button13" JoyEnableEvents="Button16,Button37,Button34,Button17" SimEvent="MobiFlight_AS1000_PFD_NAV_Large_INC" /><!--IAS INCR-->
+			<JoyMap JoyEvent="Button14" JoyEnableEvents="Button16,Button37,Button34,Button17" SimEvent="MobiFlight_AS1000_PFD_NAV_Large_DEC" /><!--IAS DECR-->
+			<JoyMap JoyEvent="Button13" JoyEnableEvents="Button16,Button37,Button34,Button18" SimEvent="MobiFlight_AS1000_PFD_COM_Large_INC" /><!--CRS INCR-->
+			<JoyMap JoyEvent="Button14" JoyEnableEvents="Button16,Button37,Button34,Button18" SimEvent="MobiFlight_AS1000_PFD_COM_Large_DEC" /><!--CRS DECR-->
+			<JoyMap JoyEvent="Button13" JoyEnableEvents="Button16,Button37,Button34,Button19" SimEvent="" SimVar="" ActiveState="True" /><!--HDG INCR-->
+			<JoyMap JoyEvent="Button14" JoyEnableEvents="Button16,Button37,Button34,Button19" SimEvent="" SimVar="" ActiveState="True" /><!--HDG DECR-->
+			<JoyMap JoyEvent="Button13" JoyEnableEvents="Button16,Button37,Button34,Button20" SimEvent="" SimVar="" ActiveState="True" /><!--VS INCR-->
+			<JoyMap JoyEvent="Button14" JoyEnableEvents="Button16,Button37,Button34,Button20" SimEvent="" SimVar="" ActiveState="True" /><!--VS DECR-->
+			<JoyMap JoyEvent="Button13" JoyEnableEvents="Button16,Button37,Button34,Button21" SimEvent="" SimVar="" ActiveState="True" /><!--ALT INCR-->
+			<JoyMap JoyEvent="Button14" JoyEnableEvents="Button16,Button37,Button34,Button21" SimEvent="" SimVar="" ActiveState="True" /><!--ALT DECR-->
+
+			<!--PFD INC/DEC Inner Knobs-->
+			<JoyMap JoyEvent="Button13" JoyEnableEvents="Button35,Button36,Button17" SimEvent="MobiFlight_AS1000_PFD_FMS_Upper_INC" /><!--IAS INCR-->
+			<JoyMap JoyEvent="Button14" JoyEnableEvents="Button35,Button36,Button17" SimEvent="MobiFlight_AS1000_PFD_FMS_Upper_DEC" /><!--IAS DECR-->
+			<JoyMap JoyEvent="Button13" JoyEnableEvents="Button35,Button36,Button18" SimEvent="MobiFlight_AS1000_PFD_RANGE_INC" /><!--CRS INCR-->
+			<JoyMap JoyEvent="Button14" JoyEnableEvents="Button35,Button36,Button18" SimEvent="MobiFlight_AS1000_PFD_RANGE_DEC" /><!--CRS DECR-->
+			<JoyMap JoyEvent="Button13" JoyEnableEvents="Button35,Button36,Button19" SimEvent="MobiFlight_AS1000_PFD_CRS_INC" /><!--HDG INCR-->
+			<JoyMap JoyEvent="Button14" JoyEnableEvents="Button35,Button36,Button19" SimEvent="MobiFlight_AS1000_PFD_CRS_DEC" /><!--HDG DECR-->
+			<JoyMap JoyEvent="Button13" JoyEnableEvents="Button35,Button36,Button20" SimEvent="" SimVar="" ActiveState="True" /><!--VS INCR-->
+			<JoyMap JoyEvent="Button14" JoyEnableEvents="Button35,Button36,Button20" SimEvent="" SimVar="" ActiveState="True" /><!--VS DECR-->
+			<JoyMap JoyEvent="Button13" JoyEnableEvents="Button35,Button36,Button21" SimEvent="" SimVar="" ActiveState="True" /><!--ALT INCR-->
+			<JoyMap JoyEvent="Button14" JoyEnableEvents="Button35,Button36,Button21" SimEvent="" SimVar="" ActiveState="True" /><!--ALT DECR-->
+
+			<!--PFD INC/DEC Outer Knobs-->
+			<JoyMap JoyEvent="Button13" JoyEnableEvents="Button16,Button35,Button36,Button17" SimEvent="MobiFlight_AS1000_PFD_FMS_Lower_INC" /><!--IAS INCR-->
+			<JoyMap JoyEvent="Button14" JoyEnableEvents="Button16,Button35,Button36,Button17" SimEvent="MobiFlight_AS1000_PFD_FMS_Lower_DEC" /><!--IAS DECR-->
+			<JoyMap JoyEvent="Button13" JoyEnableEvents="Button16,Button35,Button36,Button18" SimEvent="MobiFlight_AS1000_PFD_RANGE_INC" /><!--CRS INCR-->
+			<JoyMap JoyEvent="Button14" JoyEnableEvents="Button16,Button35,Button36,Button18" SimEvent="MobiFlight_AS1000_PFD_RANGE_DEC" /><!--CRS DECR-->
+			<JoyMap JoyEvent="Button13" JoyEnableEvents="Button16,Button35,Button36,Button19" SimEvent="MobiFlight_AS1000_PFD_BARO_INC" /><!--HDG INCR-->
+			<JoyMap JoyEvent="Button14" JoyEnableEvents="Button16,Button35,Button36,Button19" SimEvent="MobiFlight_AS1000_PFD_BARO_DEC" /><!--HDG DECR-->
+			<JoyMap JoyEvent="Button13" JoyEnableEvents="Button16,Button35,Button36,Button20" SimEvent="" SimVar="" ActiveState="True" /><!--VS INCR-->
+			<JoyMap JoyEvent="Button14" JoyEnableEvents="Button16,Button35,Button36,Button20" SimEvent="" SimVar="" ActiveState="True" /><!--VS DECR-->
+			<JoyMap JoyEvent="Button13" JoyEnableEvents="Button16,Button35,Button36,Button21" SimEvent="" SimVar="" ActiveState="True" /><!--ALT INCR-->
+			<JoyMap JoyEvent="Button14" JoyEnableEvents="Button16,Button35,Button36,Button21" SimEvent="" SimVar="" ActiveState="True" /><!--ALT DECR-->
+      
+			<!--MFD INC/DEC Inner Knobs-->
+			<JoyMap JoyEvent="Button13" JoyEnableEvents="Button34,Button36,Button17" SimEvent="MobiFlight_AS1000_MFD_FMS_Upper_INC" /><!--IAS INCR-->
+			<JoyMap JoyEvent="Button14" JoyEnableEvents="Button34,Button36,Button17" SimEvent="MobiFlight_AS1000_MFD_FMS_Upper_DEC" /><!--IAS DECR-->
+			<JoyMap JoyEvent="Button13" JoyEnableEvents="Button34,Button36,Button18" SimEvent="MobiFlight_AS1000_MFD_RANGE_INC" /><!--CRS INCR-->
+			<JoyMap JoyEvent="Button14" JoyEnableEvents="Button34,Button36,Button18" SimEvent="MobiFlight_AS1000_MFD_RANGE_DEC" /><!--CRS DECR-->
+			<JoyMap JoyEvent="Button13" JoyEnableEvents="Button34,Button36,Button19" SimEvent="MobiFlight_AS1000_MFD_CRS_INC" /><!--HDG INCR-->
+			<JoyMap JoyEvent="Button14" JoyEnableEvents="Button34,Button36,Button19" SimEvent="MobiFlight_AS1000_MFD_CRS_DEC" /><!--HDG DECR-->
+			<JoyMap JoyEvent="Button13" JoyEnableEvents="Button34,Button36,Button20" SimEvent="" SimVar="" ActiveState="True" /><!--VS INCR-->
+			<JoyMap JoyEvent="Button14" JoyEnableEvents="Button34,Button36,Button20" SimEvent="" SimVar="" ActiveState="True" /><!--VS DECR-->
+			<JoyMap JoyEvent="Button13" JoyEnableEvents="Button34,Button36,Button21" SimEvent="" SimVar="" ActiveState="True" /><!--ALT INCR-->
+			<JoyMap JoyEvent="Button14" JoyEnableEvents="Button34,Button36,Button21" SimEvent="" SimVar="" ActiveState="True" /><!--ALT DECR-->
+
+			<!--MFD INC/DEC Outer Knobs-->
+			<JoyMap JoyEvent="Button13" JoyEnableEvents="Button16,Button34,Button36,Button17" SimEvent="MobiFlight_AS1000_MFD_FMS_Lower_INC" /><!--IAS INCR-->
+			<JoyMap JoyEvent="Button14" JoyEnableEvents="Button16,Button34,Button36,Button17" SimEvent="MobiFlight_AS1000_MFD_FMS_Lower_DEC" /><!--IAS DECR-->
+			<JoyMap JoyEvent="Button13" JoyEnableEvents="Button16,Button34,Button36,Button18" SimEvent="MobiFlight_AS1000_MFD_RANGE_INC" /><!--CRS INCR-->
+			<JoyMap JoyEvent="Button14" JoyEnableEvents="Button16,Button34,Button36,Button18" SimEvent="MobiFlight_AS1000_MFD_RANGE_DEC" /><!--CRS DECR-->
+			<JoyMap JoyEvent="Button13" JoyEnableEvents="Button16,Button34,Button36,Button19" SimEvent="MobiFlight_AS1000_MFD_BARO_INC" /><!--HDG INCR-->
+			<JoyMap JoyEvent="Button14" JoyEnableEvents="Button16,Button34,Button36,Button19" SimEvent="MobiFlight_AS1000_MFD_BARO_DEC" /><!--HDG DECR-->
+			<JoyMap JoyEvent="Button13" JoyEnableEvents="Button16,Button34,Button36,Button20" SimEvent="" SimVar="" ActiveState="True" /><!--VS INCR-->
+			<JoyMap JoyEvent="Button14" JoyEnableEvents="Button16,Button34,Button36,Button20" SimEvent="" SimVar="" ActiveState="True" /><!--VS DECR-->
+			<JoyMap JoyEvent="Button13" JoyEnableEvents="Button16,Button34,Button36,Button21" SimEvent="" SimVar="" ActiveState="True" /><!--ALT INCR-->
+			<JoyMap JoyEvent="Button14" JoyEnableEvents="Button16,Button34,Button36,Button21" SimEvent="" SimVar="" ActiveState="True" /><!--ALT DECR-->
+      
+			<!--Other Stuff-->
+			<JoyMap JoyEvent="Button8" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!--AUTO PILOT-->
+			<JoyMap JoyEvent="Button9" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!--Axis 2 REVERSE-->
+			<JoyMap JoyEvent="Button10" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!--Axis 3 REVERSE-->
+			<JoyMap JoyEvent="Button11" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!--Axis 4 REVERSE-->
+			<JoyMap JoyEvent="Button12" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!--Axis 5 REVERSE-->
+			<JoyMap JoyEvent="Button15" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!--FLAPS DOWN-->
+			<JoyMap JoyEvent="Button16" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!--FLAPS UP-->
+			<JoyMap JoyEvent="Button17" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!--Knob IAS-->
+			<JoyMap JoyEvent="Button18" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!--Knob CRS-->
+			<JoyMap JoyEvent="Button19" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!--Knob HDG-->
+			<JoyMap JoyEvent="Button20" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!--Knob VS-->
+			<JoyMap JoyEvent="Button21" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!--Knob ALT-->
+			<JoyMap JoyEvent="Button22" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!--TRIM NOSE DOWN-->
+			<JoyMap JoyEvent="Button23" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!--TRIM NOSE UP-->
+			<JoyMap JoyEvent="Button24" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!--AXIS 1 DETENT-->
+			<JoyMap JoyEvent="Button25" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!--AXIS 2 DETENT-->
+			<JoyMap JoyEvent="Button26" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!--AXIS 3 DETENT-->
+			<JoyMap JoyEvent="Button27" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!--AXIS 4 DETENT-->
+			<JoyMap JoyEvent="Button28" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!--AXIS 5 DETENT-->
+			<JoyMap JoyEvent="Button29" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!--TOGA-->
+			<JoyMap JoyEvent="Button30" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!---->
+			<JoyMap JoyEvent="Button31" JoyEnableEvents="" SimEvent="GEAR_UP" SimVar="" ActiveState="True" /><!--GEAR UP-->
+			<JoyMap JoyEvent="Button32" JoyEnableEvents="" SimEvent="GEAR_DOWN" SimVar="" ActiveState="True" /><!--GEAR DOWN-->
+			<JoyMap JoyEvent="Button33" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!--AXIS 6 DETENT-->
+			<JoyMap JoyEvent="Button34" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!--ROCKER SW 1 UP-->
+			<JoyMap JoyEvent="Button35" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!--ROCKER SW 1 DOWN-->
+			<JoyMap JoyEvent="Button36" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!--ROCKER SW 2 UP-->
+			<JoyMap JoyEvent="Button37" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!--ROCKER SW 2 DOWN-->
+			<JoyMap JoyEvent="Button38" JoyEnableEvents="" SimEvent="LANDING_LIGHTS_ON" SimVar="" ActiveState="True" /><!--ROCKER SW 3 UP-->
+			<JoyMap JoyEvent="Button39" JoyEnableEvents="" SimEvent="LANDING_LIGHTS_OFF" SimVar="" ActiveState="False" /><!--ROCKER SW 3 DOWN-->
+			<JoyMap JoyEvent="Button40" JoyEnableEvents="" SimEvent="TOGGLE_TAXI_LIGHTS" SimVar="LIGHT TAXI" ActiveState="True" /><!--ROCKER SW 4 UP-->
+			<JoyMap JoyEvent="Button41" JoyEnableEvents="" SimEvent="TOGGLE_TAXI_LIGHTS" SimVar="LIGHT TAXI" ActiveState="False" /><!--ROCKER SW 4 DOWN-->
+			<JoyMap JoyEvent="Button42" JoyEnableEvents="" SimEvent="TOGGLE_NAV_LIGHTS" SimVar="LIGHT NAV" ActiveState="True" /><!--ROCKER SW 5 UP-->
+			<JoyMap JoyEvent="Button43" JoyEnableEvents="" SimEvent="TOGGLE_NAV_LIGHTS" SimVar="LIGHT NAV" ActiveState="False" /><!--ROCKER SW 5 DOWN-->
+			<JoyMap JoyEvent="Button44" JoyEnableEvents="" SimEvent="STROBES_ON" SimVar="" ActiveState="True" /><!--ROCKER SW 6 UP-->
+			<JoyMap JoyEvent="Button45" JoyEnableEvents="" SimEvent="STROBES_OFF" SimVar="" ActiveState="False" /><!--ROCKER SW 6 DOWN-->
+			<JoyMap JoyEvent="Button46" JoyEnableEvents="" SimEvent="PITOT_HEAT_ON" SimVar="" ActiveState="True" /><!--ROCKER SW 7 UP-->
+			<JoyMap JoyEvent="Button47" JoyEnableEvents="" SimEvent="PITOT_HEAT_OFF" SimVar="" ActiveState="True" /><!--ROCKER SW 7 DOWN-->
+			<JoyMap JoyEvent="Button48" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!---->
+		</Joystick>
+		<Joystick MappingName="Logitech Extreme 3D - Default" Name="Logitech Extreme 3D">
+			<JoyMap JoyEvent="Button1" SimEvent="" SimVar="" ActiveState="True" />
+			<JoyMap JoyEvent="Button2" SimEvent="" SimVar="" ActiveState="True" />
+			<JoyMap JoyEvent="Button3" SimEvent="" SimVar="" ActiveState="True" />
+			<JoyMap JoyEvent="Button4" SimEvent="" SimVar="" ActiveState="True" />
+			<JoyMap JoyEvent="Button5" SimEvent="" SimVar="" ActiveState="True" />
+			<JoyMap JoyEvent="Button6" SimEvent="" SimVar="" ActiveState="True" />
+			<JoyMap JoyEvent="Button7" SimEvent="" SimVar="" ActiveState="True" />
+			<JoyMap JoyEvent="Button8" SimEvent="" SimVar="" ActiveState="True" />
+			<JoyMap JoyEvent="Button9" SimEvent="" SimVar="" ActiveState="True" />
+			<JoyMap JoyEvent="Button11" SimEvent="" SimVar="" ActiveState="True" />
+			<JoyMap JoyEvent="Button12" SimEvent="" SimVar="" ActiveState="True" />
+		</Joystick>
+		<Joystick MappingName="Saitek Pro Flight X-56 Rhino Throttle - Default" Name="Saitek Pro Flight X-56 Rhino Throttle">
+			<JoyMap JoyEvent="Button30" JoyEnableEvents="Button6" SimEvent="HEADING_BUG_DEC" />
+			<JoyMap JoyEvent="Button31" JoyEnableEvents="Button6" SimEvent="HEADING_BUG_INC" />
+			<JoyMap JoyEvent="Button30" JoyEnableEvents="Button7" SimEvent="AP_ALT_VAR_DEC" />
+			<JoyMap JoyEvent="Button31" JoyEnableEvents="Button7" SimEvent="AP_ALT_VAR_INC" />
+			<JoyMap JoyEvent="Button30" JoyEnableEvents="Button8" SimEvent="AP_VS_VAR_DEC" />
+			<JoyMap JoyEvent="Button31" JoyEnableEvents="Button8" SimEvent="AP_VS_VAR_INC" />
+			<JoyMap JoyEvent="Button34" SimEvent="GEAR_TOGGLE" SimVar="GEAR HANDLE POSITION" ActiveState="False" />
+			<JoyMap JoyEvent="Button35" SimEvent="GEAR_TOGGLE" SimVar="GEAR HANDLE POSITION" ActiveState="True" />
+			<JoyMap JoyEvent="Button12" SimEvent="TOGGLE_NAV_LIGHTS" SimVar="LIGHT NAV" ActiveState="False" />
+			<JoyMap JoyEvent="Button13" SimEvent="TOGGLE_NAV_LIGHTS" SimVar="LIGHT NAV" ActiveState="True" />
+			<JoyMap JoyEvent="Button14" SimEvent="LANDING_LIGHTS_TOGGLE" SimVar="LIGHT LANDING" ActiveState="False" />
+			<JoyMap JoyEvent="Button15" SimEvent="LANDING_LIGHTS_TOGGLE" SimVar="LIGHT LANDING" ActiveState="True" />
+			<JoyMap JoyEvent="Button16" SimEvent="STROBES_TOGGLE" SimVar="LIGHT STROBE" ActiveState="False" />
+			<JoyMap JoyEvent="Button17" SimEvent="STROBES_TOGGLE" SimVar="LIGHT STROBE" ActiveState="True" />
+			<JoyMap JoyEvent="Button18" SimEvent="TOGGLE_TAXI_LIGHTS" SimVar="LIGHT TAXI" ActiveState="False" />
+			<JoyMap JoyEvent="Button19" SimEvent="TOGGLE_TAXI_LIGHTS" SimVar="LIGHT TAXI" ActiveState="True" />
+		</Joystick>
+		<Joystick MappingName="Saitek Pro Flight X-56 Rhino Throttle - Special" Name="Saitek Pro Flight X-56 Rhino Throttle">
+			<JoyMap JoyEvent="Button30" JoyEnableEvents="Button6" SimEvent="HEADING_BUG_DEC" />
+			<JoyMap JoyEvent="Button31" JoyEnableEvents="Button6" SimEvent="HEADING_BUG_INC" />
+			<JoyMap JoyEvent="Button30" JoyEnableEvents="Button7" SimEvent="AP_ALT_VAR_DEC" />
+			<JoyMap JoyEvent="Button31" JoyEnableEvents="Button7" SimEvent="AP_ALT_VAR_INC" />
+			<JoyMap JoyEvent="Button30" JoyEnableEvents="Button8" SimEvent="AP_VS_VAR_DEC" />
+			<JoyMap JoyEvent="Button31" JoyEnableEvents="Button8" SimEvent="AP_VS_VAR_INC" />
+			<JoyMap JoyEvent="Button34" SimEvent="TOGGLE_NAV_LIGHTS" SimVar="LIGHT NAV" ActiveState="False" />
+			<JoyMap JoyEvent="Button35" SimEvent="TOGGLE_NAV_LIGHTS" SimVar="LIGHT NAV" ActiveState="True" />
+		</Joystick>
+	</Joysticks>
+	<Profiles>
+		<Profile Name="Default">
+			<JoyMapping Name="Bravo Throttle Quadrant - Default"/>
+		</Profile>
+		<Profile Name="Extra">
+			<JoyMapping Name="Bravo Throttle Quadrant - MobiFlight"/>
+		</Profile>
+		<Profile Name="Testing">
+			<JoyMapping Name="Logitech Extreme 3D - Default"/>
+			<JoyMapping Name="Saitek Pro Flight X-56 Rhino Throttle - Special"/>
+			<JoyMapping Name="Bravo Throttle Quadrant - Default"/>
+		</Profile>
+	</Profiles>
+</JoystickMappings>
+<!--
+Keystrokes are designated as: KEY.<modifiers_enum>.<scancode_enum>
+
+E.G.	Alt-F					=	"KEY.ALT.KEY_F"
+			F							=	"KEY.None.KEY_F"
+			Shift-Alt-F		=	"KEY.SH_ALT.KEY_F"
+
+<modifiers_enum> must be exactly one of-
+				None
+				SH
+        ALT
+        CTL
+        SH_CTL
+        SH_ALT
+        CTL_ALT
+        SH_CTL_ALT
+
+<scancode_enum> is one of-
+        KEY_A
+        KEY_B
+				...
+        KEY_Y
+        KEY_Z
+        KEY_1
+        KEY_2
+				...
+				KEY_9
+        KEY_0
+        KEY_F1
+        KEY_F2
+				...
+        KEY_F11
+        KEY_F12
+        KEY_ENTER
+        KEY_ESC
+        KEY_MINUS
+        KEY_EQUAL
+        KEY_BACKSPACE
+        KEY_TAB
+        KEY_SPACE
+        KEY_GRAVE_TILDE
+        KEY_INSERT
+        KEY_HOME
+        KEY_DELETE
+        KEY_END
+        KEY_PAGEUP
+        KEY_PAGEDOWN
+        KEY_UP
+        KEY_RIGHT
+        KEY_DOWN
+        KEY_LEFT
+        KEY_NUMLOCK
+        KEY_KPSLASH
+        KEY_KPASTERISK
+        KEY_KPMINUS
+        KEY_KPPLUS
+        KEY_KPENTER
+        KEY_KP1
+        KEY_KP2
+				...
+				KEY_KP9
+        KEY_KP0
+        KEY_KPDEL
+        KEY_LEFTBRACE
+        KEY_RIGHTBRACE
+        KEY_BACKSLASH
+        KEY_SEMICOLON
+        KEY_QUOTE
+        KEY_COMMA
+        KEY_DOT
+        KEY_SLASH
+        KEY_CAPSLOCK
+-->
+<!--
+VSI_BUG_SELECT
+AP_AIRSPEED_HOLD
+AP_ALT_HOLD
+AP_APR_HOLD
+AP_ATT_HOLD
+AP_BC_HOLD
+AP_HDG_HOLD
+AP_LOC_HOLD
+AP_MACH_HOLD
+AP_MACH_SET
+AP_MASTER
+AP_N1_HOLD
+AP_NAV1_HOLD
+AP_PANEL_ALTITUDE_HOLD
+AP_PANEL_HEADING_HOLD
+AP_PANEL_MACH_HOLD_TOGGLE
+AP_PANEL_SPEED_HOLD
+AP_PANEL_SPEED_HOLD_TOGGLE
+AP_WING_LEVELER
+
+HEADING_BUG_DEC
+HEADING_BUG_INC
+AP_ALT_VAR_DEC
+AP_ALT_VAR_INC
+AP_MACH_VAR_DEC
+AP_MACH_VAR_INC
+AP_PITCH_REF_INC_DN
+AP_PITCH_REF_INC_UP
+AP_SPD_VAR_DEC
+AP_SPD_VAR_INC
+AP_VS_VAR_DEC
+AP_VS_VAR_INC
+VOR1_OBI_DEC
+VOR1_OBI_INC
+VOR2_OBI_DEC
+VOR2_OBI_INC
+NAV1_RADIO_FRACT_DEC
+NAV1_RADIO_FRACT_DEC_CARRY
+NAV1_RADIO_FRACT_INC
+NAV1_RADIO_FRACT_INC_CARRY
+NAV1_RADIO_SWAP
+NAV1_RADIO_WHOLE_DEC
+NAV1_RADIO_WHOLE_INC
+NAV2_RADIO_FRACT_DEC
+NAV2_RADIO_FRACT_DEC_CARRY
+NAV2_RADIO_FRACT_INC
+NAV2_RADIO_FRACT_INC_CARRY
+NAV2_RADIO_SWAP
+NAV2_RADIO_WHOLE_DEC
+NAV2_RADIO_WHOLE_INC
+KOHLSMAN_DEC
+KOHLSMAN_INC
+
+LANDING_LIGHTS_OFF
+LANDING_LIGHTS_ON
+LANDING_LIGHTS_TOGGLE
+PANEL_LIGHTS_OFF
+PANEL_LIGHTS_ON
+PANEL_LIGHTS_TOGGLE
+STROBES_OFF
+STROBES_ON
+STROBES_TOGGLE
+TOGGLE_BEACON_LIGHTS
+TOGGLE_CABIN_LIGHTS
+TOGGLE_NAV_LIGHTS			"LIGHT NAV"
+TOGGLE_RECOGNITION_LIGHTS
+TOGGLE_TAXI_LIGHTS			"LIGHT TAXI"
+
+GEAR_DOWN
+GEAR_TOGGLE
+GEAR_UP
+
+PITOT_HEAT_OFF
+PITOT_HEAT_ON
+PITOT_HEAT_TOGGLE
+
+RUDDER_TRIM_LEFT
+RUDDER_TRIM_RIGHT
+AILERON_TRIM_LEFT
+AILERON_TRIM_RIGHT
+ELEV_TRIM_DN
+ELEV_TRIM_UP
+
+PITOT_HEAT_OFF
+PITOT_HEAT_ON
+PITOT_HEAT_TOGGLE
+
+PARKING_BRAKES
+
+// G1000 PFD
+MobiFlight.AS1000_PFD_VOL_1_INC
+MobiFlight.AS1000_PFD_VOL_1_DEC
+MobiFlight.AS1000_PFD_VOL_2_INC
+MobiFlight.AS1000_PFD_VOL_2_DEC
+MobiFlight.AS1000_PFD_NAV_Switch
+MobiFlight.AS1000_PFD_NAV_Large_INC
+MobiFlight.AS1000_PFD_NAV_Large_DEC
+MobiFlight.AS1000_PFD_NAV_Small_INC
+MobiFlight.AS1000_PFD_NAV_Small_DEC
+MobiFlight.AS1000_PFD_NAV_Push
+MobiFlight.AS1000_PFD_COM_Switch_Long
+MobiFlight.AS1000_PFD_COM_Switch
+MobiFlight.AS1000_PFD_COM_Large_INC
+MobiFlight.AS1000_PFD_COM_Large_DEC
+MobiFlight.AS1000_PFD_COM_Small_INC
+MobiFlight.AS1000_PFD_COM_Small_DEC
+MobiFlight.AS1000_PFD_COM_Push
+MobiFlight.AS1000_PFD_BARO_INC
+MobiFlight.AS1000_PFD_BARO_DEC
+MobiFlight.AS1000_PFD_CRS_INC
+MobiFlight.AS1000_PFD_CRS_DEC
+MobiFlight.AS1000_PFD_CRS_PUSH
+MobiFlight.AS1000_PFD_SOFTKEYS_1
+MobiFlight.AS1000_PFD_SOFTKEYS_2
+MobiFlight.AS1000_PFD_SOFTKEYS_3
+MobiFlight.AS1000_PFD_SOFTKEYS_4
+MobiFlight.AS1000_PFD_SOFTKEYS_5
+MobiFlight.AS1000_PFD_SOFTKEYS_6
+MobiFlight.AS1000_PFD_SOFTKEYS_7
+MobiFlight.AS1000_PFD_SOFTKEYS_8
+MobiFlight.AS1000_PFD_SOFTKEYS_9
+MobiFlight.AS1000_PFD_SOFTKEYS_10
+MobiFlight.AS1000_PFD_SOFTKEYS_11
+MobiFlight.AS1000_PFD_SOFTKEYS_12
+MobiFlight.AS1000_PFD_DIRECTTO
+MobiFlight.AS1000_PFD_ENT_Push
+MobiFlight.AS1000_PFD_CLR_Long
+MobiFlight.AS1000_PFD_CLR
+MobiFlight.AS1000_PFD_MENU_Push
+MobiFlight.AS1000_PFD_FPL_Push
+MobiFlight.AS1000_PFD_PROC_Push
+MobiFlight.AS1000_PFD_FMS_Upper_INC
+MobiFlight.AS1000_PFD_FMS_Upper_DEC
+MobiFlight.AS1000_PFD_FMS_Upper_PUSH
+MobiFlight.AS1000_PFD_FMS_Lower_INC
+MobiFlight.AS1000_PFD_FMS_Lower_DEC
+MobiFlight.AS1000_PFD_RANGE_INC
+MobiFlight.AS1000_PFD_RANGE_DEC
+MobiFlight.AS1000_PFD_JOYSTICK_PUSH
+MobiFlight.AS1000_PFD_ActivateMapCursor
+MobiFlight.AS1000_PFD_DeactivateMapCursor
+MobiFlight.AS1000_PFD_JOYSTICK_RIGHT
+MobiFlight.AS1000_PFD_JOYSTICK_LEFT
+MobiFlight.AS1000_PFD_JOYSTICK_UP
+MobiFlight.AS1000_PFD_JOYSTICK_DOWN
+ 
+// G1000 MFD
+MobiFlight.AS1000_MFD_VOL_1_INC
+MobiFlight.AS1000_MFD_VOL_1_DEC
+MobiFlight.AS1000_MFD_VOL_2_INC
+MobiFlight.AS1000_MFD_VOL_2_DEC
+MobiFlight.AS1000_MFD_NAV_Switch
+MobiFlight.AS1000_MFD_NAV_Large_INC
+MobiFlight.AS1000_MFD_NAV_Large_DEC
+MobiFlight.AS1000_MFD_NAV_Small_INC
+MobiFlight.AS1000_MFD_NAV_Small_DEC
+MobiFlight.AS1000_MFD_NAV_Push
+MobiFlight.AS1000_MFD_COM_Switch_Long
+MobiFlight.AS1000_MFD_COM_Switch
+MobiFlight.AS1000_MFD_COM_Large_INC
+MobiFlight.AS1000_MFD_COM_Large_DEC
+MobiFlight.AS1000_MFD_COM_Small_INC
+MobiFlight.AS1000_MFD_COM_Small_DEC
+MobiFlight.AS1000_MFD_COM_Push
+MobiFlight.AS1000_MFD_BARO_INC
+MobiFlight.AS1000_MFD_BARO_DEC
+MobiFlight.AS1000_MFD_CRS_INC
+MobiFlight.AS1000_MFD_CRS_DEC
+MobiFlight.AS1000_MFD_CRS_PUSH
+MobiFlight.AS1000_MFD_SOFTKEYS_1
+MobiFlight.AS1000_MFD_SOFTKEYS_2
+MobiFlight.AS1000_MFD_SOFTKEYS_3
+MobiFlight.AS1000_MFD_SOFTKEYS_4
+MobiFlight.AS1000_MFD_SOFTKEYS_5
+MobiFlight.AS1000_MFD_SOFTKEYS_6
+MobiFlight.AS1000_MFD_SOFTKEYS_7
+MobiFlight.AS1000_MFD_SOFTKEYS_8
+MobiFlight.AS1000_MFD_SOFTKEYS_9
+MobiFlight.AS1000_MFD_SOFTKEYS_10
+MobiFlight.AS1000_MFD_SOFTKEYS_11
+MobiFlight.AS1000_MFD_SOFTKEYS_12
+MobiFlight.AS1000_MFD_DIRECTTO
+MobiFlight.AS1000_MFD_ENT_Push
+MobiFlight.AS1000_MFD_CLR_Long
+MobiFlight.AS1000_MFD_CLR
+MobiFlight.AS1000_MFD_MENU_Push
+MobiFlight.AS1000_MFD_FPL_Push
+MobiFlight.AS1000_MFD_PROC_Push
+MobiFlight.AS1000_MFD_FMS_Upper_INC
+MobiFlight.AS1000_MFD_FMS_Upper_DEC
+MobiFlight.AS1000_MFD_FMS_Upper_PUSH
+MobiFlight.AS1000_MFD_FMS_Lower_INC
+MobiFlight.AS1000_MFD_FMS_Lower_DEC
+MobiFlight.AS1000_MFD_RANGE_INC
+MobiFlight.AS1000_MFD_RANGE_DEC
+MobiFlight.AS1000_MFD_JOYSTICK_PUSH
+MobiFlight.AS1000_MFD_ActivateMapCursor
+MobiFlight.AS1000_MFD_DeactivateMapCursor
+MobiFlight.AS1000_MFD_JOYSTICK_RIGHT
+MobiFlight.AS1000_MFD_JOYSTICK_LEFT
+MobiFlight.AS1000_MFD_JOYSTICK_UP
+MobiFlight.AS1000_MFD_JOYSTICK_DOWN
+ 
+// G1000 MID
+MobiFlight.AS1000_MID_COM_1_Push
+MobiFlight.AS1000_MID_COM_2_Push
+MobiFlight.AS1000_MID_COM_3_Push
+MobiFlight.AS1000_MID_COM_Mic_1_Push
+MobiFlight.AS1000_MID_COM_Mic_2_Push
+MobiFlight.AS1000_MID_COM_Mic_3_Push
+MobiFlight.AS1000_MID_COM_Swap_1_2_Push
+MobiFlight.AS1000_MID_TEL_Push
+MobiFlight.AS1000_MID_PA_Push
+MobiFlight.AS1000_MID_SPKR_Push
+MobiFlight.AS1000_MID_MKR_Mute_Push
+MobiFlight.AS1000_MID_HI_SENS_Push
+MobiFlight.AS1000_MID_DME_Push
+MobiFlight.AS1000_MID_NAV_1_Push
+MobiFlight.AS1000_MID_NAV_2_Push
+MobiFlight.AS1000_MID_ADF_Push
+MobiFlight.AS1000_MID_AUX_Push
+MobiFlight.AS1000_MID_MAN_SQ_Push
+MobiFlight.AS1000_MID_Play_Push
+MobiFlight.AS1000_MID_Isolate_Pilot_Push
+MobiFlight.AS1000_MID_Isolate_Copilot_Push
+MobiFlight.AS1000_MID_Pass_Copilot_INC
+MobiFlight.AS1000_MID_Pass_Copilot_DEC
+MobiFlight.AS1000_MID_Display_Backup_Push
+ 
+// G3000 PFD
+MobiFlight.AS3000_PFD_SOFTKEYS_1
+MobiFlight.AS3000_PFD_SOFTKEYS_2
+MobiFlight.AS3000_PFD_SOFTKEYS_3
+MobiFlight.AS3000_PFD_SOFTKEYS_4
+MobiFlight.AS3000_PFD_SOFTKEYS_5
+MobiFlight.AS3000_PFD_SOFTKEYS_6
+MobiFlight.AS3000_PFD_SOFTKEYS_7
+MobiFlight.AS3000_PFD_SOFTKEYS_8
+MobiFlight.AS3000_PFD_SOFTKEYS_9
+MobiFlight.AS3000_PFD_SOFTKEYS_10
+MobiFlight.AS3000_PFD_SOFTKEYS_11
+MobiFlight.AS3000_PFD_SOFTKEYS_12
+ 
+// G3000 PFD Top Panel
+MobiFlight.AS3000_PFD_BottomKnob_Small_INC
+MobiFlight.AS3000_PFD_BottomKnob_Small_DEC
+MobiFlight.AS3000_PFD_BottomKnob_Push_Long
+MobiFlight.AS3000_PFD_BottomKnob_Push
+MobiFlight.AS3000_PFD_BottomKnob_Large_INC
+MobiFlight.AS3000_PFD_BottomKnob_Large_DEC
+MobiFlight.AS3000_PFD_TopKnob_Large_INC
+MobiFlight.AS3000_PFD_TopKnob_Large_DEC
+MobiFlight.AS3000_PFD_TopKnob_Small_INC
+MobiFlight.AS3000_PFD_TopKnob_Small_DEC
+ 
+// G3000 MFD
+MobiFlight.AS3000_MFD_SOFTKEYS_1
+MobiFlight.AS3000_MFD_SOFTKEYS_2
+MobiFlight.AS3000_MFD_SOFTKEYS_3
+MobiFlight.AS3000_MFD_SOFTKEYS_4
+MobiFlight.AS3000_MFD_SOFTKEYS_5
+MobiFlight.AS3000_MFD_SOFTKEYS_6
+MobiFlight.AS3000_MFD_SOFTKEYS_7
+MobiFlight.AS3000_MFD_SOFTKEYS_8
+MobiFlight.AS3000_MFD_SOFTKEYS_9
+MobiFlight.AS3000_MFD_SOFTKEYS_10
+MobiFlight.AS3000_MFD_SOFTKEYS_11
+MobiFlight.AS3000_MFD_SOFTKEYS_12
+ 
+// GTX 580 TBM
+MobiFlight.AS3000_TSC_Horizontal_SoftKey_1
+MobiFlight.AS3000_TSC_Horizontal_SoftKey_2
+MobiFlight.AS3000_TSC_Horizontal_SoftKey_3
+MobiFlight.AS3000_TSC_Horizontal_TopKnob_Large_INC
+MobiFlight.AS3000_TSC_Horizontal_TopKnob_Large_DEC
+MobiFlight.AS3000_TSC_Horizontal_TopKnob_Small_INC
+MobiFlight.AS3000_TSC_Horizontal_TopKnob_Small_DEC
+MobiFlight.AS3000_TSC_Horizontal_TopKnob_Push_Long
+MobiFlight.AS3000_TSC_Horizontal_TopKnob_Push
+MobiFlight.AS3000_TSC_Horizontal_BottomKnob_Small_INC
+MobiFlight.AS3000_TSC_Horizontal_BottomKnob_Small_DEC
+MobiFlight.AS3000_TSC_Horizontal_BottomKnob_Push
+ 
+// GTX 580 Longitude
+MobiFlight.AS3000_TSC_Vertical_BottomKnob_Small_INC
+MobiFlight.AS3000_TSC_Vertical_BottomKnob_Small_DEC
+MobiFlight.AS3000_TSC_Vertical_BottomKnob_Push_Long
+MobiFlight.AS3000_TSC_Vertical_BottomKnob_Push
+MobiFlight.AS3000_TSC_Vertical_BottomKnob_Large_INC
+MobiFlight.AS3000_TSC_Vertical_BottomKnob_Large_DEC
+MobiFlight.AS3000_TSC_Vertical_TopKnob_Large_INC
+MobiFlight.AS3000_TSC_Vertical_TopKnob_Large_DEC
+MobiFlight.AS3000_TSC_Vertical_TopKnob_Small_INC
+MobiFlight.AS3000_TSC_Vertical_TopKnob_Small_DEC
+ 
+// KAP140
+MobiFlight.KAP140_Push_AP
+MobiFlight.KAP140_Push_HDG
+MobiFlight.KAP140_Push_NAV
+MobiFlight.KAP140_Push_APR
+MobiFlight.KAP140_Push_REV
+MobiFlight.KAP140_Push_ALT
+MobiFlight.KAP140_Push_UP
+MobiFlight.KAP140_Push_DN
+MobiFlight.KAP140_Long_Push_BARO
+MobiFlight.KAP140_Push_BARO
+MobiFlight.KAP140_Push_ARM
+MobiFlight.KAP140_Knob_Inner_INC
+MobiFlight.KAP140_Knob_Inner_DEC
+MobiFlight.KAP140_Knob_Outer_INC
+MobiFlight.KAP140_Knob_Outer_DEC
+ 
+// M803
+MobiFlight.oclock_select
+MobiFlight.oclock_oat
+MobiFlight.oclock_control_long
+MobiFlight.oclock_control
+ 
+// GNS 530
+MobiFlight.AS530_ENT_Push
+MobiFlight.AS530_MENU_Push
+MobiFlight.AS530_FPL_Push
+MobiFlight.AS530_DirectTo_Push
+MobiFlight.AS530_CLR_Push_Long
+MobiFlight.AS530_CLR_Push
+MobiFlight.AS530_MSG_Push
+MobiFlight.AS530_OBS_Push
+MobiFlight.AS530_VNAV_Push
+MobiFlight.AS530_PROC_Push
+MobiFlight.AS530_COMSWAP_Push
+MobiFlight.AS530_NAVSWAP_Push
+MobiFlight.AS530_RNG_Dezoom
+MobiFlight.AS530_RNG_Zoom
+MobiFlight.AS530_RightLargeKnob_Right
+MobiFlight.AS530_RightLargeKnob_Left
+MobiFlight.AS530_LeftLargeKnob_Right
+MobiFlight.AS530_LeftLargeKnob_Left
+MobiFlight.AS530_RightSmallKnob_Right
+MobiFlight.AS530_RightSmallKnob_Left
+MobiFlight.AS530_RightSmallKnob_Push
+MobiFlight.AS530_LeftSmallKnob_Right
+MobiFlight.AS530_LeftSmallKnob_Left
+MobiFlight.AS530_LeftSmallKnob_Push
+ 
+// GNS 430
+MobiFlight.AS430_ENT_Push
+MobiFlight.AS430_MENU_Push
+MobiFlight.AS430_FPL_Push
+MobiFlight.AS430_DirectTo_Push
+MobiFlight.AS430_CLR_Push_Long
+MobiFlight.AS430_CLR_Push
+MobiFlight.AS430_MSG_Push
+MobiFlight.AS430_OBS_Push
+MobiFlight.AS430_PROC_Push
+MobiFlight.AS430_COMSWAP_Push
+MobiFlight.AS430_NAVSWAP_Push
+MobiFlight.AS430_RNG_Dezoom
+MobiFlight.AS430_RNG_Zoom
+MobiFlight.AS430_RightLargeKnob_Right
+MobiFlight.AS430_RightLargeKnob_Left
+MobiFlight.AS430_LeftLargeKnob_Right
+MobiFlight.AS430_LeftLargeKnob_Left
+MobiFlight.AS430_RightSmallKnob_Right
+MobiFlight.AS430_RightSmallKnob_Left
+MobiFlight.AS430_RightSmallKnob_Push
+MobiFlight.AS430_LeftSmallKnob_Right
+MobiFlight.AS430_LeftSmallKnob_Left
+MobiFlight.AS430_LeftSmallKnob_Push
+ 
+// KR 87
+MobiFlight.adf_AntAdf
+MobiFlight.adf_bfo
+MobiFlight.adf_frqTransfert
+MobiFlight.adf_FltEt
+MobiFlight.adf_SetRst
+ 
+// KT76C
+MobiFlight.TransponderIDT
+MobiFlight.TransponderVFR
+MobiFlight.TransponderCLR
+MobiFlight.Transponder0
+MobiFlight.Transponder1
+MobiFlight.Transponder2
+MobiFlight.Transponder3
+MobiFlight.Transponder4
+MobiFlight.Transponder5
+MobiFlight.Transponder6
+MobiFlight.Transponder7
+-->

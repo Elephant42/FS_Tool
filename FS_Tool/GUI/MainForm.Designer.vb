@@ -1,4 +1,5 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿
+<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class MainForm
     Inherits System.Windows.Forms.Form
 
@@ -36,6 +37,13 @@ Partial Class MainForm
         Me.ctx1Item_Rate_x2 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ctx1Item_Rate_x1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator5 = New System.Windows.Forms.ToolStripSeparator()
+        Me.ctx1Item_Settings = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ctx1Item_Joysticks = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
+        Me.ctx1Item_EnableSimCon = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ctx1Item_EnableServer = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ctx1Item_EnableJoyMaps = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripSeparator9 = New System.Windows.Forms.ToolStripSeparator()
         Me.ctx1Item_Restore = New System.Windows.Forms.ToolStripMenuItem()
         Me.ctx1Item_Minimise = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator8 = New System.Windows.Forms.ToolStripSeparator()
@@ -47,6 +55,9 @@ Partial Class MainForm
         Me.lblCurrSimRate = New System.Windows.Forms.Label()
         Me.txtCurrSimRate = New System.Windows.Forms.TextBox()
         Me.gbSlew = New System.Windows.Forms.GroupBox()
+        Me.btnRecord = New System.Windows.Forms.Button()
+        Me.HeartbeatLabel1 = New SimConLib.HeartbeatLabel()
+        Me.btnSimConDebug = New System.Windows.Forms.Button()
         Me.btnSlew = New System.Windows.Forms.Button()
         Me.btnClip = New System.Windows.Forms.Button()
         Me.lblNewLong = New System.Windows.Forms.Label()
@@ -54,15 +65,9 @@ Partial Class MainForm
         Me.txtNewLong = New System.Windows.Forms.TextBox()
         Me.lblNewLat = New System.Windows.Forms.Label()
         Me.txtDisplay = New System.Windows.Forms.TextBox()
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
-        Me.ctx1Item_Settings = New System.Windows.Forms.ToolStripMenuItem()
         Me.cmTrayIcon.SuspendLayout()
         Me.gbSimRate.SuspendLayout()
         Me.gbSlew.SuspendLayout()
-        Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
         'tmrUpdateTimer
@@ -77,72 +82,112 @@ Partial Class MainForm
         '
         'cmTrayIcon
         '
-        Me.cmTrayIcon.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ctx1Item_Slew, Me.ToolStripSeparator6, Me.ctx1Item_Rate_x8, Me.ctx1Item_Rate_x4, Me.ctx1Item_Rate_x2, Me.ctx1Item_Rate_x1, Me.ToolStripSeparator5, Me.ctx1Item_Settings, Me.ToolStripSeparator1, Me.ctx1Item_Restore, Me.ctx1Item_Minimise, Me.ToolStripSeparator8, Me.ctx1Item_Exit})
+        Me.cmTrayIcon.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ctx1Item_Slew, Me.ToolStripSeparator6, Me.ctx1Item_Rate_x8, Me.ctx1Item_Rate_x4, Me.ctx1Item_Rate_x2, Me.ctx1Item_Rate_x1, Me.ToolStripSeparator5, Me.ctx1Item_Settings, Me.ctx1Item_Joysticks, Me.ToolStripSeparator1, Me.ctx1Item_EnableSimCon, Me.ctx1Item_EnableServer, Me.ctx1Item_EnableJoyMaps, Me.ToolStripSeparator9, Me.ctx1Item_Restore, Me.ctx1Item_Minimise, Me.ToolStripSeparator8, Me.ctx1Item_Exit})
         Me.cmTrayIcon.Name = "cmTrayIcon"
-        Me.cmTrayIcon.Size = New System.Drawing.Size(181, 248)
+        Me.cmTrayIcon.Size = New System.Drawing.Size(210, 320)
         Me.cmTrayIcon.Text = "Actions"
         '
         'ctx1Item_Slew
         '
         Me.ctx1Item_Slew.Name = "ctx1Item_Slew"
-        Me.ctx1Item_Slew.Size = New System.Drawing.Size(180, 22)
+        Me.ctx1Item_Slew.Size = New System.Drawing.Size(209, 22)
         Me.ctx1Item_Slew.Text = "Slew To Clipboard"
         '
         'ToolStripSeparator6
         '
         Me.ToolStripSeparator6.Name = "ToolStripSeparator6"
-        Me.ToolStripSeparator6.Size = New System.Drawing.Size(177, 6)
+        Me.ToolStripSeparator6.Size = New System.Drawing.Size(206, 6)
         '
         'ctx1Item_Rate_x8
         '
         Me.ctx1Item_Rate_x8.Name = "ctx1Item_Rate_x8"
-        Me.ctx1Item_Rate_x8.Size = New System.Drawing.Size(180, 22)
+        Me.ctx1Item_Rate_x8.Size = New System.Drawing.Size(209, 22)
         Me.ctx1Item_Rate_x8.Text = "Sim Rate x8"
         '
         'ctx1Item_Rate_x4
         '
         Me.ctx1Item_Rate_x4.Name = "ctx1Item_Rate_x4"
-        Me.ctx1Item_Rate_x4.Size = New System.Drawing.Size(180, 22)
+        Me.ctx1Item_Rate_x4.Size = New System.Drawing.Size(209, 22)
         Me.ctx1Item_Rate_x4.Text = "Sim Rate x4"
         '
         'ctx1Item_Rate_x2
         '
         Me.ctx1Item_Rate_x2.Name = "ctx1Item_Rate_x2"
-        Me.ctx1Item_Rate_x2.Size = New System.Drawing.Size(180, 22)
+        Me.ctx1Item_Rate_x2.Size = New System.Drawing.Size(209, 22)
         Me.ctx1Item_Rate_x2.Text = "Sim Rate x2"
         '
         'ctx1Item_Rate_x1
         '
         Me.ctx1Item_Rate_x1.Name = "ctx1Item_Rate_x1"
-        Me.ctx1Item_Rate_x1.Size = New System.Drawing.Size(180, 22)
+        Me.ctx1Item_Rate_x1.Size = New System.Drawing.Size(209, 22)
         Me.ctx1Item_Rate_x1.Text = "Sim Rate x1"
         '
         'ToolStripSeparator5
         '
         Me.ToolStripSeparator5.Name = "ToolStripSeparator5"
-        Me.ToolStripSeparator5.Size = New System.Drawing.Size(177, 6)
+        Me.ToolStripSeparator5.Size = New System.Drawing.Size(206, 6)
+        '
+        'ctx1Item_Settings
+        '
+        Me.ctx1Item_Settings.Name = "ctx1Item_Settings"
+        Me.ctx1Item_Settings.Size = New System.Drawing.Size(209, 22)
+        Me.ctx1Item_Settings.Text = "Settings..."
+        '
+        'ctx1Item_Joysticks
+        '
+        Me.ctx1Item_Joysticks.Name = "ctx1Item_Joysticks"
+        Me.ctx1Item_Joysticks.Size = New System.Drawing.Size(209, 22)
+        Me.ctx1Item_Joysticks.Text = "Joysticks..."
+        '
+        'ToolStripSeparator1
+        '
+        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
+        Me.ToolStripSeparator1.Size = New System.Drawing.Size(206, 6)
+        '
+        'ctx1Item_EnableSimCon
+        '
+        Me.ctx1Item_EnableSimCon.Name = "ctx1Item_EnableSimCon"
+        Me.ctx1Item_EnableSimCon.Size = New System.Drawing.Size(209, 22)
+        Me.ctx1Item_EnableSimCon.Text = "Enable SimConnect"
+        '
+        'ctx1Item_EnableServer
+        '
+        Me.ctx1Item_EnableServer.Name = "ctx1Item_EnableServer"
+        Me.ctx1Item_EnableServer.Size = New System.Drawing.Size(209, 22)
+        Me.ctx1Item_EnableServer.Text = "Enable Server"
+        '
+        'ctx1Item_EnableJoyMaps
+        '
+        Me.ctx1Item_EnableJoyMaps.Name = "ctx1Item_EnableJoyMaps"
+        Me.ctx1Item_EnableJoyMaps.Size = New System.Drawing.Size(209, 22)
+        Me.ctx1Item_EnableJoyMaps.Text = "Enable Joystick Mappings"
+        '
+        'ToolStripSeparator9
+        '
+        Me.ToolStripSeparator9.Name = "ToolStripSeparator9"
+        Me.ToolStripSeparator9.Size = New System.Drawing.Size(206, 6)
         '
         'ctx1Item_Restore
         '
         Me.ctx1Item_Restore.Name = "ctx1Item_Restore"
-        Me.ctx1Item_Restore.Size = New System.Drawing.Size(180, 22)
+        Me.ctx1Item_Restore.Size = New System.Drawing.Size(209, 22)
         Me.ctx1Item_Restore.Text = "Restore"
         '
         'ctx1Item_Minimise
         '
         Me.ctx1Item_Minimise.Name = "ctx1Item_Minimise"
-        Me.ctx1Item_Minimise.Size = New System.Drawing.Size(180, 22)
+        Me.ctx1Item_Minimise.Size = New System.Drawing.Size(209, 22)
         Me.ctx1Item_Minimise.Text = "Minimise"
         '
         'ToolStripSeparator8
         '
         Me.ToolStripSeparator8.Name = "ToolStripSeparator8"
-        Me.ToolStripSeparator8.Size = New System.Drawing.Size(177, 6)
+        Me.ToolStripSeparator8.Size = New System.Drawing.Size(206, 6)
         '
         'ctx1Item_Exit
         '
         Me.ctx1Item_Exit.Name = "ctx1Item_Exit"
-        Me.ctx1Item_Exit.Size = New System.Drawing.Size(180, 22)
+        Me.ctx1Item_Exit.Size = New System.Drawing.Size(209, 22)
         Me.ctx1Item_Exit.Text = "Exit"
         '
         'gbSimRate
@@ -152,7 +197,7 @@ Partial Class MainForm
         Me.gbSimRate.Controls.Add(Me.lblNewSimRate)
         Me.gbSimRate.Controls.Add(Me.lblCurrSimRate)
         Me.gbSimRate.Controls.Add(Me.txtCurrSimRate)
-        Me.gbSimRate.Location = New System.Drawing.Point(12, 349)
+        Me.gbSimRate.Location = New System.Drawing.Point(12, 287)
         Me.gbSimRate.Name = "gbSimRate"
         Me.gbSimRate.Size = New System.Drawing.Size(420, 56)
         Me.gbSimRate.TabIndex = 20
@@ -207,6 +252,9 @@ Partial Class MainForm
         '
         'gbSlew
         '
+        Me.gbSlew.Controls.Add(Me.btnRecord)
+        Me.gbSlew.Controls.Add(Me.HeartbeatLabel1)
+        Me.gbSlew.Controls.Add(Me.btnSimConDebug)
         Me.gbSlew.Controls.Add(Me.btnSlew)
         Me.gbSlew.Controls.Add(Me.btnClip)
         Me.gbSlew.Controls.Add(Me.lblNewLong)
@@ -220,11 +268,41 @@ Partial Class MainForm
         Me.gbSlew.TabStop = False
         Me.gbSlew.Text = "Slew Coordinates"
         '
+        'btnRecord
+        '
+        Me.btnRecord.Location = New System.Drawing.Point(179, 71)
+        Me.btnRecord.Name = "btnRecord"
+        Me.btnRecord.Size = New System.Drawing.Size(105, 25)
+        Me.btnRecord.TabIndex = 16
+        Me.btnRecord.Text = "Save Flaps Data"
+        Me.btnRecord.UseVisualStyleBackColor = True
+        '
+        'HeartbeatLabel1
+        '
+        Me.HeartbeatLabel1.AutoSize = True
+        Me.HeartbeatLabel1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.HeartbeatLabel1.HeartbeatMilliSeconds = 1
+        Me.HeartbeatLabel1.HeartbeatString = "*"
+        Me.HeartbeatLabel1.Location = New System.Drawing.Point(6, 77)
+        Me.HeartbeatLabel1.Name = "HeartbeatLabel1"
+        Me.HeartbeatLabel1.Size = New System.Drawing.Size(17, 24)
+        Me.HeartbeatLabel1.TabIndex = 15
+        Me.HeartbeatLabel1.Text = "*"
+        '
+        'btnSimConDebug
+        '
+        Me.btnSimConDebug.Location = New System.Drawing.Point(290, 71)
+        Me.btnSimConDebug.Name = "btnSimConDebug"
+        Me.btnSimConDebug.Size = New System.Drawing.Size(126, 25)
+        Me.btnSimConDebug.TabIndex = 14
+        Me.btnSimConDebug.Text = "SimConnect Debug"
+        Me.btnSimConDebug.UseVisualStyleBackColor = True
+        '
         'btnSlew
         '
         Me.btnSlew.Location = New System.Drawing.Point(96, 71)
         Me.btnSlew.Name = "btnSlew"
-        Me.btnSlew.Size = New System.Drawing.Size(104, 25)
+        Me.btnSlew.Size = New System.Drawing.Size(65, 25)
         Me.btnSlew.TabIndex = 3
         Me.btnSlew.Text = "&Slew"
         Me.btnSlew.UseVisualStyleBackColor = True
@@ -280,52 +358,11 @@ Partial Class MainForm
         Me.txtDisplay.Size = New System.Drawing.Size(422, 153)
         Me.txtDisplay.TabIndex = 18
         '
-        'GroupBox1
-        '
-        Me.GroupBox1.Controls.Add(Me.Button2)
-        Me.GroupBox1.Controls.Add(Me.Button1)
-        Me.GroupBox1.Location = New System.Drawing.Point(12, 287)
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(420, 56)
-        Me.GroupBox1.TabIndex = 21
-        Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "Sample Commands"
-        '
-        'Button2
-        '
-        Me.Button2.Location = New System.Drawing.Point(144, 19)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(124, 25)
-        Me.Button2.TabIndex = 19
-        Me.Button2.Text = "Toggle Auto Pilot"
-        Me.Button2.UseVisualStyleBackColor = True
-        '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(11, 19)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(124, 25)
-        Me.Button1.TabIndex = 18
-        Me.Button1.Text = "Toggle Parking Brake"
-        Me.Button1.UseVisualStyleBackColor = True
-        '
-        'ToolStripSeparator1
-        '
-        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
-        Me.ToolStripSeparator1.Size = New System.Drawing.Size(177, 6)
-        '
-        'ctx1Item_Settings
-        '
-        Me.ctx1Item_Settings.Name = "ctx1Item_Settings"
-        Me.ctx1Item_Settings.Size = New System.Drawing.Size(180, 22)
-        Me.ctx1Item_Settings.Text = "Settings"
-        '
         'MainForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(442, 412)
-        Me.Controls.Add(Me.GroupBox1)
+        Me.ClientSize = New System.Drawing.Size(442, 350)
         Me.Controls.Add(Me.gbSimRate)
         Me.Controls.Add(Me.gbSlew)
         Me.Controls.Add(Me.txtDisplay)
@@ -341,7 +378,6 @@ Partial Class MainForm
         Me.gbSimRate.PerformLayout()
         Me.gbSlew.ResumeLayout(False)
         Me.gbSlew.PerformLayout()
-        Me.GroupBox1.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -358,7 +394,9 @@ Partial Class MainForm
     Friend WithEvents ctx1Item_Minimise As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ctx1Item_Restore As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ctx1Item_Rate_x8 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ToolStripSeparator9 As ToolStripSeparator
     Friend WithEvents ctx1Item_Rate_x2 As ToolStripMenuItem
+    Friend WithEvents ctx1Item_Settings As ToolStripMenuItem
     Friend WithEvents ctx1Item_Rate_x1 As ToolStripMenuItem
     Friend WithEvents ctx1Item_Rate_x4 As ToolStripMenuItem
     Friend WithEvents gbSimRate As GroupBox
@@ -376,9 +414,12 @@ Partial Class MainForm
     Friend WithEvents lblNewLat As Label
     Friend WithEvents txtDisplay As TextBox
     Friend WithEvents ctx1Item_Slew As ToolStripMenuItem
-    Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents Button2 As Button
-    Friend WithEvents Button1 As Button
-    Friend WithEvents ctx1Item_Settings As ToolStripMenuItem
+    Friend WithEvents btnSimConDebug As Button
+    Friend WithEvents ctx1Item_EnableServer As ToolStripMenuItem
+    Friend WithEvents ctx1Item_EnableSimCon As ToolStripMenuItem
+    Friend WithEvents HeartbeatLabel1 As SimConLib.HeartbeatLabel
+    Friend WithEvents btnRecord As Button
+    Friend WithEvents ctx1Item_Joysticks As ToolStripMenuItem
     Friend WithEvents ToolStripSeparator1 As ToolStripSeparator
+    Friend WithEvents ctx1Item_EnableJoyMaps As ToolStripMenuItem
 End Class
