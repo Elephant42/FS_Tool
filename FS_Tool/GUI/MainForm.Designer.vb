@@ -1,5 +1,4 @@
-﻿
-<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
 Partial Class MainForm
     Inherits System.Windows.Forms.Form
 
@@ -39,6 +38,7 @@ Partial Class MainForm
         Me.ToolStripSeparator5 = New System.Windows.Forms.ToolStripSeparator()
         Me.ctx1Item_Settings = New System.Windows.Forms.ToolStripMenuItem()
         Me.ctx1Item_Joysticks = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ctx1Item_G1000PFD = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.ctx1Item_EnableSimCon = New System.Windows.Forms.ToolStripMenuItem()
         Me.ctx1Item_EnableServer = New System.Windows.Forms.ToolStripMenuItem()
@@ -82,9 +82,9 @@ Partial Class MainForm
         '
         'cmTrayIcon
         '
-        Me.cmTrayIcon.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ctx1Item_Slew, Me.ToolStripSeparator6, Me.ctx1Item_Rate_x8, Me.ctx1Item_Rate_x4, Me.ctx1Item_Rate_x2, Me.ctx1Item_Rate_x1, Me.ToolStripSeparator5, Me.ctx1Item_Settings, Me.ctx1Item_Joysticks, Me.ToolStripSeparator1, Me.ctx1Item_EnableSimCon, Me.ctx1Item_EnableServer, Me.ctx1Item_EnableJoyMaps, Me.ToolStripSeparator9, Me.ctx1Item_Restore, Me.ctx1Item_Minimise, Me.ToolStripSeparator8, Me.ctx1Item_Exit})
+        Me.cmTrayIcon.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ctx1Item_Slew, Me.ToolStripSeparator6, Me.ctx1Item_Rate_x8, Me.ctx1Item_Rate_x4, Me.ctx1Item_Rate_x2, Me.ctx1Item_Rate_x1, Me.ToolStripSeparator5, Me.ctx1Item_Settings, Me.ctx1Item_Joysticks, Me.ctx1Item_G1000PFD, Me.ToolStripSeparator1, Me.ctx1Item_EnableSimCon, Me.ctx1Item_EnableServer, Me.ctx1Item_EnableJoyMaps, Me.ToolStripSeparator9, Me.ctx1Item_Restore, Me.ctx1Item_Minimise, Me.ToolStripSeparator8, Me.ctx1Item_Exit})
         Me.cmTrayIcon.Name = "cmTrayIcon"
-        Me.cmTrayIcon.Size = New System.Drawing.Size(210, 320)
+        Me.cmTrayIcon.Size = New System.Drawing.Size(210, 364)
         Me.cmTrayIcon.Text = "Actions"
         '
         'ctx1Item_Slew
@@ -138,6 +138,13 @@ Partial Class MainForm
         Me.ctx1Item_Joysticks.Name = "ctx1Item_Joysticks"
         Me.ctx1Item_Joysticks.Size = New System.Drawing.Size(209, 22)
         Me.ctx1Item_Joysticks.Text = "Joysticks..."
+        '
+        'ctx1Item_G1000PFD
+        '
+        Me.ctx1Item_G1000PFD.Name = "ctx1Item_G1000PFD"
+        Me.ctx1Item_G1000PFD.Size = New System.Drawing.Size(209, 22)
+        Me.ctx1Item_G1000PFD.Text = "G-1000 PFD..."
+        Me.ctx1Item_G1000PFD.Visible = False
         '
         'ToolStripSeparator1
         '
@@ -270,7 +277,7 @@ Partial Class MainForm
         '
         'btnRecord
         '
-        Me.btnRecord.Location = New System.Drawing.Point(179, 71)
+        Me.btnRecord.Location = New System.Drawing.Point(179, 79)
         Me.btnRecord.Name = "btnRecord"
         Me.btnRecord.Size = New System.Drawing.Size(105, 25)
         Me.btnRecord.TabIndex = 16
@@ -291,7 +298,7 @@ Partial Class MainForm
         '
         'btnSimConDebug
         '
-        Me.btnSimConDebug.Location = New System.Drawing.Point(290, 71)
+        Me.btnSimConDebug.Location = New System.Drawing.Point(290, 79)
         Me.btnSimConDebug.Name = "btnSimConDebug"
         Me.btnSimConDebug.Size = New System.Drawing.Size(126, 25)
         Me.btnSimConDebug.TabIndex = 14
@@ -366,7 +373,7 @@ Partial Class MainForm
         Me.Controls.Add(Me.gbSimRate)
         Me.Controls.Add(Me.gbSlew)
         Me.Controls.Add(Me.txtDisplay)
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "MainForm"
@@ -422,4 +429,5 @@ Partial Class MainForm
     Friend WithEvents ctx1Item_Joysticks As ToolStripMenuItem
     Friend WithEvents ToolStripSeparator1 As ToolStripSeparator
     Friend WithEvents ctx1Item_EnableJoyMaps As ToolStripMenuItem
+    Friend WithEvents ctx1Item_G1000PFD As ToolStripMenuItem
 End Class

@@ -20,6 +20,8 @@ Public Class SimData
 
 #Region "Public Declarations"
 
+    Public Const CUSTOM_SIMVAR_INDEX_BASE As Integer = 9000
+
     Public Enum CameraMode
         Cockpit
         External
@@ -965,7 +967,8 @@ Public Class SimData
         AILERON_TRIM_RIGHT
         ELEV_TRIM_DN
         ELEV_TRIM_UP
-
+        AP_ALT_VAR_SET_ENGLISH
+        AP_ALT_VAR_SET_METRIC
         VSI_BUG_SELECT
         AP_AIRSPEED_HOLD
         AP_ALT_HOLD
@@ -987,6 +990,16 @@ Public Class SimData
         AP_WING_LEVELER
         AP_VS_HOLD
         AP_FLC_HOLD
+
+        MAGNETO
+        MAGNETO_BOTH
+        MAGNETO_DECR
+        MAGNETO_INCR
+        MAGNETO_LEFT
+        MAGNETO_OFF
+        MAGNETO_RIGHT
+        MAGNETO_SET
+        MAGNETO_START
 
         MobiFlight_AS1000_PFD_VOL_1_INC
         MobiFlight_AS1000_PFD_VOL_1_DEC
@@ -1291,13 +1304,13 @@ Public Class SimData
     End Enum
 
     Public Structure SimVar
-        Public Index As SimVarEnum
+        Public Index As Integer
         Public Name As String
         Public Units As String
         Public IsString As Boolean
     End Structure
 
-    Public ReadOnly Property SimVars As Dictionary(Of SimVarEnum, SimVar)
+    Public ReadOnly Property SimVars As Dictionary(Of Integer, SimVar)
         Get
             Return _SimVars
         End Get
@@ -1354,7 +1367,7 @@ Public Class SimData
     Public Function SimVarEnumFromName(ByVal varName As String) As SimVarEnum
 
         If _SimVarsName.ContainsKey(varName) Then
-            Return _SimVarsName(varName).Index
+            Return CType(_SimVarsName(varName).Index, SimVarEnum)
         Else
             Return SimVarEnum.NULL
         End If
@@ -1371,17 +1384,21 @@ Public Class SimData
 
     End Function
 
+    Public Function AddCustomSimVar(ByVal name As String, ByVal units As String) As Integer
+        Return processSingleSimVar(name, units)
+    End Function
+
     Public Sub New()
         processSimVars()
     End Sub
 
-    Public Function Contains(ByVal varIndex As Integer) As Boolean
+    Public Function ContainsSimVar(ByVal varIndex As Integer) As Boolean
         Return _SimVars.ContainsKey(CType(varIndex, SimVarEnum))
     End Function
-    Public Function Contains(ByVal varIndex As SimVarEnum) As Boolean
+    Public Function ContainsSimVar(ByVal varIndex As SimVarEnum) As Boolean
         Return _SimVars.ContainsKey(varIndex)
     End Function
-    Public Function Contains(ByVal varName As String) As Boolean
+    Public Function ContainsSimVar(ByVal varName As String) As Boolean
         Return _SimVarsName.ContainsKey(varName)
     End Function
 
@@ -1389,20 +1406,41 @@ Public Class SimData
 
 #Region "Private Functions"
 
+    Private Function nextSimVarIndex() As Integer
+
+        Dim i As Integer = nextSimVarCustomIndex
+        nextSimVarCustomIndex += 1
+
+        Return i
+
+    End Function
+
+    Private Function processSingleSimVar(ByVal name As String, ByVal units As String, Optional ByVal index As Integer = -1) As Integer
+
+        If index = -1 Then index = nextSimVarCustomIndex
+
+        Dim v As SimVar
+        v.Index = index
+        v.Name = name
+        v.Units = units
+        v.IsString = (v.Units.ToLower.StartsWith("string") Or v.Units.ToLower = "variable length string")
+        _SimVars.Add(index, v)
+        _SimVarsName.Add(name, v)
+
+        Return v.Index
+
+    End Function
+
     Private Sub processSimVars()
 
         For Each toConnect In simVarsProperties
             Dim values() As String = toConnect.Value.Split(","c)
 
-            Dim e As SimVarEnum = toConnect.Key
+            Dim i As Integer = toConnect.Key
             Dim n As String = values(0)
-            Dim v As SimVar
-            v.Index = e
-            v.Name = n
-            v.Units = values(1)
-            v.IsString = (v.Units.ToLower.StartsWith("string") Or v.Units.ToLower = "variable length string")
-            _SimVars.Add(e, v)
-            _SimVarsName.Add(n, v)
+            Dim u As String = values(1)
+
+            processSingleSimVar(n, u, i)
         Next
 
     End Sub
@@ -1411,7 +1449,8 @@ Public Class SimData
 
 #Region "Private Declarations"
 
-    Private _SimVars As New Dictionary(Of SimVarEnum, SimVar)
+    Private nextSimVarCustomIndex As Integer = CUSTOM_SIMVAR_INDEX_BASE
+    Private _SimVars As New Dictionary(Of Integer, SimVar)
     Private _SimVarsName As New Dictionary(Of String, SimVar)
     Private _BaseSimVars As New List(Of SimVarEnum) From {
         {SimVarEnum.TITLE},
@@ -1424,18 +1463,18 @@ Public Class SimData
         {SimVarEnum.PLANE_HEADING_DEGREES_MAGNETIC},
         {SimVarEnum.PLANE_LATITUDE},
         {SimVarEnum.PLANE_LONGITUDE},
-        {SimVarEnum.SIMULATION_RATE}
-    }
-    '{SimVarEnum.ATC_MODEL},
-    '{SimVarEnum.ATC_TYPE},
-
-    Private _CommonSimVars As New List(Of SimVarEnum) From {
+        {SimVarEnum.SIMULATION_RATE},
         {SimVarEnum.LIGHT_BEACON},
         {SimVarEnum.LIGHT_BEACON_ON},
         {SimVarEnum.LIGHT_LANDING},
         {SimVarEnum.LIGHT_LANDING_ON},
         {SimVarEnum.LIGHT_NAV},
-        {SimVarEnum.LIGHT_NAV_ON},
+        {SimVarEnum.LIGHT_NAV_ON}
+    }
+    '{SimVarEnum.ATC_MODEL},
+    '{SimVarEnum.ATC_TYPE},
+
+    Private _CommonSimVars As New List(Of SimVarEnum) From {
         {SimVarEnum.PLANE_HEADING_DEGREES_GYRO},
         {SimVarEnum.PLANE_HEADING_DEGREES},
         {SimVarEnum.HEADING_INDICATOR},

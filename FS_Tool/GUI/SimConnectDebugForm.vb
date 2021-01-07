@@ -1,7 +1,9 @@
 ﻿Option Explicit On
 Option Strict On
 
+Imports System.Runtime.InteropServices
 Imports SimConLib
+Imports System.Text
 
 Public Class SimConnectDebugForm
 
@@ -17,6 +19,75 @@ Public Class SimConnectDebugForm
             mySim = value
         End Set
     End Property
+
+    Private Sub moveInstWin(ByVal hWnd As IntPtr)
+
+        If hWnd <> IntPtr.Zero Then
+            Dim X = Me.Left + Me.pnlWinBox.Left
+            Dim Y = Me.Top + Me.pnlWinBox.Top
+            Dim nWidth = Me.pnlWinBox.Width
+            Dim nHeight = Me.pnlWinBox.Height
+
+            HidSharp.Win32API.MoveWindow(hWnd, X, Y, nWidth, nHeight, True)
+            HidSharp.Win32API.SetForegroundWindow(hWnd)
+        End If
+
+    End Sub
+
+    Private Sub checkInstWin()
+
+        Dim localByName As Process() = Process.GetProcessesByName("FlightSimulator")
+        If localByName.Count = 1 Then
+            Dim fsp = localByName(0)
+            Dim _windowHandles = New List(Of IntPtr)
+            Dim listHandle As GCHandle = CType(Nothing, GCHandle)
+            listHandle = GCHandle.Alloc(_windowHandles)
+            For Each pt As ProcessThread In fsp.Threads
+                HidSharp.Win32API.EnumThreadWindows(CType(pt.Id, UInteger), New HidSharp.Win32API.EnumThreadDelegate(AddressOf EnumThreadCallback), GCHandle.ToIntPtr(listHandle))
+            Next
+
+            For Each hWnd As IntPtr In _windowHandles
+                Dim wt As New StringBuilder(128)
+                Dim cn As New StringBuilder(128)
+
+                Dim wtl = HidSharp.Win32API.GetWindowText(hWnd, wt, 128)
+                HidSharp.Win32API.GetClassName(hWnd, cn, 128)
+
+                If cn.ToString = "AceApp" And wtl = 0 Then
+                    moveInstWin(hWnd)
+                    Exit For
+                End If
+
+                'Debug.WriteLine(hWnd.ToString("X8") & ": " & wt.ToString & "," & cn.ToString & "")
+            Next
+        End If
+
+    End Sub
+
+    Private Sub doPollWin()
+
+        'MessageBox.Show("Left: " & Me.Left & ", Top: " & Me.Top)
+
+
+    End Sub
+
+    Private Shared Function EnumThreadCallback(ByVal hWnd As IntPtr, ByVal lParam As IntPtr) As Boolean
+
+        Dim gch As GCHandle = GCHandle.FromIntPtr(lParam)
+        Dim list As List(Of IntPtr) = CType(gch.Target, List(Of IntPtr))
+        If list Is Nothing Then
+            Throw New InvalidCastException("GCHandle Target could not be cast as List(Of IntPtr)")
+        End If
+
+        list.Add(hWnd)
+
+        Return True
+
+    End Function
+
+    Private Sub winPollContinuous(ByVal activeFlag As Boolean)
+
+    End Sub
 
     Private Sub doTransmit()
 
@@ -96,6 +167,7 @@ Public Class SimConnectDebugForm
             'mySim.RegisterSimVars(tl)
 
             mySim.RegisterCommonSimVars()
+            'mySim.AddRegisteredSimVar("")
         End If
 
     End Sub
@@ -256,6 +328,18 @@ Public Class SimConnectDebugForm
 
     Private Sub btnPoll_Click(sender As Object, e As EventArgs) Handles btnPoll.Click
         doSimVarPoll()
+    End Sub
+
+    Private Sub btnPollWin_Click(sender As Object, e As EventArgs) Handles btnPollWin.Click
+        doPollWin()
+    End Sub
+
+    Private Sub chkContinuousWin_CheckedChanged(sender As Object, e As EventArgs) Handles chkContinuousWin.CheckedChanged
+        winPollContinuous(CType(sender, CheckBox).Checked)
+    End Sub
+
+    Private Sub SimConnectDebugForm_Move(sender As Object, e As EventArgs) Handles MyBase.Move
+        checkInstWin()
     End Sub
 
 #End Region

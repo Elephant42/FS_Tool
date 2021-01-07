@@ -109,6 +109,8 @@ Partial Class JoystickForm
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "JoystickForm"
+        Me.ShowIcon = False
+        Me.ShowInTaskbar = False
         Me.Text = "JoystickForm"
         Me.ResumeLayout(False)
         Me.PerformLayout()

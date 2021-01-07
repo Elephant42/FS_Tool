@@ -46,6 +46,11 @@ Partial Class SimConnectDebugForm
         Me.txtSimVarVal = New System.Windows.Forms.TextBox()
         Me.chkContinuous = New System.Windows.Forms.CheckBox()
         Me.btnPoll = New System.Windows.Forms.Button()
+        Me.txtWinTitle = New System.Windows.Forms.TextBox()
+        Me.lblWinTitle = New System.Windows.Forms.Label()
+        Me.btnPollWin = New System.Windows.Forms.Button()
+        Me.chkContinuousWin = New System.Windows.Forms.CheckBox()
+        Me.pnlWinBox = New System.Windows.Forms.Panel()
         Me.SuspendLayout()
         '
         'btnTransmit
@@ -68,8 +73,7 @@ Partial Class SimConnectDebugForm
         '
         'Button1
         '
-        Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.Button1.Location = New System.Drawing.Point(135, 224)
+        Me.Button1.Location = New System.Drawing.Point(139, 87)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(104, 25)
         Me.Button1.TabIndex = 17
@@ -78,8 +82,7 @@ Partial Class SimConnectDebugForm
         '
         'Button2
         '
-        Me.Button2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.Button2.Location = New System.Drawing.Point(11, 224)
+        Me.Button2.Location = New System.Drawing.Point(15, 87)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(104, 25)
         Me.Button2.TabIndex = 18
@@ -88,17 +91,16 @@ Partial Class SimConnectDebugForm
         '
         'btnTestHello
         '
-        Me.btnTestHello.Location = New System.Drawing.Point(463, 82)
+        Me.btnTestHello.Location = New System.Drawing.Point(395, 87)
         Me.btnTestHello.Name = "btnTestHello"
-        Me.btnTestHello.Size = New System.Drawing.Size(104, 25)
+        Me.btnTestHello.Size = New System.Drawing.Size(47, 25)
         Me.btnTestHello.TabIndex = 19
         Me.btnTestHello.Text = "Hello"
         Me.btnTestHello.UseVisualStyleBackColor = True
         '
         'Button4
         '
-        Me.Button4.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.Button4.Location = New System.Drawing.Point(11, 255)
+        Me.Button4.Location = New System.Drawing.Point(15, 118)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(104, 25)
         Me.Button4.TabIndex = 20
@@ -107,8 +109,7 @@ Partial Class SimConnectDebugForm
         '
         'Button5
         '
-        Me.Button5.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.Button5.Location = New System.Drawing.Point(135, 255)
+        Me.Button5.Location = New System.Drawing.Point(139, 118)
         Me.Button5.Name = "Button5"
         Me.Button5.Size = New System.Drawing.Size(104, 25)
         Me.Button5.TabIndex = 21
@@ -117,8 +118,7 @@ Partial Class SimConnectDebugForm
         '
         'Button6
         '
-        Me.Button6.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.Button6.Location = New System.Drawing.Point(11, 286)
+        Me.Button6.Location = New System.Drawing.Point(15, 149)
         Me.Button6.Name = "Button6"
         Me.Button6.Size = New System.Drawing.Size(104, 25)
         Me.Button6.TabIndex = 22
@@ -127,8 +127,7 @@ Partial Class SimConnectDebugForm
         '
         'Button7
         '
-        Me.Button7.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.Button7.Location = New System.Drawing.Point(135, 286)
+        Me.Button7.Location = New System.Drawing.Point(139, 149)
         Me.Button7.Name = "Button7"
         Me.Button7.Size = New System.Drawing.Size(104, 25)
         Me.Button7.TabIndex = 23
@@ -137,8 +136,7 @@ Partial Class SimConnectDebugForm
         '
         'Button8
         '
-        Me.Button8.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.Button8.Location = New System.Drawing.Point(258, 286)
+        Me.Button8.Location = New System.Drawing.Point(262, 149)
         Me.Button8.Name = "Button8"
         Me.Button8.Size = New System.Drawing.Size(104, 25)
         Me.Button8.TabIndex = 24
@@ -147,8 +145,7 @@ Partial Class SimConnectDebugForm
         '
         'Button9
         '
-        Me.Button9.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.Button9.Location = New System.Drawing.Point(258, 224)
+        Me.Button9.Location = New System.Drawing.Point(262, 87)
         Me.Button9.Name = "Button9"
         Me.Button9.Size = New System.Drawing.Size(104, 25)
         Me.Button9.TabIndex = 25
@@ -157,8 +154,7 @@ Partial Class SimConnectDebugForm
         '
         'Button10
         '
-        Me.Button10.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.Button10.Location = New System.Drawing.Point(258, 255)
+        Me.Button10.Location = New System.Drawing.Point(262, 118)
         Me.Button10.Name = "Button10"
         Me.Button10.Size = New System.Drawing.Size(104, 25)
         Me.Button10.TabIndex = 26
@@ -179,11 +175,11 @@ Partial Class SimConnectDebugForm
         Me.txtDisplay.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.txtDisplay.Enabled = False
-        Me.txtDisplay.Location = New System.Drawing.Point(15, 72)
+        Me.txtDisplay.Location = New System.Drawing.Point(-2, 552)
         Me.txtDisplay.Multiline = True
         Me.txtDisplay.Name = "txtDisplay"
         Me.txtDisplay.ReadOnly = True
-        Me.txtDisplay.Size = New System.Drawing.Size(442, 144)
+        Me.txtDisplay.Size = New System.Drawing.Size(749, 201)
         Me.txtDisplay.TabIndex = 30
         '
         'tmrPoll
@@ -192,8 +188,7 @@ Partial Class SimConnectDebugForm
         '
         'Button11
         '
-        Me.Button11.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button11.Location = New System.Drawing.Point(463, 113)
+        Me.Button11.Location = New System.Drawing.Point(466, 87)
         Me.Button11.Name = "Button11"
         Me.Button11.Size = New System.Drawing.Size(104, 25)
         Me.Button11.TabIndex = 31
@@ -202,8 +197,7 @@ Partial Class SimConnectDebugForm
         '
         'Button12
         '
-        Me.Button12.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button12.Location = New System.Drawing.Point(463, 144)
+        Me.Button12.Location = New System.Drawing.Point(466, 118)
         Me.Button12.Name = "Button12"
         Me.Button12.Size = New System.Drawing.Size(104, 25)
         Me.Button12.TabIndex = 32
@@ -212,8 +206,7 @@ Partial Class SimConnectDebugForm
         '
         'Button13
         '
-        Me.Button13.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button13.Location = New System.Drawing.Point(463, 175)
+        Me.Button13.Location = New System.Drawing.Point(466, 149)
         Me.Button13.Name = "Button13"
         Me.Button13.Size = New System.Drawing.Size(104, 25)
         Me.Button13.TabIndex = 33
@@ -263,11 +256,58 @@ Partial Class SimConnectDebugForm
         Me.btnPoll.Text = "Poll"
         Me.btnPoll.UseVisualStyleBackColor = True
         '
+        'txtWinTitle
+        '
+        Me.txtWinTitle.Location = New System.Drawing.Point(90, 191)
+        Me.txtWinTitle.Name = "txtWinTitle"
+        Me.txtWinTitle.Size = New System.Drawing.Size(352, 20)
+        Me.txtWinTitle.TabIndex = 40
+        '
+        'lblWinTitle
+        '
+        Me.lblWinTitle.AutoSize = True
+        Me.lblWinTitle.Location = New System.Drawing.Point(12, 194)
+        Me.lblWinTitle.Name = "lblWinTitle"
+        Me.lblWinTitle.Size = New System.Drawing.Size(72, 13)
+        Me.lblWinTitle.TabIndex = 39
+        Me.lblWinTitle.Text = "Window Title:"
+        '
+        'btnPollWin
+        '
+        Me.btnPollWin.Location = New System.Drawing.Point(448, 188)
+        Me.btnPollWin.Name = "btnPollWin"
+        Me.btnPollWin.Size = New System.Drawing.Size(38, 25)
+        Me.btnPollWin.TabIndex = 42
+        Me.btnPollWin.Text = "Poll"
+        Me.btnPollWin.UseVisualStyleBackColor = True
+        '
+        'chkContinuousWin
+        '
+        Me.chkContinuousWin.AutoSize = True
+        Me.chkContinuousWin.Location = New System.Drawing.Point(491, 193)
+        Me.chkContinuousWin.Name = "chkContinuousWin"
+        Me.chkContinuousWin.Size = New System.Drawing.Size(79, 17)
+        Me.chkContinuousWin.TabIndex = 41
+        Me.chkContinuousWin.Text = "Continuous"
+        Me.chkContinuousWin.UseVisualStyleBackColor = True
+        '
+        'pnlWinBox
+        '
+        Me.pnlWinBox.Location = New System.Drawing.Point(47, 213)
+        Me.pnlWinBox.Name = "pnlWinBox"
+        Me.pnlWinBox.Size = New System.Drawing.Size(656, 333)
+        Me.pnlWinBox.TabIndex = 43
+        '
         'SimConnectDebugForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(580, 321)
+        Me.ClientSize = New System.Drawing.Size(754, 755)
+        Me.Controls.Add(Me.pnlWinBox)
+        Me.Controls.Add(Me.btnPollWin)
+        Me.Controls.Add(Me.chkContinuousWin)
+        Me.Controls.Add(Me.txtWinTitle)
+        Me.Controls.Add(Me.lblWinTitle)
         Me.Controls.Add(Me.btnPoll)
         Me.Controls.Add(Me.chkContinuous)
         Me.Controls.Add(Me.txtSimVarVal)
@@ -322,4 +362,9 @@ Partial Class SimConnectDebugForm
     Friend WithEvents txtSimVarVal As TextBox
     Friend WithEvents chkContinuous As CheckBox
     Friend WithEvents btnPoll As Button
+    Friend WithEvents txtWinTitle As TextBox
+    Friend WithEvents lblWinTitle As Label
+    Friend WithEvents btnPollWin As Button
+    Friend WithEvents chkContinuousWin As CheckBox
+    Friend WithEvents pnlWinBox As Panel
 End Class

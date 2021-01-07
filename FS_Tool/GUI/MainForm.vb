@@ -320,6 +320,7 @@ Public Class MainForm
     Private myJoyMaps As JoystickMappings = Nothing
     Private joyMapEvtTimes As Dictionary(Of String, Date) = Nothing
     'Private currentJoyProfile As String = ""
+    Private g1000Form As Form = Nothing
 
 #If DEBUG Then
     Private Class recordData
@@ -447,6 +448,23 @@ Public Class MainForm
 
 #Region "Private Functions"
 
+    Private Sub openG1000PFD()
+
+        'If Me.ctx1Item_G1000PFD.Checked Then
+        '    If g1000Form IsNot Nothing Then
+        '        g1000Form.Close()
+        '    End If
+        '    g1000Form = Nothing
+        '    Me.ctx1Item_G1000PFD.Checked = False
+        'Else
+        '    If g1000Form IsNot Nothing Then Throw New Exception("G-1000 PFD is already open")
+        '    g1000Form = New G1000PFD_Form
+        '    g1000Form.Show()
+        '    Me.ctx1Item_G1000PFD.Checked = True
+        'End If
+
+    End Sub
+
     Private Sub doEnableJoyMaps(ByVal profileName As String, Optional ByVal startupFlag As Boolean = False)
 
         If startupFlag Then
@@ -465,6 +483,11 @@ Public Class MainForm
                     joyMapsEnable(profileName)
                 End If
             End If
+            'If Me.ctx1Item_EnableJoyMaps.Checked Then
+            '    joyMapsDisable()
+            'Else
+            '    joyMapsEnable(profileName)
+            'End If
         End If
 
     End Sub
@@ -504,7 +527,7 @@ Public Class MainForm
 
     End Sub
 
-    Private Sub sendSimEvent(ByVal simEvent As String)
+    Private Sub sendSingleSimEvent(ByVal simEvent As String)
 
         If simEvent.StartsWith("KEY.") Then
             Try
@@ -518,16 +541,56 @@ Public Class MainForm
                 Throw New Exception("Invalid KeyStroke: " & simEvent)
             End Try
         Else
-            Dim t As SimData.SimEventEnum = SimConnectLib.GetSimEventByName(simEvent)
-            If t <> SimData.SimEventEnum.NONE Then
-                Debug.WriteLine(vbTab & vbTab & Utility.GetTicks() & " Sending SimEvent " & simEvent)
+            Dim simEv = simEvent
+            Dim simDat As String = "0"
 
+            If simEvent.Contains(":") Then
+                Dim tokens = simEvent.Split(":"c)
+                If tokens.Count = 2 Then
+                    simEv = tokens(0)
+                    simDat = tokens(1)
+                End If
+            End If
+
+            Debug.WriteLine(vbTab & vbTab & Utility.GetTicks() & " Sending SimEvent " & simEvent & " - " & simEv & ": " & simDat)
+            Dim t As SimData.SimEventEnum = SimConnectLib.GetSimEventByName(simEv)
+            If t <> SimData.SimEventEnum.NONE Then
                 If sim IsNot Nothing Then
                     If sim.Connected Then
-                        sim.TransmitClientEvent(t)
+                        sim.TransmitClientEvent(t, simDat)
+                        Debug.WriteLine(vbTab & vbTab & Utility.GetTicks() & " SimEvent sent")
                     End If
                 End If
             End If
+        End If
+
+    End Sub
+
+    Private Sub sendCountSimEvents(ByVal simEvent As String)
+
+        If simEvent.Contains(".") Then
+            Dim tokens = simEvent.Split("."c)
+            If tokens.Count = 2 Then
+                Dim evtCount As Integer = CInt(tokens(0))
+                For i = 1 To evtCount
+                    sendSingleSimEvent(tokens(1))
+                Next
+            End If
+        Else
+            sendSingleSimEvent(simEvent)
+        End If
+
+    End Sub
+
+    Private Sub sendSimEvent(ByVal simEvent As String)
+
+        If simEvent.Contains(",") Then
+            Dim tokens = simEvent.Split(","c)
+            For Each token In tokens
+                sendCountSimEvents(token)
+            Next
+        Else
+            sendCountSimEvents(simEvent)
         End If
 
     End Sub
@@ -574,7 +637,13 @@ Public Class MainForm
                                 End If
                                 joyMapEvtTimes(md.GUID) = Now
                             Else
-                                sendSimEvent(md.SimEvent)
+                                If md.LongPushActive Then
+                                    sendSimEvent(md.LongPushSimEvent)
+                                ElseIf md.ReleaseActive Then
+                                    sendSimEvent(md.ReleaseSimEvent)
+                                Else
+                                    sendSimEvent(md.SimEvent)
+                                End If
                             End If
                         End If
                     End If
@@ -1125,6 +1194,8 @@ Public Class MainForm
             doEnableJoyMaps(My.Settings.JoyProfile, True)
         End If
 
+        Me.ShowInTaskbar = False
+
     End Sub
 
     Private Sub tmrUpdateTimer_Tick(sender As Object, e As EventArgs) Handles tmrUpdateTimer.Tick
@@ -1235,9 +1306,9 @@ Public Class MainForm
         doEnableSimCon()
     End Sub
 
-    'Private Sub ctx1Item_EnableJoyMaps_Click(sender As Object, e As EventArgs) Handles ctx1Item_EnableJoyMaps.Click
-    '    doEnableJoyMaps()
-    'End Sub
+    Private Sub ctx1Item_G1000PFD_Click(sender As Object, e As EventArgs) Handles ctx1Item_G1000PFD.Click
+        openG1000PFD()
+    End Sub
 
     Private Sub ctx1Item_Joysticks_Click(sender As Object, e As EventArgs) Handles ctx1Item_Joysticks.Click
         doJoysticks()

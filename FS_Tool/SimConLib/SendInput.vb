@@ -2,6 +2,7 @@
 Option Strict On
 
 Imports System.CodeDom
+Imports System.Drawing
 Imports System.Runtime.InteropServices
 
 Public Module SendInputModule
@@ -268,9 +269,9 @@ Public Module SendInputModule
     Private Declare Function AttachThreadInput Lib "user32" (ByVal idAttach As IntPtr, ByVal idAttachTo As IntPtr, ByVal fAttach As Boolean) As Boolean
     Private Declare Function GetWindowThreadProcessId Lib "user32" (ByVal hWnd As IntPtr, ByVal lpwdProcessId As IntPtr) As IntPtr
     Private Declare Function GetCurrentThreadId Lib "kernel32" () As IntPtr
+    Private Declare Function GetMessageExtraInfo Lib "user32" () As IntPtr
     Private Declare Auto Function FindWindow Lib "user32" (ByVal lpClassName As String, ByVal lpWindowName As String) As IntPtr
     Private Declare Function SetForegroundWindow Lib "user32" (ByVal hWnd As IntPtr) As Boolean
-    Private Declare Function GetMessageExtraInfo Lib "user32" () As IntPtr
 
     Private gInput0(0) As INPUT
 
@@ -502,7 +503,6 @@ Public Module SendInputModule
 
     Private Sub doRandomKeySleep()
         Threading.Thread.Sleep(15 + CInt(Rnd() * 15))
-        'Threading.Thread.Sleep(50 + CInt(Rnd() * 50))
     End Sub
 
 #End Region

@@ -224,7 +224,11 @@ Public Class SimConnectLib
         Inherits Form
 
         Public Sub New(ByVal pSim As SimConnectLib)
+
             sim = pSim
+            Me.ShowIcon = False
+            Me.ShowInTaskbar = False
+
         End Sub
 
         Protected Overrides Sub WndProc(ByRef m As Message)
@@ -404,14 +408,16 @@ Public Class SimConnectLib
     Public Function GetSimValDouble(ByVal simVarName As String) As Double
 
         Try
-            If Not simDat.Contains(simVarName) Then Throw New Exception("Unknown SimVar: " & simVarName)
+            If Not simDat.ContainsSimVar(simVarName) Then Throw New Exception("Unknown SimVar: " & simVarName)
             Dim t As SimData.SimVar = simDat.SimVarsName(simVarName)
             If t.IsString Then Throw New Exception("GetSimValDouble - SimVar is String type: " & simVarName)
             Dim ndx As Integer = t.Index
             If Not regSimVars.ContainsKey(ndx) Then
                 Throw New Exception("SimVar not registered: " & simVarName)
             End If
-            If Not simValsDouble.ContainsKey(ndx) Then Throw New Exception("Registered SimVar, data not found: " & simVarName)
+            If Not simValsDouble.ContainsKey(ndx) Then
+                Throw New Exception("Registered SimVar, data not found: " & simVarName)
+            End If
             requestBaseSimVars()
             doRequestSimData(ndx)
             Return simValsDouble(ndx)
@@ -450,7 +456,7 @@ Public Class SimConnectLib
     Public Function GetSimValString(ByVal simVarName As String) As String
 
         Try
-            If Not simDat.Contains(simVarName) Then Throw New Exception("Unknown SimVar: " & simVarName)
+            If Not simDat.ContainsSimVar(simVarName) Then Throw New Exception("Unknown SimVar: " & simVarName)
             Dim t As SimData.SimVar = simDat.SimVarsName(simVarName)
             If Not t.IsString Then Throw New Exception("GetSimValString - SimVar is NOT String type: " & simVarName)
             Dim ndx As Integer = t.Index
@@ -624,6 +630,10 @@ Public Class SimConnectLib
 
     End Sub
 
+    Public Sub RegisterCustomSimVar(ByVal name As String, ByVal units As String)
+        doRegisterCustomSimVar(name, units)
+    End Sub
+
     Public Sub RegisterSimVars(ByVal varNames As List(Of String))
 
         disconnect()
@@ -663,6 +673,10 @@ Public Class SimConnectLib
 
     End Sub
 
+    Public Sub AddRegisteredSimVar(ByVal sve As SimData.SimVarEnum)
+        doAddRegisteredSimVar(sve)
+    End Sub
+
 #End Region
 
 #Region "Private Functions"
@@ -675,18 +689,49 @@ Public Class SimConnectLib
 
     End Sub
 
+    Private Sub doRegisterCustomSimVar(ByVal simVarName As String, ByVal simVarUnits As String)
+
+        Dim t As SimData.SimVar
+        If simDat.ContainsSimVar(simVarName) Then
+            t = simDat.SimVarsName(simVarName)
+        Else
+            t = simDat.SimVars(simDat.AddCustomSimVar(simVarName, simVarUnits))
+        End If
+
+        doAddRegisteredSimVar(t.Index)
+
+        If Connected Then
+            registerSingleSimVar(t)
+        End If
+
+    End Sub
+
+    Private Sub doAddRegisteredSimVar(ByVal sve As SimData.SimVarEnum)
+        doAddRegisteredSimVarInt(sve)
+    End Sub
+    Private Sub doAddRegisteredSimVar(ByVal svi As Integer)
+        doAddRegisteredSimVarInt(svi)
+    End Sub
+
+    Private Sub doAddRegisteredSimVarInt(ByVal svi As Integer)
+
+        Dim t As SimData.SimVar = simDat.SimVars(svi)
+
+        If Not regSimVars.ContainsKey(t.Index) Then
+            regSimVars.Add(t.Index, t)
+            If t.IsString Then
+                simValsString.Add(t.Index, "")
+            Else
+                simValsDouble.Add(t.Index, 0.0)
+            End If
+        End If
+
+    End Sub
+
     Private Sub registerSimVars(ByVal varList As List(Of SimData.SimVarEnum))
 
-        For Each i As SimData.SimVarEnum In varList
-            Dim t As SimData.SimVar = simDat.SimVars(i)
-            If Not regSimVars.ContainsKey(i) Then
-                regSimVars.Add(i, t)
-                If t.IsString Then
-                    simValsString.Add(i, "")
-                Else
-                    simValsDouble.Add(i, 0.0)
-                End If
-            End If
+        For Each sve As SimData.SimVarEnum In varList
+            doAddRegisteredSimVar(sve)
         Next
 
     End Sub
@@ -782,12 +827,14 @@ Public Class SimConnectLib
     End Sub
     Private Sub doRequestSimData(ByVal simVar As SimData.SimVar)
 
-        If isCustomSimVar(simVar) Then
-            debugMsg("doRequestSimData() Custom: " & simVar.Name)
-            pollOneCustomSimVar(simVar)
-        Else
-            debugMsg("RequestDataOnSimObjectType()-" & simVar.Name)
-            sim.RequestDataOnSimObjectType(CType(simVar.Index, DUMMYENUM), CType(simVar.Index, DUMMYENUM), 0, SIMCONNECT_SIMOBJECT_TYPE.USER)
+        If Me.Connected Then
+            If isCustomSimVar(simVar) Then
+                debugMsg("doRequestSimData() Custom: " & simVar.Name)
+                pollOneCustomSimVar(simVar)
+            Else
+                debugMsg("RequestDataOnSimObjectType()-" & simVar.Name)
+                sim.RequestDataOnSimObjectType(CType(simVar.Index, DUMMYENUM), CType(simVar.Index, DUMMYENUM), 0, SIMCONNECT_SIMOBJECT_TYPE.USER)
+            End If
         End If
 
     End Sub
@@ -1079,6 +1126,30 @@ Public Class SimConnectLib
 
     End Sub
 
+    Private Sub registerSingleSimVar(ByVal simv As SimData.SimVar)
+
+        If simv.IsString Then
+            ' Define a data structure
+            sim.AddToDataDefinition(CType(simv.Index, DUMMYENUM), simv.Name, "number", simVarTypes(simv.Index), 0, SimConnect.SIMCONNECT_UNUSED)
+
+            ' IMPORTANT: Register it With the simconnect managed wrapper marshaller
+            ' If you skip this step, you will only receive a uint in the .dwData field.
+            Select Case simVarTypes(simv.Index)
+                Case SIMCONNECT_DATATYPE.STRING8
+                    sim.RegisterDataDefineStruct(Of string1024Struct)(CType(simv.Index, DUMMYENUM))
+                Case SIMCONNECT_DATATYPE.STRING64
+                    sim.RegisterDataDefineStruct(Of string64Struct)(CType(simv.Index, DUMMYENUM))
+                Case SIMCONNECT_DATATYPE.STRING256
+                    sim.RegisterDataDefineStruct(Of string256Struct)(CType(simv.Index, DUMMYENUM))
+                Case Else
+                    sim.RegisterDataDefineStruct(Of string1024Struct)(CType(simv.Index, DUMMYENUM))
+            End Select
+        Else
+            sim.AddToDataDefinition(CType(simv.Index, DUMMYENUM), simv.Name, simv.Units, simVarTypes(simv.Index), 0.0, SimConnect.SIMCONNECT_UNUSED)
+            sim.RegisterDataDefineStruct(Of Double)(CType(simv.Index, DUMMYENUM))
+        End If
+
+    End Sub
 
     ' <summary>
     ' We received a connection from SimConnect.
@@ -1090,26 +1161,7 @@ Public Class SimConnectLib
 
         Try
             For Each t As SimData.SimVar In simDat.SimVars.Values
-                If t.IsString Then
-                    ' Define a data structure
-                    sim.AddToDataDefinition(CType(t.Index, DUMMYENUM), t.Name, "number", simVarTypes(t.Index), 0, SimConnect.SIMCONNECT_UNUSED)
-
-                    ' IMPORTANT: Register it With the simconnect managed wrapper marshaller
-                    ' If you skip this step, you will only receive a uint in the .dwData field.
-                    Select Case simVarTypes(t.Index)
-                        Case SIMCONNECT_DATATYPE.STRING8
-                            sim.RegisterDataDefineStruct(Of string1024Struct)(CType(t.Index, DUMMYENUM))
-                        Case SIMCONNECT_DATATYPE.STRING64
-                            sim.RegisterDataDefineStruct(Of string64Struct)(CType(t.Index, DUMMYENUM))
-                        Case SIMCONNECT_DATATYPE.STRING256
-                            sim.RegisterDataDefineStruct(Of string256Struct)(CType(t.Index, DUMMYENUM))
-                        Case Else
-                            sim.RegisterDataDefineStruct(Of string1024Struct)(CType(t.Index, DUMMYENUM))
-                    End Select
-                Else
-                    sim.AddToDataDefinition(CType(t.Index, DUMMYENUM), t.Name, t.Units, simVarTypes(t.Index), 0.0, SimConnect.SIMCONNECT_UNUSED)
-                    sim.RegisterDataDefineStruct(Of Double)(CType(t.Index, DUMMYENUM))
-                End If
+                registerSingleSimVar(t)
             Next
 
             For Each item As SimData.SimEventEnum In [Enum].GetValues(GetType(SimData.SimEventEnum))

@@ -71,6 +71,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Drawing" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AsyncResult.cs" />
@@ -185,6 +186,7 @@
     <Compile Include="Reports\Units\TimeUnit.cs" />
     <Compile Include="Reports\Units\Unit.cs" />
     <Compile Include="Reports\Units\UnitSystem.cs" />
+    <Compile Include="WinAPI.cs" />
     <Compile Include="Utility\BcdHelper.cs" />
     <Compile Include="Utility\HResult.cs" />
     <Compile Include="Utility\HidSharpDiagnostics.cs" />

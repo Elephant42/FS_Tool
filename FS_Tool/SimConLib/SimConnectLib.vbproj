@@ -97,7 +97,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AsyncSocket.vb" />
-    <Compile Include="CircularBuffer.vb" />
+    <Compile Include="UtilityClasses.vb" />
     <Compile Include="HeartbeatLabel.vb">
       <SubType>Component</SubType>
     </Compile>

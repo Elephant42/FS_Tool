@@ -32,4 +32,3 @@ Public Class HeartbeatLabel
     Private lastBeat As Date = Date.MinValue
 
 End Class
-

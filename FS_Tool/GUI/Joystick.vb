@@ -13,8 +13,12 @@ Public Class JoystickEventMap
     Public Structure MappingDataStruct
         Public GUID As String
         Public SimEvent As String
+        Public LongPushSimEvent As String
+        Public ReleaseSimEvent As String
         Public SimVar As String
         Public ActiveState As Boolean
+        Public LongPushActive As Boolean
+        Public ReleaseActive As Boolean
         Public Acceleration As Integer
         Public Delay As Integer
         Public EnableEventCount As Integer
@@ -24,7 +28,7 @@ Public Class JoystickEventMap
 
     Public Shared ReadOnly Property EmptyMappingData() As MappingDataStruct
         Get
-            Dim md As MappingDataStruct
+            Dim md As New MappingDataStruct
 
             md.GUID = ""
             md.SimEvent = ""
@@ -82,6 +86,18 @@ Public Class JoystickEventMap
         End Get
     End Property
 
+    Public ReadOnly Property LongPushSimEvent As String
+        Get
+            Return _LongPushSimEvent
+        End Get
+    End Property
+
+    Public ReadOnly Property ReleaseSimEvent As String
+        Get
+            Return _ReleaseSimEvent
+        End Get
+    End Property
+
     Public ReadOnly Property SimVar As String
         Get
             Return _SimVar
@@ -100,12 +116,20 @@ Public Class JoystickEventMap
         End Get
     End Property
 
+    Public ReadOnly Property LongPushActive As Boolean
+        Get
+            Return _LongPushActive
+        End Get
+    End Property
+
     Public Sub New(ByVal elem As XmlElement, ByVal joyMaps As JoystickMapping)
 
         Dim jeEvents As String = elem.GetAttribute("JoyEnableEvents")
         myJoyMaps = joyMaps
         _JoyEvent = elem.GetAttribute("JoyEvent")
         _SimEvent = elem.GetAttribute("SimEvent")
+        _LongPushSimEvent = elem.GetAttribute("LongPushSimEvent")
+        _ReleaseSimEvent = elem.GetAttribute("ReleaseSimEvent")
         _SimVar = elem.GetAttribute("SimVar")
         _Accel = getIntAttr(elem.GetAttribute("Accel"))
         _Delay = getIntAttr(elem.GetAttribute("Delay"))
@@ -134,37 +158,82 @@ Public Class JoystickEventMap
 
         If mapIsEnabled() Then
             md.SimEvent = SimEvent
+            md.LongPushSimEvent = LongPushSimEvent
+            md.ReleaseSimEvent = ReleaseSimEvent
             md.SimVar = SimVar
             md.ActiveState = ActiveState
             md.Acceleration = _Accel
             md.Delay = _Delay
             md.MapIsEnabled = True
             md.EnableEventCount = _EnableEvents.Count
+            md.LongPushActive = _LongPushActive
+            md.ReleaseActive = _ReleaseActive
         End If
 
         Return md
 
     End Function
 
+    Private Function checkLongPush(ByVal joyEventIsTrue As Boolean) As Boolean
+
+        If joyEventIsTrue Then
+            'Start the long press timer and do nothing else
+            eventTrueTime = Now
+            Return False
+        Else
+            If Now > eventTrueTime.AddMilliseconds(myJoyMaps.LongPressTimeout) Then
+                'If the long press timer has expired make it a long press event
+                _LongPushActive = True
+            Else
+                'Else it's a normal press event
+                _LongPushActive = False
+            End If
+            Return True
+        End If
+
+    End Function
+
     Private Function mapIsEnabled() As Boolean
 
-        If myJoyMaps.Device.Data.GetValueBool(JoyEvent) Then
-            If _EnableEvents.Count > 0 Then
-                For Each evt In _EnableEvents
-                    If Not myJoyMaps.Device.Data.GetValueBool(evt) Then
-                        'One of the enable events is not pressed so bad luck, it's not enabled
-                        Return False
-                    End If
-                Next
-                'if we get to the end of the enable event list then they are all pressed and bingo, it's enabled
-                Return True
+        Dim joyEventIsTrue = myJoyMaps.Device.Data.GetValueBool(JoyEvent)
+
+        'First we check that all required enable events are True
+        If _EnableEvents.Count > 0 Then
+            For Each evt In _EnableEvents
+                If Not myJoyMaps.Device.Data.GetValueBool(evt) Then
+                    'One of the enable events is not pressed so bad luck, it's not enabled
+                    Return False
+                End If
+            Next
+        End If
+        'if we get to the end of the enable event list then they are all pressed and bingo,
+        'it's enabled so we can continue processing the event.
+
+        If joyEventIsTrue Then
+            If _LongPushSimEvent = "" Then
+                _ReleaseActive = False
+                If ReleaseSimEvent <> "" Then
+                    'Maps never enabled on button press events unless a Release event is specified,
+                    'in which case maps are enabled on both press and release.
+                    Return True
+                Else
+                    Return False
+                End If
             Else
-                'No enable events so it's automatically enabled
-                Return True
+                'Start the long push timer
+                Return checkLongPush(True)
             End If
         Else
-            'maps are enabled only on button press events
-            Return False
+            'Maps are always enabled on button release events.
+            If _LongPushSimEvent = "" Then
+                If ReleaseSimEvent <> "" Then
+                    _ReleaseActive = True
+                End If
+                Return True
+            Else
+                'Enables either a long push or normal event depending on whether the long push timer has expired.
+                Return checkLongPush(False)
+            End If
         End If
 
     End Function
@@ -186,13 +255,18 @@ Public Class JoystickEventMap
     Private _Key As String = ""
     Private _JoyEvent As String = ""
     Private _SimEvent As String = ""
+    Private _LongPushSimEvent As String = ""
+    Private _ReleaseSimEvent As String = ""
     Private _SimVar As String = ""
     Private _Accel As Integer = 0
     Private _Delay As Integer = 0
     Private _ActiveState As Boolean = False
+    Private _LongPushActive As Boolean = False
+    Private _ReleaseActive As Boolean = False
     Private _EnableEvents As New List(Of String)
     Private myJoyMaps As JoystickMapping = Nothing
     Private _GUID As String = Guid.NewGuid.ToString
+    Private eventTrueTime As Date = Date.MinValue
 
 End Class
 
@@ -245,7 +319,7 @@ Public Class JoystickEvent
                 Dim temp = jem.MappingData
                 If temp.MapIsEnabled Then
                     If md.MapIsEnabled Then
-                        'If the joystick even has multiple mappings then the one with the highest number of enable events wins
+                        'If the joystick event has multiple mappings then the one with the highest number of enable events wins
                         If temp.EnableEventCount > md.EnableEventCount Then
                             md = temp
                         End If
@@ -315,6 +389,8 @@ Public Class JoystickMapping
         End Set
     End Property
 
+    Public Property LongPressTimeout As Integer = 200
+
     Public ReadOnly Property Name As String
         Get
             Return _Name
@@ -376,6 +452,11 @@ Public Class JoystickMapping
 
         _Name = elem.GetAttribute("MappingName")
         _JoyName = elem.GetAttribute("Name")
+        Dim lpt = elem.GetAttribute("LongPressTimeout")
+        If lpt <> "" And IsNumeric(lpt) Then
+            Me.LongPressTimeout = CInt(lpt)
+        End If
+
         For Each el As XmlElement In elem.GetElementsByTagName("JoyMap")
             Dim evtName = el.GetAttribute("JoyEvent")
             If myEvents.ContainsKey(evtName) Then
@@ -741,7 +822,11 @@ Public Class Joystick
     Public ReadOnly Property DisplayName() As String
         Get
             Try
-                Return myHID.GetFriendlyName
+                Dim t As String = myHID.GetFriendlyName
+                If t = "" Then
+                    t = myHID.ToString
+                End If
+                Return t
             Catch ex As Exception
                 Try
                     Return myHID.ToString
@@ -768,12 +853,19 @@ Public Class Joystick
 
     Public Shared Function GetJoysticksDictionary() As Dictionary(Of String, Joystick)
 
+        Dim d As HidDevice
+
         Dim tempList As New Dictionary(Of String, Joystick)
         Dim hidDevList = getHID_Devlist()
         For Each dev In hidDevList
+            Debug.WriteLine(dev.ToString)
             Dim tempJoy = New Joystick(dev)
             If tempJoy.IsJoystickOrGamepad Then
-                tempList.Add(tempJoy.DisplayName, tempJoy)
+                If tempList.ContainsKey(tempJoy.DisplayName) Then
+                    Debug.WriteLine("Duplicate HID Device: " & tempJoy.DisplayName)
+                Else
+                    tempList.Add(tempJoy.DisplayName, tempJoy)
+                End If
             End If
         Next
         Return tempList
@@ -926,11 +1018,11 @@ Public Class Joystick
                                 'Debug.WriteLine("Ok")
                                 'If worker.CancellationPending Then e.Cancel = True : Exit Do
                                 If CancelFlag Then Exit Do
-                                Dim d As JoystickData = writeDeviceItemInputParserResultData(inputParser, Me)
+                                Dim jd As JoystickData = writeDeviceItemInputParserResultData(inputParser, Me)
 
                                 'If worker.CancellationPending Then e.Cancel = True : Exit Do
                                 If CancelFlag Then Exit Do
-                                doReportCallback(d)
+                                doReportCallback(jd)
                             Else
                                 Debug.WriteLine(Now & " Bad parse")
                                 'If worker.CancellationPending Then e.Cancel = True : Exit Do
@@ -965,6 +1057,17 @@ Public Class Joystick
 
     End Sub
 
+    Private Function isValidUsage(ByVal tUsage As UInteger, ByVal hdev As HidDevice) As Boolean
+
+        If CType(tUsage, Usage) = Usage.GenericDesktopJoystick Then Return True
+        If CType(tUsage, Usage) = Usage.GenericDesktopGamepad Then Return True
+        'If hdev.GetProductName().ToLower.Contains("flight") Then Return True
+        If tUsage = &H10000 Then Return True 'Logitech Flight Multi Panel
+
+        Return False
+
+    End Function
+
     Private Sub newDevice(ByVal hDev As HidDevice)
 
         Try
@@ -993,15 +1096,21 @@ Public Class Joystick
 
             For Each deviceItem In reportDescriptor.DeviceItems
                 Dim gotJoy As Boolean = False
+                Debug.WriteLine("Device: " & hDev.GetProductName())
                 Debug.WriteLine("Num Usages: " & deviceItem.Usages.Count)
 
                 For Each tUsage In deviceItem.Usages.GetAllValues()
                     Debug.WriteLine(String.Format("Usage: {0:X4} {1}", tUsage, CType(tUsage, Usage)))
-                    If CType(tUsage, Usage) = Usage.GenericDesktopJoystick Or CType(tUsage, Usage) = Usage.GenericDesktopGamepad Then
+                    'If CType(tUsage, Usage) = Usage.GenericDesktopJoystick Or CType(tUsage, Usage) = Usage.GenericDesktopGamepad Or hDev.GetFriendlyName().ToLower.Contains("flight") Then
+                    If isValidUsage(tUsage, hDev) Then
                         myHID = hDev
                         myReportDescriptor = reportDescriptor
                         myDeviceItem = deviceItem
+                        Exit For
                     End If
+                    'myHID = hDev
+                    'myReportDescriptor = reportDescriptor
+                    'myDeviceItem = deviceItem
                     'GenericDesktopJoystick = 0x00010004,
                     'GenericDesktopGamepad = 0x00010005,
                 Next
