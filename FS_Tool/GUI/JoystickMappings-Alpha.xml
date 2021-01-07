@@ -311,60 +311,34 @@
 			<JoyMap JoyEvent="Button11" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!---->
 			<JoyMap JoyEvent="Button12" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!---->
 
+			<!--Rocker Switches-->
+			<JoyMap JoyEvent="Button13" JoyEnableEvents="" SimEvent="TOGGLE_ALTERNATOR1" SimVar="GENERAL ENG MASTER ALTERNATOR:1" ActiveState="True" /><!--ROCKER SW 1 UP-->
+			<JoyMap JoyEvent="Button14" JoyEnableEvents="" SimEvent="TOGGLE_ALTERNATOR1" SimVar="GENERAL ENG MASTER ALTERNATOR:1" ActiveState="False" /><!--ROCKER SW 1 DN-->
+			<JoyMap JoyEvent="Button15" JoyEnableEvents="" SimEvent="TOGGLE_MASTER_BATTERY" SimVar="ELECTRICAL MASTER BATTERY" ActiveState="True" /><!--ROCKER SW 2 UP-->
+			<JoyMap JoyEvent="Button16" JoyEnableEvents="" SimEvent="TOGGLE_MASTER_BATTERY" SimVar="ELECTRICAL MASTER BATTERY" ActiveState="False" /><!--ROCKER SW 2 DN-->
+			<JoyMap JoyEvent="Button17" JoyEnableEvents="" SimEvent="TOGGLE_AVIONICS_MASTER" SimVar="AVIONICS MASTER SWITCH" ActiveState="True" /><!--ROCKER SW 3 UP-->
+			<JoyMap JoyEvent="Button18" JoyEnableEvents="" SimEvent="TOGGLE_AVIONICS_MASTER" SimVar="AVIONICS MASTER SWITCH" ActiveState="False" /><!--ROCKER SW 3 DN-->
+			<JoyMap JoyEvent="Button19" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!--ROCKER SW 4 UP-->
+			<JoyMap JoyEvent="Button20" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!--ROCKER SW 4 DN-->
 
-<!--
-Button	Action	Remark	Switch Name
-13	Set Alternator		Rocker Switch 1
-14			Rocker Switch 1
-15	Set Master Battery		Rocker Switch 2
-16			Rocker Switch 2
-17	Set Avionics Master 1		Rocker Switch 3
-18			Rocker Switch 3
-19	Set Avionics Master 2		Rocker Switch 4
-20			Rocker Switch 4
-21	Set Beacon Lights	I think this is broken/bug by Flightsim	Toggle Switch 1
-22			Toggle Switch 1
-23	Set Landing Lights		Toggle Switch 2
-24			Toggle Switch 2
-25	Set Taxi Lights		Toggle Switch 3
-26			Toggle Switch 3
-27	Set Nav Lights		Toggle Switch 4
-28			Toggle Switch 4
-29	Set Strobe Lights		Toggle Switch 5
-30			Toggle Switch 5
-31	Magnetos Off		Magnetos Off
-32	Magnetos Right		Magnetos Right
-33	Magnetos Left		Magnetos Left
-34	Magentos Both		Magentos Both
-35	Magentos Start	I think this needs some more time  for the engine to start	Magentos Start
--->
+			<!--Toggle Switches-->
+			<JoyMap JoyEvent="Button21" JoyEnableEvents="" SimEvent="TOGGLE_BEACON_LIGHTS" SimVar="LIGHT BEACON" ActiveState="True" /><!--TOGGLE SW 1 UP-->
+			<JoyMap JoyEvent="Button22" JoyEnableEvents="" SimEvent="TOGGLE_BEACON_LIGHTS" SimVar="LIGHT BEACON" ActiveState="False" /><!--TOGGLE SW 1 DN-->
+			<JoyMap JoyEvent="Button23" JoyEnableEvents="" SimEvent="LANDING_LIGHTS_ON" /><!--TOGGLE SW 2 UP-->
+			<JoyMap JoyEvent="Button24" JoyEnableEvents="" SimEvent="LANDING_LIGHTS_OFF" /><!--TOGGLE SW 2 DN-->
+			<JoyMap JoyEvent="Button25" JoyEnableEvents="" SimEvent="TOGGLE_TAXI_LIGHTS" SimVar="LIGHT TAXI" ActiveState="True" /><!--TOGGLE SW 3 UP-->
+			<JoyMap JoyEvent="Button26" JoyEnableEvents="" SimEvent="TOGGLE_TAXI_LIGHTS" SimVar="LIGHT TAXI" ActiveState="False" /><!--TOGGLE SW 3 DN-->
+			<JoyMap JoyEvent="Button27" JoyEnableEvents="" SimEvent="TOGGLE_NAV_LIGHTS" SimVar="LIGHT NAV" ActiveState="True" /><!--TOGGLE SW 4 UP-->
+			<JoyMap JoyEvent="Button28" JoyEnableEvents="" SimEvent="TOGGLE_NAV_LIGHTS" SimVar="LIGHT NAV" ActiveState="False" /><!--TOGGLE SW 4 DN-->
+			<JoyMap JoyEvent="Button29" JoyEnableEvents="" SimEvent="STROBES_ON" /><!--TOGGLE SW 5 UP-->
+			<JoyMap JoyEvent="Button30" JoyEnableEvents="" SimEvent="STROBES_OFF" /><!--TOGGLE SW 5 DN-->
 
-
-			<JoyMap JoyEvent="Button13" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!---->
-			<JoyMap JoyEvent="Button14" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!---->
-			<JoyMap JoyEvent="Button15" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!---->
-			<JoyMap JoyEvent="Button16" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!---->
-			<JoyMap JoyEvent="Button17" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!---->
-			<JoyMap JoyEvent="Button18" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!---->
-			<JoyMap JoyEvent="Button19" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!---->
-			<JoyMap JoyEvent="Button20" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!---->
-			<JoyMap JoyEvent="Button21" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!---->
-			<JoyMap JoyEvent="Button22" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!---->
-
-			<JoyMap JoyEvent="Button23" JoyEnableEvents="" SimEvent="LANDING_LIGHTS_ON" SimVar="" ActiveState="True" /><!--ROCKER SW 3 UP-->
-			<JoyMap JoyEvent="Button24" JoyEnableEvents="" SimEvent="LANDING_LIGHTS_OFF" SimVar="" ActiveState="False" /><!--ROCKER SW 3 DOWN-->
-			<JoyMap JoyEvent="Button25" JoyEnableEvents="" SimEvent="TOGGLE_TAXI_LIGHTS" SimVar="LIGHT TAXI" ActiveState="True" /><!--ROCKER SW 4 UP-->
-			<JoyMap JoyEvent="Button26" JoyEnableEvents="" SimEvent="TOGGLE_TAXI_LIGHTS" SimVar="LIGHT TAXI" ActiveState="False" /><!--ROCKER SW 4 DOWN-->
-			<JoyMap JoyEvent="Button27" JoyEnableEvents="" SimEvent="TOGGLE_NAV_LIGHTS" SimVar="LIGHT NAV" ActiveState="True" /><!--ROCKER SW 5 UP-->
-			<JoyMap JoyEvent="Button28" JoyEnableEvents="" SimEvent="TOGGLE_NAV_LIGHTS" SimVar="LIGHT NAV" ActiveState="False" /><!--ROCKER SW 5 DOWN-->
-			<JoyMap JoyEvent="Button29" JoyEnableEvents="" SimEvent="STROBES_ON" SimVar="" ActiveState="True" /><!--ROCKER SW 6 UP-->
-			<JoyMap JoyEvent="Button30" JoyEnableEvents="" SimEvent="STROBES_OFF" SimVar="" ActiveState="False" /><!--ROCKER SW 6 DOWN-->
-
-			<JoyMap JoyEvent="Button31" JoyEnableEvents="" SimEvent="MAGNETO_OFF" /><!---->
-			<JoyMap JoyEvent="Button32" JoyEnableEvents="" SimEvent="MAGNETO_RIGHT" /><!---->
-			<JoyMap JoyEvent="Button33" JoyEnableEvents="" SimEvent="MAGNETO_LEFT" /><!---->
-			<JoyMap JoyEvent="Button34" JoyEnableEvents="" SimEvent="MAGNETO_BOTH" /><!---->
-			<JoyMap JoyEvent="Button35" JoyEnableEvents="" SimEvent="MAGNETO_START" /><!---->
+			<!--Ignition Switches-->
+			<JoyMap JoyEvent="Button31" JoyEnableEvents="" SimEvent="MAGNETO_OFF" /><!--Magnetos Off-->
+			<JoyMap JoyEvent="Button32" JoyEnableEvents="" SimEvent="MAGNETO_RIGHT" /><!--Magnetos Right-->
+			<JoyMap JoyEvent="Button33" JoyEnableEvents="" SimEvent="MAGNETO_LEFT" /><!--Magnetos Left-->
+			<JoyMap JoyEvent="Button34" JoyEnableEvents="" SimEvent="MAGNETO_BOTH" /><!--Magentos Both-->
+			<JoyMap JoyEvent="Button35" JoyEnableEvents="" SimEvent="MAGNETO_START" /><!--Magentos Start-->
 		</Joystick>
 	</Joysticks>
 	<Profiles>
@@ -541,7 +515,7 @@ PANEL_LIGHTS_TOGGLE
 STROBES_OFF
 STROBES_ON
 STROBES_TOGGLE
-TOGGLE_BEACON_LIGHTS
+TOGGLE_BEACON_LIGHTS		"LIGHT BEACON"
 TOGGLE_CABIN_LIGHTS
 TOGGLE_NAV_LIGHTS			"LIGHT NAV"
 TOGGLE_RECOGNITION_LIGHTS

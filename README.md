@@ -1,4 +1,4 @@
-# Flight Sim Tool v0.6.0
+# Flight Sim Tool v0.6.1
 
 ## About
 This little app uses SimConnect to continuously read position data from MSFS2020.  Meh I hear you say, so what - lots of far more capable apps out there that'll do that.  Ahh true but despite lots of searching I have not yet found one that will allow me to instantly slew my aircraft to any position on the globe.  Hence this project was born.
@@ -54,6 +54,8 @@ One caveat is that you will need the MSFS2020 SDK installed in order for the Sim
 xcopy "C:\MSFS SDK\SimConnect SDK\lib\SimConnect.dll" "$(TargetDir)" /y
 xcopy "C:\MSFS SDK\Samples\SimvarWatcher\SimConnect.cfg" "$(TargetDir)" /y
 
+Another Caveat is that because the whole MSFS ecosystem is native 64 bit (thank goodness), you need to make sure that all projects are built using the x64 configuration.
+
 
 ## License
 My code is licensed under the GNU GENERAL PUBLIC LICENSE Version 3, 29 June 2007
@@ -70,15 +72,17 @@ The included HIDSharp library code which I utilise for reading joystick events i
 ### 
 - **[SimConnect]** All functions separated out to a library DLL.
 - **[SimConnect]** Able to inject low level keystroke events.
-- **[Joysticks]** Able map HID joystick events to SimConnect events and/or keystroke events.
+- **[Joysticks]** Able to map HID joystick events to SimConnect events and/or keystroke events.
 
-## [0.6.0]
+## [0.6.1]
 ### Minor Enhancements
 - **[Joysticks]** Added long press events.
 - **[Joysticks]** Added ability to send multiple events with a single HID Event.
 - **[Joysticks]** Added ability to specify the data to send with each SimEvent.
 - **[Joysticks]** Added ability to send an event multiple times in a single HID event.
 - **[Joysticks]** Added ability to specify both press and release events for a HID event.
+- **[Joysticks]** Added mappings for the Logitech Flight Multi Panel.
+- **[Joysticks]** Added mappings for the Honeycomb Alpha yoke, un-tested as I don't have one.
 - **[General]** Documentation updates and improvements.
 
 

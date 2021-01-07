@@ -673,10 +673,6 @@ Public Class SimConnectLib
 
     End Sub
 
-    Public Sub AddRegisteredSimVar(ByVal sve As SimData.SimVarEnum)
-        doAddRegisteredSimVar(sve)
-    End Sub
-
 #End Region
 
 #Region "Private Functions"
@@ -698,6 +694,7 @@ Public Class SimConnectLib
             t = simDat.SimVars(simDat.AddCustomSimVar(simVarName, simVarUnits))
         End If
 
+        addOneSimVarType(t)
         doAddRegisteredSimVar(t.Index)
 
         If Connected Then
@@ -791,10 +788,9 @@ Public Class SimConnectLib
 
     End Sub
 
-    Private Sub intSimVarTypes()
+    Private Sub addOneSimVarType(ByVal t As SimData.SimVar)
 
-        For Each t In simDat.SimVars.Values
-
+        If Not simVarTypes.ContainsKey(t.Index) Then
             Select Case t.Units.ToLower
                 Case "string"
                     simVarTypes.Add(t.Index, SIMCONNECT_DATATYPE.STRINGV)
@@ -815,8 +811,16 @@ Public Class SimConnectLib
                 Case Else
                     simVarTypes.Add(t.Index, SIMCONNECT_DATATYPE.FLOAT64)
             End Select
-            '
+        End If
+
+    End Sub
+
+    Private Sub intSimVarTypes()
+
+        For Each t In simDat.SimVars.Values
+            addOneSimVarType(t)
         Next
+
     End Sub
 
     Private Sub doRequestSimData(ByVal simVarIndex As Integer)

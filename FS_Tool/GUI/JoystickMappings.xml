@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<!--This file version: 0.1-->
+<!--This file version: 0.6.1-->
 <JoystickMappings>
 	<Joysticks>
 		<Joystick MappingName="Bravo Throttle Quadrant - Default" Name="Bravo Throttle Quadrant" LongPressTimeout="500" >
@@ -50,8 +50,8 @@
 			<JoyMap JoyEvent="Button35" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!--ROCKER SW 1 DOWN-->
 			<JoyMap JoyEvent="Button36" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!--ROCKER SW 2 UP-->
 			<JoyMap JoyEvent="Button37" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!--ROCKER SW 2 DOWN-->
-			<JoyMap JoyEvent="Button38" JoyEnableEvents="" SimEvent="LANDING_LIGHTS_ON" SimVar="" ActiveState="True" /><!--ROCKER SW 3 UP-->
-			<JoyMap JoyEvent="Button39" JoyEnableEvents="" SimEvent="LANDING_LIGHTS_OFF" SimVar="" ActiveState="False" /><!--ROCKER SW 3 DOWN-->
+			<JoyMap JoyEvent="Button38" JoyEnableEvents="" SimEvent="LANDING_LIGHTS_ON" /><!--ROCKER SW 3 UP-->
+			<JoyMap JoyEvent="Button39" JoyEnableEvents="" SimEvent="LANDING_LIGHTS_OFF" /><!--ROCKER SW 3 DOWN-->
 			<JoyMap JoyEvent="Button40" JoyEnableEvents="" SimEvent="TOGGLE_TAXI_LIGHTS" SimVar="LIGHT TAXI" ActiveState="True" /><!--ROCKER SW 4 UP-->
 			<JoyMap JoyEvent="Button41" JoyEnableEvents="" SimEvent="TOGGLE_TAXI_LIGHTS" SimVar="LIGHT TAXI" ActiveState="False" /><!--ROCKER SW 4 DOWN-->
 			<JoyMap JoyEvent="Button42" JoyEnableEvents="" SimEvent="TOGGLE_NAV_LIGHTS" SimVar="LIGHT NAV" ActiveState="True" /><!--ROCKER SW 5 UP-->
@@ -87,7 +87,7 @@
 			<JoyMap JoyEvent="Button8" JoyEnableEvents="Button34,Button37,Button18" SimEvent="MobiFlight_AS1000_PFD_COM_Push,MobiFlight_AS430_LeftSmallKnob_Push" /><!--AUTO PILOT-->
 
 			<!--G1000PFD/AS530 Buttons-->
-			<JoyMap JoyEvent="Button1" JoyEnableEvents="Button35,Button36" SimEvent="MobiFlight_AS530_MSG_Push" /><!--HDG-->
+			<JoyMap JoyEvent="Button1" JoyEnableEvents="Button35,Button36" SimEvent="MobiFlight_AS1000_PFD_SOFTKEYS_6,MobiFlight_AS530_MSG_Push" /><!--HDG-->
 			<JoyMap JoyEvent="Button2" JoyEnableEvents="Button35,Button36" SimEvent="MobiFlight_AS1000_PFD_CLR,MobiFlight_AS530_CLR_Push" 
 							LongPushSimEvent="MobiFlight_AS1000_PFD_CLR_Long,MobiFlight_AS530_CLR_Push_Long" /><!--NAV-->
 			<JoyMap JoyEvent="Button3" JoyEnableEvents="Button35,Button36" SimEvent="MobiFlight_AS1000_PFD_FPL_Push,MobiFlight_AS530_FPL_Push" /><!--APR-->
@@ -236,17 +236,6 @@
 			<JoyMap JoyEvent="Button47" JoyEnableEvents="" SimEvent="PITOT_HEAT_OFF" SimVar="" ActiveState="True" /><!--ROCKER SW 7 DOWN-->
 			<JoyMap JoyEvent="Button48" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!---->
 		</Joystick>
-		<Joystick MappingName="Saitek Pro Flight Quadrant - Default" Name="Saitek Pro Flight Quadrant">
-			<JoyMap JoyEvent="Button1" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!--Rocker1 Up-->
-			<JoyMap JoyEvent="Button2" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!--Rocker1 Dn-->
-			<JoyMap JoyEvent="Button3" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!--Rocker2 Up-->
-			<JoyMap JoyEvent="Button4" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!--Rocker2 Dn-->
-			<JoyMap JoyEvent="Button5" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!--Rocker3 Up-->
-			<JoyMap JoyEvent="Button6" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!--Rocker3 Dn-->
-			<JoyMap JoyEvent="Button7" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!--Throttle Detent-->
-			<JoyMap JoyEvent="Button8" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!--Prop Detent-->
-			<JoyMap JoyEvent="Button9" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!--Mix Detent-->
-		</Joystick>
 		<Joystick MappingName="Logitech Flight Multi Panel - Default" Name="Logitech Flight Multi Panel">
 			<JoyMap JoyEvent="Button6" JoyEnableEvents="Button1" SimEvent="AP_ALT_VAR_INC" Accel="10" Delay="50" /><!--ALT INCR-->
 			<JoyMap JoyEvent="Button7" JoyEnableEvents="Button1" SimEvent="AP_ALT_VAR_DEC" Accel="10" Delay="50" /><!--ALT DECR-->
@@ -323,7 +312,7 @@
 			<JoyMap JoyEvent="Button8" JoyEnableEvents="Button1,Button16" SimEvent="MobiFlight_AS1000_PFD_FMS_Upper_PUSH" /><!--AP-->
 			<JoyMap JoyEvent="Button9" JoyEnableEvents="Button1,Button16" SimEvent="MobiFlight_AS1000_PFD_DIRECTTO" /><!--HDG-->
 			<JoyMap JoyEvent="Button10" JoyEnableEvents="Button1,Button16" SimEvent="MobiFlight_AS1000_PFD_CLR" LongPushSimEvent="MobiFlight_AS1000_PFD_CLR_Long" /><!--NAV-->
-			<JoyMap JoyEvent="Button11" JoyEnableEvents="Button1,Button16" SimEvent="" /><!--IAS-->
+			<JoyMap JoyEvent="Button11" JoyEnableEvents="Button1,Button16" SimEvent="MobiFlight_AS1000_PFD_SOFTKEYS_6" /><!--IAS-->
 			<JoyMap JoyEvent="Button12" JoyEnableEvents="Button1,Button16" SimEvent="MobiFlight_AS1000_PFD_MENU_Push" /><!--ALT-->
 			<JoyMap JoyEvent="Button13" JoyEnableEvents="Button1,Button16" SimEvent="MobiFlight_AS1000_PFD_ENT_Push" /><!--VS-->
 			<JoyMap JoyEvent="Button14" JoyEnableEvents="Button1,Button16" SimEvent="MobiFlight_AS1000_PFD_FPL_Push" /><!--APR-->
@@ -333,7 +322,7 @@
 			<JoyMap JoyEvent="Button8" JoyEnableEvents="Button2,Button16" SimEvent="MobiFlight_AS1000_PFD_JOYSTICK_PUSH" /><!--AP-->
 			<JoyMap JoyEvent="Button9" JoyEnableEvents="Button2,Button16" SimEvent="" /><!--HDG-->
 			<JoyMap JoyEvent="Button10" JoyEnableEvents="Button2,Button16" SimEvent="" /><!--NAV-->
-			<JoyMap JoyEvent="Button11" JoyEnableEvents="Button2,Button16" SimEvent="" /><!--IAS-->
+			<JoyMap JoyEvent="Button11" JoyEnableEvents="Button2,Button16" SimEvent="MobiFlight_AS1000_PFD_SOFTKEYS_6" /><!--IAS-->
 			<JoyMap JoyEvent="Button12" JoyEnableEvents="Button2,Button16" SimEvent="" /><!--ALT-->
 			<JoyMap JoyEvent="Button13" JoyEnableEvents="Button2,Button16" SimEvent="" /><!--VS-->
 			<JoyMap JoyEvent="Button14" JoyEnableEvents="Button2,Button16" SimEvent="" /><!--APR-->
@@ -343,7 +332,7 @@
 			<JoyMap JoyEvent="Button8" JoyEnableEvents="Button3,Button16" SimEvent="MobiFlight_AS1000_PFD_CRS_PUSH" /><!--AP-->
 			<JoyMap JoyEvent="Button9" JoyEnableEvents="Button3,Button16" SimEvent="" /><!--HDG-->
 			<JoyMap JoyEvent="Button10" JoyEnableEvents="Button3,Button16" SimEvent="" /><!--NAV-->
-			<JoyMap JoyEvent="Button11" JoyEnableEvents="Button3,Button16" SimEvent="" /><!--IAS-->
+			<JoyMap JoyEvent="Button11" JoyEnableEvents="Button3,Button16" SimEvent="MobiFlight_AS1000_PFD_SOFTKEYS_6" /><!--IAS-->
 			<JoyMap JoyEvent="Button12" JoyEnableEvents="Button3,Button16" SimEvent="" /><!--ALT-->
 			<JoyMap JoyEvent="Button13" JoyEnableEvents="Button3,Button16" SimEvent="" /><!--VS-->
 			<JoyMap JoyEvent="Button14" JoyEnableEvents="Button3,Button16" SimEvent="" /><!--APR-->
@@ -375,36 +364,140 @@
 			<JoyMap JoyEvent="Button19" JoyEnableEvents="" SimEvent="ELEV_TRIM_DN" /><!--PITCH DN-->
 			<JoyMap JoyEvent="Button20" JoyEnableEvents="" SimEvent="ELEV_TRIM_UP" /><!--PITCH UP-->
 		</Joystick>
-    <Joystick MappingName="Logitech Extreme 3D - Default" Name="Logitech Extreme 3D">
-      <JoyMap JoyEvent="Button1" SimEvent="" SimVar="" ActiveState="True" />
-      <JoyMap JoyEvent="Button2" SimEvent="" SimVar="" ActiveState="True" />
-      <JoyMap JoyEvent="Button3" SimEvent="" SimVar="" ActiveState="True" />
-      <JoyMap JoyEvent="Button4" SimEvent="" SimVar="" ActiveState="True" />
-      <JoyMap JoyEvent="Button5" SimEvent="" SimVar="" ActiveState="True" />
-      <JoyMap JoyEvent="Button6" SimEvent="" SimVar="" ActiveState="True" />
-      <JoyMap JoyEvent="Button7" SimEvent="" SimVar="" ActiveState="True" />
-      <JoyMap JoyEvent="Button8" SimEvent="" SimVar="" ActiveState="True" />
-      <JoyMap JoyEvent="Button9" SimEvent="" SimVar="" ActiveState="True" />
-      <JoyMap JoyEvent="Button11" SimEvent="" SimVar="" ActiveState="True" />
-      <JoyMap JoyEvent="Button12" SimEvent="" SimVar="" ActiveState="True" />
-    </Joystick>
-    <Joystick MappingName="Logitech Extreme 3D - Testing" Name="Logitech Extreme 3D">
-      <JoyMap JoyEvent="Button1" SimEvent="" SimVar="" ActiveState="True" />
-      <JoyMap JoyEvent="Button2" SimEvent="" SimVar="" ActiveState="True" />
-      <JoyMap JoyEvent="Button3" SimEvent="" SimVar="" ActiveState="True" />
-      <JoyMap JoyEvent="Button4" SimEvent="" SimVar="" ActiveState="True" />
-      <JoyMap JoyEvent="Button5" SimEvent="" SimVar="" ActiveState="True" />
-      <JoyMap JoyEvent="Button6" SimEvent="" SimVar="" ActiveState="True" />
-      <JoyMap JoyEvent="Button7" SimEvent="" SimVar="" ActiveState="True" />
-      <JoyMap JoyEvent="Button8" SimEvent="" SimVar="" ActiveState="True" />
-      <JoyMap JoyEvent="Button9" SimEvent="" SimVar="" ActiveState="True" />
-      <JoyMap JoyEvent="Button10" SimEvent="STROBES_ON" ReleaseSimEvent="STROBES_OFF" />
-      <JoyMap JoyEvent="Button11" SimEvent="" SimVar="" ActiveState="True" />
-      <JoyMap JoyEvent="Button12" SimEvent="" SimVar="" ActiveState="True" />
-      <JoyMap JoyEvent="Button11" JoyEnableEvents="Button1" SimEvent="AP_ALT_VAR_SET_ENGLISH:1000" />
-      <JoyMap JoyEvent="Button12" JoyEnableEvents="Button1" SimEvent="10.HEADING_BUG_INC" />
-    </Joystick>
-    <Joystick MappingName="Saitek Pro Flight X-56 Rhino Throttle - Default" Name="Saitek Pro Flight X-56 Rhino Throttle">
+		<Joystick MappingName="Bravo Throttle Quadrant - With Alpha Yoke" Name="Bravo Throttle Quadrant" LongPressTimeout="500" >
+			<JoyMap JoyEvent="Button1" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!--HDG-->
+			<JoyMap JoyEvent="Button2" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!--NAV-->
+			<JoyMap JoyEvent="Button3" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!--APR-->
+			<JoyMap JoyEvent="Button4" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!--REV-->
+			<JoyMap JoyEvent="Button5" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!--ALT-->
+			<JoyMap JoyEvent="Button6" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!--VS-->
+			<JoyMap JoyEvent="Button7" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!--IAS-->
+			<JoyMap JoyEvent="Button8" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!--AUTO PILOT-->
+			<JoyMap JoyEvent="Button9" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!--Axis 2 REVERSE-->
+			<JoyMap JoyEvent="Button10" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!--Axis 3 REVERSE-->
+			<JoyMap JoyEvent="Button11" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!--Axis 4 REVERSE-->
+			<JoyMap JoyEvent="Button12" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!--Axis 5 REVERSE-->
+
+			<JoyMap JoyEvent="Button13" JoyEnableEvents="Button17" SimEvent="AP_SPD_VAR_INC" Accel="10" Delay="50" /><!--IAS INCR-->
+			<JoyMap JoyEvent="Button14" JoyEnableEvents="Button17" SimEvent="AP_SPD_VAR_DEC" Accel="10" Delay="50" /><!--IAS DECR-->
+			<JoyMap JoyEvent="Button13" JoyEnableEvents="Button18" SimEvent="VOR1_OBI_INC" Accel="10" Delay="50" /><!--CRS INCR-->
+			<JoyMap JoyEvent="Button14" JoyEnableEvents="Button18" SimEvent="VOR1_OBI_DEC" Accel="10" Delay="50" /><!--CRS DECR-->
+			<JoyMap JoyEvent="Button13" JoyEnableEvents="Button19" SimEvent="HEADING_BUG_INC" Accel="10" Delay="50" /><!--HDG INCR-->
+			<JoyMap JoyEvent="Button14" JoyEnableEvents="Button19" SimEvent="HEADING_BUG_DEC" Accel="10" Delay="50" /><!--HDG DECR-->
+			<JoyMap JoyEvent="Button13" JoyEnableEvents="Button20" SimEvent="AP_VS_VAR_INC" /><!--VS INCR-->
+			<JoyMap JoyEvent="Button14" JoyEnableEvents="Button20" SimEvent="AP_VS_VAR_DEC" /><!--VS DECR-->
+			<JoyMap JoyEvent="Button13" JoyEnableEvents="Button21" SimEvent="AP_ALT_VAR_INC" Accel="10" Delay="50" /><!--ALT INCR-->
+			<JoyMap JoyEvent="Button14" JoyEnableEvents="Button21" SimEvent="AP_ALT_VAR_DEC" Accel="10" Delay="50" /><!--ALT DECR-->
+
+			<JoyMap JoyEvent="Button15" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!--FLAPS DOWN-->
+			<JoyMap JoyEvent="Button16" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!--FLAPS UP-->
+			<JoyMap JoyEvent="Button17" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!--Knob IAS-->
+			<JoyMap JoyEvent="Button18" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!--Knob CRS-->
+			<JoyMap JoyEvent="Button19" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!--Knob HDG-->
+			<JoyMap JoyEvent="Button20" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!--Knob VS-->
+			<JoyMap JoyEvent="Button21" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!--Knob ALT-->
+			<JoyMap JoyEvent="Button22" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!--TRIM NOSE DOWN-->
+			<JoyMap JoyEvent="Button23" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!--TRIM NOSE UP-->
+			<JoyMap JoyEvent="Button24" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!--AXIS 1 DETENT-->
+			<JoyMap JoyEvent="Button25" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!--AXIS 2 DETENT-->
+			<JoyMap JoyEvent="Button26" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!--AXIS 3 DETENT-->
+			<JoyMap JoyEvent="Button27" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!--AXIS 4 DETENT-->
+			<JoyMap JoyEvent="Button28" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!--AXIS 5 DETENT-->
+			<JoyMap JoyEvent="Button29" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!--TOGA-->
+			<JoyMap JoyEvent="Button30" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!---->
+			<JoyMap JoyEvent="Button31" JoyEnableEvents="" SimEvent="GEAR_UP" SimVar="" ActiveState="True" /><!--GEAR UP-->
+			<JoyMap JoyEvent="Button32" JoyEnableEvents="" SimEvent="GEAR_DOWN" SimVar="" ActiveState="True" /><!--GEAR DOWN-->
+			<JoyMap JoyEvent="Button33" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!--AXIS 6 DETENT-->
+			<JoyMap JoyEvent="Button34" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!--ROCKER SW 1 UP-->
+			<JoyMap JoyEvent="Button35" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!--ROCKER SW 1 DOWN-->
+			<JoyMap JoyEvent="Button36" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!--ROCKER SW 2 UP-->
+			<JoyMap JoyEvent="Button37" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!--ROCKER SW 2 DOWN-->
+			<JoyMap JoyEvent="Button38" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!--ROCKER SW 3 UP-->
+			<JoyMap JoyEvent="Button39" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="False" /><!--ROCKER SW 3 DOWN-->
+			<JoyMap JoyEvent="Button40" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!--ROCKER SW 4 UP-->
+			<JoyMap JoyEvent="Button41" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="False" /><!--ROCKER SW 4 DOWN-->
+			<JoyMap JoyEvent="Button42" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!--ROCKER SW 5 UP-->
+			<JoyMap JoyEvent="Button43" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="False" /><!--ROCKER SW 5 DOWN-->
+			<JoyMap JoyEvent="Button44" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!--ROCKER SW 6 UP-->
+			<JoyMap JoyEvent="Button45" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="False" /><!--ROCKER SW 6 DOWN-->
+			<JoyMap JoyEvent="Button46" JoyEnableEvents="" SimEvent="PITOT_HEAT_ON" SimVar="" ActiveState="True" /><!--ROCKER SW 7 UP-->
+			<JoyMap JoyEvent="Button47" JoyEnableEvents="" SimEvent="PITOT_HEAT_OFF" SimVar="" ActiveState="True" /><!--ROCKER SW 7 DOWN-->
+			<JoyMap JoyEvent="Button48" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!---->
+		</Joystick>
+		<Joystick MappingName="Alpha Flight Controls - Default" Name="Alpha Flight Controls" LongPressTimeout="500" >
+			<JoyMap JoyEvent="GenericDesktopHatSwitch" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!---->
+			<JoyMap JoyEvent="Button1" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!---->
+			<JoyMap JoyEvent="Button2" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!---->
+			<JoyMap JoyEvent="Button3" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!---->
+			<JoyMap JoyEvent="Button4" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!---->
+			<JoyMap JoyEvent="Button5" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!---->
+			<JoyMap JoyEvent="Button6" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!---->
+			<JoyMap JoyEvent="Button7" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!---->
+			<JoyMap JoyEvent="Button8" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!---->
+			<JoyMap JoyEvent="Button9" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!---->
+			<JoyMap JoyEvent="Button10" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!---->
+			<JoyMap JoyEvent="Button11" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!---->
+			<JoyMap JoyEvent="Button12" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!---->
+
+			<!--Rocker Switches-->
+			<JoyMap JoyEvent="Button13" JoyEnableEvents="" SimEvent="TOGGLE_ALTERNATOR1" SimVar="GENERAL ENG MASTER ALTERNATOR:1" ActiveState="True" /><!--ROCKER SW 1 UP-->
+			<JoyMap JoyEvent="Button14" JoyEnableEvents="" SimEvent="TOGGLE_ALTERNATOR1" SimVar="GENERAL ENG MASTER ALTERNATOR:1" ActiveState="False" /><!--ROCKER SW 1 DN-->
+			<JoyMap JoyEvent="Button15" JoyEnableEvents="" SimEvent="TOGGLE_MASTER_BATTERY" SimVar="ELECTRICAL MASTER BATTERY" ActiveState="True" /><!--ROCKER SW 2 UP-->
+			<JoyMap JoyEvent="Button16" JoyEnableEvents="" SimEvent="TOGGLE_MASTER_BATTERY" SimVar="ELECTRICAL MASTER BATTERY" ActiveState="False" /><!--ROCKER SW 2 DN-->
+			<JoyMap JoyEvent="Button17" JoyEnableEvents="" SimEvent="TOGGLE_AVIONICS_MASTER" SimVar="AVIONICS MASTER SWITCH" ActiveState="True" /><!--ROCKER SW 3 UP-->
+			<JoyMap JoyEvent="Button18" JoyEnableEvents="" SimEvent="TOGGLE_AVIONICS_MASTER" SimVar="AVIONICS MASTER SWITCH" ActiveState="False" /><!--ROCKER SW 3 DN-->
+			<JoyMap JoyEvent="Button19" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!--ROCKER SW 4 UP-->
+			<JoyMap JoyEvent="Button20" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!--ROCKER SW 4 DN-->
+
+			<!--Toggle Switches-->
+			<JoyMap JoyEvent="Button21" JoyEnableEvents="" SimEvent="TOGGLE_BEACON_LIGHTS" SimVar="LIGHT BEACON" ActiveState="True" /><!--TOGGLE SW 1 UP-->
+			<JoyMap JoyEvent="Button22" JoyEnableEvents="" SimEvent="TOGGLE_BEACON_LIGHTS" SimVar="LIGHT BEACON" ActiveState="False" /><!--TOGGLE SW 1 DN-->
+			<JoyMap JoyEvent="Button23" JoyEnableEvents="" SimEvent="LANDING_LIGHTS_ON" /><!--TOGGLE SW 2 UP-->
+			<JoyMap JoyEvent="Button24" JoyEnableEvents="" SimEvent="LANDING_LIGHTS_OFF" /><!--TOGGLE SW 2 DN-->
+			<JoyMap JoyEvent="Button25" JoyEnableEvents="" SimEvent="TOGGLE_TAXI_LIGHTS" SimVar="LIGHT TAXI" ActiveState="True" /><!--TOGGLE SW 3 UP-->
+			<JoyMap JoyEvent="Button26" JoyEnableEvents="" SimEvent="TOGGLE_TAXI_LIGHTS" SimVar="LIGHT TAXI" ActiveState="False" /><!--TOGGLE SW 3 DN-->
+			<JoyMap JoyEvent="Button27" JoyEnableEvents="" SimEvent="TOGGLE_NAV_LIGHTS" SimVar="LIGHT NAV" ActiveState="True" /><!--TOGGLE SW 4 UP-->
+			<JoyMap JoyEvent="Button28" JoyEnableEvents="" SimEvent="TOGGLE_NAV_LIGHTS" SimVar="LIGHT NAV" ActiveState="False" /><!--TOGGLE SW 4 DN-->
+			<JoyMap JoyEvent="Button29" JoyEnableEvents="" SimEvent="STROBES_ON" /><!--TOGGLE SW 5 UP-->
+			<JoyMap JoyEvent="Button30" JoyEnableEvents="" SimEvent="STROBES_OFF" /><!--TOGGLE SW 5 DN-->
+
+			<!--Ignition Switches-->
+			<JoyMap JoyEvent="Button31" JoyEnableEvents="" SimEvent="MAGNETO_OFF" /><!--Magnetos Off-->
+			<JoyMap JoyEvent="Button32" JoyEnableEvents="" SimEvent="MAGNETO_RIGHT" /><!--Magnetos Right-->
+			<JoyMap JoyEvent="Button33" JoyEnableEvents="" SimEvent="MAGNETO_LEFT" /><!--Magnetos Left-->
+			<JoyMap JoyEvent="Button34" JoyEnableEvents="" SimEvent="MAGNETO_BOTH" /><!--Magentos Both-->
+			<JoyMap JoyEvent="Button35" JoyEnableEvents="" SimEvent="MAGNETO_START" /><!--Magentos Start-->
+		</Joystick>
+		<Joystick MappingName="Logitech Extreme 3D - Default" Name="Logitech Extreme 3D">
+			<JoyMap JoyEvent="Button1" SimEvent="" SimVar="" ActiveState="True" />
+			<JoyMap JoyEvent="Button2" SimEvent="" SimVar="" ActiveState="True" />
+			<JoyMap JoyEvent="Button3" SimEvent="" SimVar="" ActiveState="True" />
+			<JoyMap JoyEvent="Button4" SimEvent="" SimVar="" ActiveState="True" />
+			<JoyMap JoyEvent="Button5" SimEvent="" SimVar="" ActiveState="True" />
+			<JoyMap JoyEvent="Button6" SimEvent="" SimVar="" ActiveState="True" />
+			<JoyMap JoyEvent="Button7" SimEvent="" SimVar="" ActiveState="True" />
+			<JoyMap JoyEvent="Button8" SimEvent="" SimVar="" ActiveState="True" />
+			<JoyMap JoyEvent="Button9" SimEvent="" SimVar="" ActiveState="True" />
+			<JoyMap JoyEvent="Button11" SimEvent="" SimVar="" ActiveState="True" />
+			<JoyMap JoyEvent="Button12" SimEvent="" SimVar="" ActiveState="True" />
+		</Joystick>
+		<Joystick MappingName="Logitech Extreme 3D - Testing" Name="Logitech Extreme 3D">
+			<JoyMap JoyEvent="Button1" SimEvent="" SimVar="" ActiveState="True" />
+			<JoyMap JoyEvent="Button2" SimEvent="" SimVar="" ActiveState="True" />
+			<JoyMap JoyEvent="Button3" SimEvent="" SimVar="" ActiveState="True" />
+			<JoyMap JoyEvent="Button4" SimEvent="" SimVar="" ActiveState="True" />
+			<JoyMap JoyEvent="Button5" SimEvent="" SimVar="" ActiveState="True" />
+			<JoyMap JoyEvent="Button6" SimEvent="" SimVar="" ActiveState="True" />
+			<JoyMap JoyEvent="Button7" SimEvent="" SimVar="" ActiveState="True" />
+			<JoyMap JoyEvent="Button8" SimEvent="" SimVar="" ActiveState="True" />
+			<JoyMap JoyEvent="Button9" SimEvent="" SimVar="" ActiveState="True" />
+			<JoyMap JoyEvent="Button10" SimEvent="STROBES_ON" ReleaseSimEvent="STROBES_OFF" />
+			<JoyMap JoyEvent="Button11" SimEvent="" SimVar="" ActiveState="True" />
+			<JoyMap JoyEvent="Button12" SimEvent="" SimVar="" ActiveState="True" />
+			<JoyMap JoyEvent="Button11" JoyEnableEvents="Button1" SimEvent="AP_ALT_VAR_SET_ENGLISH:1000" />
+			<JoyMap JoyEvent="Button12" JoyEnableEvents="Button1" SimEvent="10#HEADING_BUG_INC" />
+		</Joystick>
+		<Joystick MappingName="Saitek Pro Flight X-56 Rhino Throttle - Default" Name="Saitek Pro Flight X-56 Rhino Throttle">
 			<JoyMap JoyEvent="Button30" JoyEnableEvents="Button6" SimEvent="HEADING_BUG_DEC" />
 			<JoyMap JoyEvent="Button31" JoyEnableEvents="Button6" SimEvent="HEADING_BUG_INC" />
 			<JoyMap JoyEvent="Button30" JoyEnableEvents="Button7" SimEvent="AP_ALT_VAR_DEC" />
@@ -440,10 +533,14 @@
 		</Profile>
 		<Profile Name="Extra">
 			<JoyMapping Name="Bravo Throttle Quadrant - MobiFlight"/>
-		</Profile>
-		<Profile Name="MobiFlight Combo">
-			<JoyMapping Name="Bravo Throttle Quadrant - MobiFlight"/>
 			<JoyMapping Name="Logitech Flight Multi Panel - MobiFlight"/>
+		</Profile>
+		<Profile Name="Alpha Yoke - Stand Alone">
+			<JoyMapping Name="Alpha Flight Controls - Default"/>
+		</Profile>
+		<Profile Name="Alpha Yoke - With Bravo Throttle">
+			<JoyMapping Name="Alpha Flight Controls - Default"/>
+			<JoyMapping Name="Bravo Throttle Quadrant - With Alpha Yoke"/>
 		</Profile>
 		<Profile Name="Testing">
 			<JoyMapping Name="Logitech Extreme 3D - Testing"/>

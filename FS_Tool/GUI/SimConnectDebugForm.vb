@@ -131,8 +131,13 @@ Public Class SimConnectDebugForm
             str = str & vbNewLine & "PLANE HEADING DEGREES GYRO: " & mySim.GetSimValDouble("PLANE HEADING DEGREES GYRO")
             str = str & vbNewLine & "PLANE HEADING DEGREES: " & mySim.GetSimValDouble("PLANE HEADING DEGREES")
             str = str & vbNewLine & "HEADING INDICATOR: " & mySim.GetSimValDouble("HEADING INDICATOR")
-            str = str & vbNewLine & "HSI BEARING: " & mySim.GetSimValDouble("HSI BEARING")
-            str = str & vbNewLine & "AUTOPILOT HEADING LOCK DIR: " & mySim.GetSimValDouble("AUTOPILOT HEADING LOCK DIR")
+            'str = str & vbNewLine & "HSI BEARING: " & mySim.GetSimValDouble("HSI BEARING")
+            'str = str & vbNewLine & "AUTOPILOT HEADING LOCK DIR: " & mySim.GetSimValDouble("AUTOPILOT HEADING LOCK DIR")
+
+            str = str & vbNewLine & "GENERAL ENG MASTER ALTERNATOR1: " & mySim.GetSimValDouble("GENERAL ENG MASTER ALTERNATOR:1")
+            str = str & vbNewLine & "GENERAL ENG MASTER ALTERNATOR2: " & mySim.GetSimValDouble("GENERAL ENG MASTER ALTERNATOR:2")
+            str = str & vbNewLine & "GENERAL ENG MASTER ALTERNATOR3: " & mySim.GetSimValDouble("GENERAL ENG MASTER ALTERNATOR:3")
+            str = str & vbNewLine & "GENERAL ENG MASTER ALTERNATOR4: " & mySim.GetSimValDouble("GENERAL ENG MASTER ALTERNATOR:4")
 
             Me.txtDisplay.Text = str
 
@@ -167,7 +172,12 @@ Public Class SimConnectDebugForm
             'mySim.RegisterSimVars(tl)
 
             mySim.RegisterCommonSimVars()
-            'mySim.AddRegisteredSimVar("")
+
+            mySim.RegisterCustomSimVar("GENERAL ENG MASTER ALTERNATOR:1", "Bool")
+            mySim.RegisterCustomSimVar("GENERAL ENG MASTER ALTERNATOR:2", "Bool")
+            mySim.RegisterCustomSimVar("GENERAL ENG MASTER ALTERNATOR:3", "Bool")
+            mySim.RegisterCustomSimVar("GENERAL ENG MASTER ALTERNATOR:4", "Bool")
+
         End If
 
     End Sub

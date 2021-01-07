@@ -568,8 +568,8 @@ Public Class MainForm
 
     Private Sub sendCountSimEvents(ByVal simEvent As String)
 
-        If simEvent.Contains(".") Then
-            Dim tokens = simEvent.Split("."c)
+        If simEvent.Contains("#") Then
+            Dim tokens = simEvent.Split("#"c)
             If tokens.Count = 2 Then
                 Dim evtCount As Integer = CInt(tokens(0))
                 For i = 1 To evtCount
