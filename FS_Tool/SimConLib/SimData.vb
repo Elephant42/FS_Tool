@@ -1875,6 +1875,12 @@ Public Class SimData
         ZULU_MINUTES_SET
         ZULU_YEAR_SET
 
+        'Undocumented SimEvents (SDK 0.9.0)
+        ALTITUDE_SLOT_INDEX_SET
+        HEADING_SLOT_INDEX_SET
+        VS_SLOT_INDEX_SET
+        SPEED_SLOT_INDEX_SET
+
         MobiFlight_AS1000_PFD_VOL_1_INC
         MobiFlight_AS1000_PFD_VOL_1_DEC
         MobiFlight_AS1000_PFD_VOL_2_INC
