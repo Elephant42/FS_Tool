@@ -871,7 +871,13 @@ Public Class SimData
     End Enum
 
     Public Enum SimEventEnum
+		'Undocumented SimEvents (SDK 0.9.0), thanks karlo922
+        ALTITUDE_SLOT_INDEX_SET
+        HEADING_SLOT_INDEX_SET
+        VS_SLOT_INDEX_SET
+        SPEED_SLOT_INDEX_SET
         AP_VS_HOLD
+
         ADD_FUEL_QUANTITY
         ADF
         ADF_1_DEC
