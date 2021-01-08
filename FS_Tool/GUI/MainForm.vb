@@ -948,6 +948,7 @@ Public Class MainForm
     Private Sub registerSimVars()
 
         For Each sv In myJoyMaps.MappedSimVars
+            If Not sim.ContainsSimVar(sv) Then sim.RegisterCustomSimVar(sv)
             addRegSimVar(sv)
         Next
 

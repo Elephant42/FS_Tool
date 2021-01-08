@@ -46,20 +46,20 @@
 			<JoyMap JoyEvent="Button31" JoyEnableEvents="" SimEvent="GEAR_UP" SimVar="" ActiveState="True" /><!--GEAR UP-->
 			<JoyMap JoyEvent="Button32" JoyEnableEvents="" SimEvent="GEAR_DOWN" SimVar="" ActiveState="True" /><!--GEAR DOWN-->
 			<JoyMap JoyEvent="Button33" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!--AXIS 6 DETENT-->
-			<JoyMap JoyEvent="Button34" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!--ROCKER SW 1 UP-->
-			<JoyMap JoyEvent="Button35" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!--ROCKER SW 1 DOWN-->
+			<JoyMap JoyEvent="Button34" JoyEnableEvents="" SimEvent="TOGGLE_ALTERNATOR1" SimVar="GENERAL ENG MASTER ALTERNATOR:1" ActiveState="True" /><!--ROCKER SW 1 UP-->
+			<JoyMap JoyEvent="Button35" JoyEnableEvents="" SimEvent="TOGGLE_ALTERNATOR1" SimVar="GENERAL ENG MASTER ALTERNATOR:1" ActiveState="False" /><!--ROCKER SW 1 DN-->
 			<JoyMap JoyEvent="Button36" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!--ROCKER SW 2 UP-->
-			<JoyMap JoyEvent="Button37" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!--ROCKER SW 2 DOWN-->
+			<JoyMap JoyEvent="Button37" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="False" /><!--ROCKER SW 2 DOWN-->
 			<JoyMap JoyEvent="Button38" JoyEnableEvents="" SimEvent="LANDING_LIGHTS_ON" /><!--ROCKER SW 3 UP-->
 			<JoyMap JoyEvent="Button39" JoyEnableEvents="" SimEvent="LANDING_LIGHTS_OFF" /><!--ROCKER SW 3 DOWN-->
 			<JoyMap JoyEvent="Button40" JoyEnableEvents="" SimEvent="TOGGLE_TAXI_LIGHTS" SimVar="LIGHT TAXI" ActiveState="True" /><!--ROCKER SW 4 UP-->
 			<JoyMap JoyEvent="Button41" JoyEnableEvents="" SimEvent="TOGGLE_TAXI_LIGHTS" SimVar="LIGHT TAXI" ActiveState="False" /><!--ROCKER SW 4 DOWN-->
 			<JoyMap JoyEvent="Button42" JoyEnableEvents="" SimEvent="TOGGLE_NAV_LIGHTS" SimVar="LIGHT NAV" ActiveState="True" /><!--ROCKER SW 5 UP-->
 			<JoyMap JoyEvent="Button43" JoyEnableEvents="" SimEvent="TOGGLE_NAV_LIGHTS" SimVar="LIGHT NAV" ActiveState="False" /><!--ROCKER SW 5 DOWN-->
-			<JoyMap JoyEvent="Button44" JoyEnableEvents="" SimEvent="STROBES_ON" SimVar="" ActiveState="True" /><!--ROCKER SW 6 UP-->
-			<JoyMap JoyEvent="Button45" JoyEnableEvents="" SimEvent="STROBES_OFF" SimVar="" ActiveState="False" /><!--ROCKER SW 6 DOWN-->
-			<JoyMap JoyEvent="Button46" JoyEnableEvents="" SimEvent="PITOT_HEAT_ON" SimVar="" ActiveState="True" /><!--ROCKER SW 7 UP-->
-			<JoyMap JoyEvent="Button47" JoyEnableEvents="" SimEvent="PITOT_HEAT_OFF" SimVar="" ActiveState="True" /><!--ROCKER SW 7 DOWN-->
+			<JoyMap JoyEvent="Button44" JoyEnableEvents="" SimEvent="STROBES_ON" /><!--ROCKER SW 6 UP-->
+			<JoyMap JoyEvent="Button45" JoyEnableEvents="" SimEvent="STROBES_OFF" /><!--ROCKER SW 6 DOWN-->
+			<JoyMap JoyEvent="Button46" JoyEnableEvents="" SimEvent="PITOT_HEAT_ON" /><!--ROCKER SW 7 UP-->
+			<JoyMap JoyEvent="Button47" JoyEnableEvents="" SimEvent="PITOT_HEAT_OFF" /><!--ROCKER SW 7 DOWN-->
 			<JoyMap JoyEvent="Button48" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!---->
 		</Joystick>
 		<Joystick MappingName="Bravo Throttle Quadrant - MobiFlight" Name="Bravo Throttle Quadrant" LongPressTimeout="500" >
@@ -224,16 +224,16 @@
 			<JoyMap JoyEvent="Button35" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!--ROCKER SW 1 DOWN-->
 			<JoyMap JoyEvent="Button36" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!--ROCKER SW 2 UP-->
 			<JoyMap JoyEvent="Button37" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!--ROCKER SW 2 DOWN-->
-			<JoyMap JoyEvent="Button38" JoyEnableEvents="" SimEvent="LANDING_LIGHTS_ON" SimVar="" ActiveState="True" /><!--ROCKER SW 3 UP-->
-			<JoyMap JoyEvent="Button39" JoyEnableEvents="" SimEvent="LANDING_LIGHTS_OFF" SimVar="" ActiveState="False" /><!--ROCKER SW 3 DOWN-->
+			<JoyMap JoyEvent="Button38" JoyEnableEvents="" SimEvent="LANDING_LIGHTS_ON" /><!--ROCKER SW 3 UP-->
+			<JoyMap JoyEvent="Button39" JoyEnableEvents="" SimEvent="LANDING_LIGHTS_OFF" /><!--ROCKER SW 3 DOWN-->
 			<JoyMap JoyEvent="Button40" JoyEnableEvents="" SimEvent="TOGGLE_TAXI_LIGHTS" SimVar="LIGHT TAXI" ActiveState="True" /><!--ROCKER SW 4 UP-->
 			<JoyMap JoyEvent="Button41" JoyEnableEvents="" SimEvent="TOGGLE_TAXI_LIGHTS" SimVar="LIGHT TAXI" ActiveState="False" /><!--ROCKER SW 4 DOWN-->
 			<JoyMap JoyEvent="Button42" JoyEnableEvents="" SimEvent="TOGGLE_NAV_LIGHTS" SimVar="LIGHT NAV" ActiveState="True" /><!--ROCKER SW 5 UP-->
 			<JoyMap JoyEvent="Button43" JoyEnableEvents="" SimEvent="TOGGLE_NAV_LIGHTS" SimVar="LIGHT NAV" ActiveState="False" /><!--ROCKER SW 5 DOWN-->
-			<JoyMap JoyEvent="Button44" JoyEnableEvents="" SimEvent="STROBES_ON" SimVar="" ActiveState="True" /><!--ROCKER SW 6 UP-->
-			<JoyMap JoyEvent="Button45" JoyEnableEvents="" SimEvent="STROBES_OFF" SimVar="" ActiveState="False" /><!--ROCKER SW 6 DOWN-->
-			<JoyMap JoyEvent="Button46" JoyEnableEvents="" SimEvent="PITOT_HEAT_ON" SimVar="" ActiveState="True" /><!--ROCKER SW 7 UP-->
-			<JoyMap JoyEvent="Button47" JoyEnableEvents="" SimEvent="PITOT_HEAT_OFF" SimVar="" ActiveState="True" /><!--ROCKER SW 7 DOWN-->
+			<JoyMap JoyEvent="Button44" JoyEnableEvents="" SimEvent="STROBES_ON" /><!--ROCKER SW 6 UP-->
+			<JoyMap JoyEvent="Button45" JoyEnableEvents="" SimEvent="STROBES_OFF" /><!--ROCKER SW 6 DOWN-->
+			<JoyMap JoyEvent="Button46" JoyEnableEvents="" SimEvent="PITOT_HEAT_ON" /><!--ROCKER SW 7 UP-->
+			<JoyMap JoyEvent="Button47" JoyEnableEvents="" SimEvent="PITOT_HEAT_OFF" /><!--ROCKER SW 7 DOWN-->
 			<JoyMap JoyEvent="Button48" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!---->
 		</Joystick>
 		<Joystick MappingName="Logitech Flight Multi Panel - Default" Name="Logitech Flight Multi Panel">
@@ -363,6 +363,10 @@
 			<JoyMap JoyEvent="Button18" JoyEnableEvents="" SimEvent="FLAPS_INCR" /><!--FLAPS DN-->
 			<JoyMap JoyEvent="Button19" JoyEnableEvents="" SimEvent="ELEV_TRIM_DN" /><!--PITCH DN-->
 			<JoyMap JoyEvent="Button20" JoyEnableEvents="" SimEvent="ELEV_TRIM_UP" /><!--PITCH UP-->
+			<JoyMap JoyEvent="Button19" JoyEnableEvents="Button1,Button16" SimEvent="RUDDER_TRIM_RIGHT" /><!--PITCH DN-->
+			<JoyMap JoyEvent="Button20" JoyEnableEvents="Button1,Button16" SimEvent="RUDDER_TRIM_LEFT" /><!--PITCH UP-->
+			<JoyMap JoyEvent="Button19" JoyEnableEvents="Button2,Button16" SimEvent="AILERON_TRIM_LEFT" /><!--PITCH DN-->
+			<JoyMap JoyEvent="Button20" JoyEnableEvents="Button2,Button16" SimEvent="AILERON_TRIM_RIGHT" /><!--PITCH UP-->
 		</Joystick>
 		<Joystick MappingName="Bravo Throttle Quadrant - With Alpha Yoke" Name="Bravo Throttle Quadrant" LongPressTimeout="500" >
 			<JoyMap JoyEvent="Button1" JoyEnableEvents="" SimEvent="" SimVar="" ActiveState="True" /><!--HDG-->

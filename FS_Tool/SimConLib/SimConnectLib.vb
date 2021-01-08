@@ -487,6 +487,10 @@ Public Class SimConnectLib
 
     End Function
 
+    Public Function ContainsSimVar(ByVal simVarName As String) As Boolean
+        Return simDat.ContainsSimVar(simVarName)
+    End Function
+
     Public Shared Function GetSimEventByName(ByVal simEvtName As String) As SimData.SimEventEnum
 
         Try
@@ -630,6 +634,9 @@ Public Class SimConnectLib
 
     End Sub
 
+    Public Sub RegisterCustomSimVar(ByVal name As String)
+        RegisterCustomSimVar(name, "Number")
+    End Sub
     Public Sub RegisterCustomSimVar(ByVal name As String, ByVal units As String)
         doRegisterCustomSimVar(name, units)
     End Sub

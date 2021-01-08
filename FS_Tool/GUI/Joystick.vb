@@ -210,29 +210,25 @@ Public Class JoystickEventMap
         'it's enabled so we can continue processing the event.
 
         If joyEventIsTrue Then
-            If _LongPushSimEvent = "" Then
-                _ReleaseActive = False
-                If ReleaseSimEvent <> "" Then
-                    'Maps never enabled on button press events unless a Release event is specified,
-                    'in which case maps are enabled on both press and release.
-                    Return True
-                Else
-                    Return False
-                End If
-            Else
-                'Start the long push timer
+            'Maps are always enabled on button press events unless they are long push or Specified as a press and release event.
+            _ReleaseActive = False
+            If _LongPushSimEvent <> "" Then
+                'Starts the long push timer.
                 Return checkLongPush(True)
+            Else
+                Return True
             End If
         Else
-            'Maps are always enabled on button release events.
-            If _LongPushSimEvent = "" Then
-                If ReleaseSimEvent <> "" Then
-                    _ReleaseActive = True
-                End If
+            If _LongPushSimEvent <> "" Then
+                'Enables either a long push or normal event depending on whether the long push timer has expired.
+                _ReleaseActive = False
+                Return checkLongPush(False)
+            ElseIf ReleaseSimEvent <> "" Then
+                'Enables a release event as specified.
+                _ReleaseActive = True
                 Return True
             Else
-                'Enables either a long push or normal event depending on whether the long push timer has expired.
-                Return checkLongPush(False)
+                Return False
             End If
         End If
 
