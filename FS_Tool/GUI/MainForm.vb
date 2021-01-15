@@ -663,12 +663,37 @@ Public Class MainForm
         For Each mds In myJoyMaps.ActiveMaps
             Dim v = getSimValBool(mds.SimVar)
             'Debug.WriteLine("JoyMap: " & mds.GUID & ", " & mds.SimVar & ", " & v & ", " & mds.ActiveState)
-            If v = (Not mds.ActiveState) Then
-                If Not joyMapEvtTimes.ContainsKey(mds.GUID) Then joyMapEvtTimes.Add(mds.GUID, Date.MinValue)
-                If Now > joyMapEvtTimes(mds.GUID).AddMilliseconds(1000) Then
-                    'Debug.WriteLine("JoyMap sending SimEvent: " & mds.SimEvent)
-                    sendSimEvent(mds.SimEvent)
-                    joyMapEvtTimes(mds.GUID) = Now
+            If mds.ReleaseSimEvent <> "" Then
+                'The gist of this block of code is such that the state of the in-sim control is read from 
+                'the sim var and if the current state of the joystick control does NOT match the sim then
+                'the appropriate event is sent.  If the sim and joystick match then nothing is sent.
+                If mds.ReleaseActive Then
+                    'If the joystick switch is OFF and the SimVar is TRUE then send the ReleaseSimEvent
+                    If v Then
+                        If Not joyMapEvtTimes.ContainsKey(mds.GUID) Then joyMapEvtTimes.Add(mds.GUID, Date.MinValue)
+                        If Now > joyMapEvtTimes(mds.GUID).AddMilliseconds(1000) Then
+                            sendSimEvent(mds.ReleaseSimEvent)
+                            joyMapEvtTimes(mds.GUID) = Now
+                        End If
+                    End If
+                Else
+                    'If the joystick switch is ON and the SimVar is FALSE then send the SimEvent
+                    If Not v Then
+                        If Not joyMapEvtTimes.ContainsKey(mds.GUID) Then joyMapEvtTimes.Add(mds.GUID, Date.MinValue)
+                        If Now > joyMapEvtTimes(mds.GUID).AddMilliseconds(1000) Then
+                            sendSimEvent(mds.SimEvent)
+                            joyMapEvtTimes(mds.GUID) = Now
+                        End If
+                    End If
+                End If
+            Else
+                If v = (Not mds.ActiveState) Then
+                    If Not joyMapEvtTimes.ContainsKey(mds.GUID) Then joyMapEvtTimes.Add(mds.GUID, Date.MinValue)
+                    If Now > joyMapEvtTimes(mds.GUID).AddMilliseconds(1000) Then
+                        'Debug.WriteLine("JoyMap sending SimEvent: " & mds.SimEvent)
+                        sendSimEvent(mds.SimEvent)
+                        joyMapEvtTimes(mds.GUID) = Now
+                    End If
                 End If
             End If
         Next

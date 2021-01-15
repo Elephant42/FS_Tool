@@ -529,6 +529,10 @@
 			<JoyMap JoyEvent="Button34" SimEvent="TOGGLE_NAV_LIGHTS" SimVar="LIGHT NAV" ActiveState="False" />
 			<JoyMap JoyEvent="Button35" SimEvent="TOGGLE_NAV_LIGHTS" SimVar="LIGHT NAV" ActiveState="True" />
 		</Joystick>
+		<Joystick MappingName="Arduino Leonardo - Default" Name="Arduino Leonardo">
+			<JoyMap JoyEvent="Button5" ReleaseSimEvent="TOGGLE_TAXI_LIGHTS" SimEvent="TOGGLE_TAXI_LIGHTS" SimVar="LIGHT TAXI" /><!--Bottom Switch-->
+			<JoyMap JoyEvent="Button6" ReleaseSimEvent="TOGGLE_TAXI_LIGHTS" SimEvent="TOGGLE_TAXI_LIGHTS" /><!--Top Switch-->
+		</Joystick>
 	</Joysticks>
 	<Profiles>
 		<Profile Name="Default">
@@ -548,6 +552,7 @@
 		</Profile>
 		<Profile Name="Testing">
 			<JoyMapping Name="Logitech Extreme 3D - Testing"/>
+			<JoyMapping Name="Arduino Leonardo - Default"/>
 		</Profile>
 	</Profiles>
 </JoystickMappings>
