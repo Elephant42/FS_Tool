@@ -533,6 +533,22 @@
 			<JoyMap JoyEvent="Button5" ReleaseSimEvent="TOGGLE_TAXI_LIGHTS" SimEvent="TOGGLE_TAXI_LIGHTS" SimVar="LIGHT TAXI" /><!--Bottom Switch-->
 			<JoyMap JoyEvent="Button6" ReleaseSimEvent="TOGGLE_TAXI_LIGHTS" SimEvent="TOGGLE_TAXI_LIGHTS" /><!--Top Switch-->
 		</Joystick>
+
+		<Joystick MappingName="Testing - Bad" Name="Logitech Extreme 3D">
+			<JoyMap JoyEvent="Button8" JoyEnableEvents="" SimEvent="TOGGLE_STARTER1" ReleaseSimEvent="TOGGLE_STARTER1" SimVar="GENERAL ENG STARTER:1"/>	<!--BTN SW 102-->
+			<JoyMap JoyEvent="Button9" JoyEnableEvents="" SimEvent="TOGGLE_STARTER2" ReleaseSimEvent="TOGGLE_STARTER2" SimVar="GENERAL ENG STARTER:2"/>	<!--BTN SW 104-->
+			<JoyMap JoyEvent="Button10" JoyEnableEvents="" SimEvent="AUTO_THROTTLE_ARM" ReleaseSimEvent="AUTO_THROTTLE_ARM" SimVar="AUTOTHROTTLE ACTIVE"/><!--BTN SW 117-->
+			<JoyMap JoyEvent="Button11" JoyEnableEvents="" SimEvent="TOGGLE_TAXI_LIGHTS" ReleaseSimEvent="TOGGLE_TAXI_LIGHTS" SimVar="LIGHT TAXI" /> <!--BTN SW 114-->
+			<JoyMap JoyEvent="Button12" JoyEnableEvents="" SimEvent="TOGGLE_NAV_LIGHTS" ReleaseSimEvent="TOGGLE_NAV_LIGHTS" SimVar="LIGHT NAV" /> <!--BTN SW 115-->
+		</Joystick>
+		<Joystick MappingName="Testing - Good" Name="Logitech Extreme 3D">
+			<JoyMap JoyEvent="Button8" JoyEnableEvents="" SimEvent="TOGGLE_STARTER1" ReleaseSimEvent="TOGGLE_STARTER1" SimVar="GENERAL ENG STARTER:1"/>	<!--BTN SW 102-->
+			<JoyMap JoyEvent="Button9" JoyEnableEvents="" SimEvent="TOGGLE_STARTER2" ReleaseSimEvent="TOGGLE_STARTER2" SimVar="GENERAL ENG STARTER:2"/>	<!--BTN SW 104-->
+			<JoyMap JoyEvent="Button10" JoyEnableEvents="" SimEvent="AUTO_THROTTLE_ARM" ReleaseSimEvent="AUTO_THROTTLE_ARM" SimVar="AUTOTHROTTLE ACTIVE"/><!--BTN SW 117-->
+			<JoyMap JoyEvent="Button11" JoyEnableEvents="" SimEvent="TOGGLE_TAXI_LIGHTS" ReleaseSimEvent="TOGGLE_TAXI_LIGHTS"/> <!--BTN SW 114-->
+			<JoyMap JoyEvent="Button12" JoyEnableEvents="" SimEvent="TOGGLE_NAV_LIGHTS" ReleaseSimEvent="TOGGLE_NAV_LIGHTS"/> <!--BTN SW 115-->
+		</Joystick>
+
 	</Joysticks>
 	<Profiles>
 		<Profile Name="Default">
@@ -553,6 +569,12 @@
 		<Profile Name="Testing">
 			<JoyMapping Name="Logitech Extreme 3D - Testing"/>
 			<JoyMapping Name="Arduino Leonardo - Default"/>
+		</Profile>
+		<Profile Name="Testing - Bad">
+			<JoyMapping Name="Testing - Bad"/>
+		</Profile>
+		<Profile Name="Testing - Good">
+			<JoyMapping Name="Testing - Good"/>
 		</Profile>
 	</Profiles>
 </JoystickMappings>
