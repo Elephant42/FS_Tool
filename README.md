@@ -1,4 +1,4 @@
-# Flight Sim Tool v0.6.1
+# Flight Sim Tool v0.6.2.1
 
 ## About
 This little app uses SimConnect to continuously read position data from MSFS2020.  Meh I hear you say, so what - lots of far more capable apps out there that'll do that.  Ahh true but despite lots of searching I have not yet found one that will allow me to instantly slew my aircraft to any position on the globe.  Hence this project was born.
@@ -84,6 +84,12 @@ The included HIDSharp library code which I utilise for reading joystick events i
 - **[Joysticks]** Added mappings for the Logitech Flight Multi Panel.
 - **[Joysticks]** Added mappings for the Honeycomb Alpha yoke, un-tested as I don't have one.
 - **[General]** Documentation updates and improvements.
+
+## [0.6.2.1]
+### Minor Enhancement + Bug Fix
+- **[SimConnect]** Added some undocumented SimEvents thanks to karlo922
+- **[Joysticks]** Added SimVar functionality to Press/Release joystick events, no other changes.
+- **[Joysticks]** Fixed a bug in the SimVar handling code.
 
 
 ## Known Issues - None.
